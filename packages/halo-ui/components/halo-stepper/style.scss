@@ -1,0 +1,43 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-stepper {
+  align-items: center;
+  display: inline-flex;
+}
+
+.halo-stepper--disabled {
+  @include halo-disabled;
+}
+
+.halo-stepper__button {
+  align-items: center;
+  background: var(--halo-color-bg);
+  border: 0;
+  border-radius: var(--halo-radius-sm);
+  color: var(--halo-color-text);
+  display: flex;
+  font-size: var(--halo-font-size-lg);
+  height: 56rpx;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: 56rpx;
+
+  &::after {
+    border: 0;
+  }
+}
+
+.halo-stepper__input {
+  background: var(--halo-color-bg);
+  border-radius: var(--halo-radius-sm);
+  color: var(--halo-color-text);
+  font-size: var(--halo-font-size-md);
+  height: 56rpx;
+  margin: 0 8rpx;
+  text-align: center;
+  width: 88rpx;
+}
+

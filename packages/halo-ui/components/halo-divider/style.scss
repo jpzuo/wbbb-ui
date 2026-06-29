@@ -1,0 +1,48 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-divider {
+  align-items: center;
+  color: var(--halo-color-text-secondary);
+  display: flex;
+  font-size: var(--halo-font-size-sm);
+  line-height: 1;
+  margin: 28rpx 0;
+}
+
+.halo-divider::before,
+.halo-divider::after {
+  border-top: 1rpx solid var(--halo-color-border);
+  content: "";
+  flex: 1;
+}
+
+.halo-divider--dashed::before,
+.halo-divider--dashed::after {
+  border-top-style: dashed;
+}
+
+.halo-divider--vertical {
+  display: inline-flex;
+  height: 1em;
+  margin: 0 16rpx;
+  width: 1rpx;
+}
+
+.halo-divider--vertical::before,
+.halo-divider--vertical::after {
+  display: none;
+}
+
+.halo-divider--vertical {
+  background: var(--halo-color-border);
+}
+
+.halo-divider__text {
+  padding: 0 20rpx;
+}
+
+.halo-divider--text-left::before,
+.halo-divider--text-right::after {
+  max-width: 12%;
+}
+

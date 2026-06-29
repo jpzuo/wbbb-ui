@@ -1,0 +1,15 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-grid {
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+}
+
+.halo-grid--bordered {
+  @include halo-hairline(all);
+  border-radius: var(--halo-radius-md);
+  overflow: hidden;
+}
+

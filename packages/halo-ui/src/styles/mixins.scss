@@ -1,0 +1,55 @@
+@mixin halo-font {
+  color: var(--halo-color-text);
+  font-family: var(--halo-font-family);
+  line-height: var(--halo-line-height);
+}
+
+@mixin halo-hairline($side: all) {
+  position: relative;
+
+  &::after {
+    border-color: var(--halo-color-border);
+    border-style: solid;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 0;
+  }
+
+  @if $side == all {
+    &::after {
+      border-width: 1px;
+      inset: 0;
+      transform: scale(0.5);
+      width: 200%;
+      height: 200%;
+    }
+  } @else if $side == bottom {
+    &::after {
+      border-bottom-width: 1px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: scaleY(0.5);
+    }
+  }
+}
+
+@mixin halo-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@mixin halo-tap-active {
+  transition: opacity var(--halo-duration-fast), transform var(--halo-duration-fast);
+
+  &:active {
+    opacity: 0.78;
+  }
+}
+
+@mixin halo-safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+

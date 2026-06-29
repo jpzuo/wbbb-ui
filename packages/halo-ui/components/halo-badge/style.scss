@@ -1,0 +1,54 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-badge {
+  display: inline-block;
+  position: relative;
+}
+
+.halo-badge__content {
+  align-items: center;
+  border: 2rpx solid #fff;
+  border-radius: 999rpx;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-flex;
+  font-size: 20rpx;
+  height: 32rpx;
+  justify-content: center;
+  min-width: 32rpx;
+  padding: 0 8rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  z-index: 1;
+}
+
+.halo-badge__content--dot {
+  height: 16rpx;
+  min-width: 16rpx;
+  padding: 0;
+  width: 16rpx;
+}
+
+.halo-badge__content--primary {
+  background: var(--halo-color-primary);
+}
+
+.halo-badge__content--success {
+  background: var(--halo-color-success);
+}
+
+.halo-badge__content--warning {
+  background: var(--halo-color-warning);
+}
+
+.halo-badge__content--danger,
+.halo-badge__content--default {
+  background: var(--halo-color-danger);
+}
+
+.halo-badge__content--info {
+  background: var(--halo-color-info);
+}
+

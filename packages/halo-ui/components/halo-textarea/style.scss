@@ -1,0 +1,31 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-textarea {
+  background: var(--halo-color-surface);
+  border: 1rpx solid var(--halo-color-border);
+  border-radius: var(--halo-radius-md);
+  box-sizing: border-box;
+  padding: 20rpx 22rpx;
+}
+
+.halo-textarea--disabled {
+  @include halo-disabled;
+  background: var(--halo-color-bg);
+}
+
+.halo-textarea__control {
+  color: var(--halo-color-text);
+  font-size: var(--halo-font-size-md);
+  min-height: 160rpx;
+  width: 100%;
+}
+
+.halo-textarea__count {
+  color: var(--halo-color-text-secondary);
+  display: block;
+  font-size: var(--halo-font-size-xs);
+  margin-top: var(--halo-spacing-xs);
+  text-align: right;
+}
+

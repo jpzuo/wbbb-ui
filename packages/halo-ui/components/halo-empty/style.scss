@@ -1,0 +1,41 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-empty {
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--halo-color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72rpx 32rpx;
+  text-align: center;
+}
+
+.halo-empty__image,
+.halo-empty__placeholder {
+  margin-bottom: var(--halo-spacing-md);
+}
+
+.halo-empty__placeholder {
+  align-items: center;
+  background: var(--halo-color-bg);
+  border-radius: var(--halo-radius-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.halo-empty__placeholder-line {
+  background: var(--halo-color-border);
+  border-radius: 999rpx;
+  height: 12rpx;
+  width: 88rpx;
+}
+
+.halo-empty__description {
+  font-size: var(--halo-font-size-md);
+}
+
+.halo-empty__action {
+  margin-top: var(--halo-spacing-md);
+}
+

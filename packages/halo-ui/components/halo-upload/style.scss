@@ -1,0 +1,61 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-upload {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--halo-spacing-sm);
+}
+
+.halo-upload--disabled {
+  @include halo-disabled;
+}
+
+.halo-upload__item,
+.halo-upload__trigger {
+  border-radius: var(--halo-radius-md);
+  height: 156rpx;
+  overflow: hidden;
+  position: relative;
+  width: 156rpx;
+}
+
+.halo-upload__image {
+  height: 100%;
+  width: 100%;
+}
+
+.halo-upload__remove {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 999rpx;
+  color: #fff;
+  display: flex;
+  font-size: 20rpx;
+  height: 32rpx;
+  justify-content: center;
+  position: absolute;
+  right: 8rpx;
+  top: 8rpx;
+  width: 32rpx;
+}
+
+.halo-upload__trigger {
+  align-items: center;
+  background: var(--halo-color-bg);
+  color: var(--halo-color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.halo-upload__plus {
+  font-size: 44rpx;
+  line-height: 1;
+}
+
+.halo-upload__text {
+  font-size: var(--halo-font-size-xs);
+  margin-top: 8rpx;
+}
+

@@ -1,0 +1,55 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-action-sheet {
+  overflow: hidden;
+}
+
+.halo-action-sheet__title {
+  color: var(--halo-color-text-secondary);
+  font-size: var(--halo-font-size-sm);
+  line-height: 1.6;
+  padding: 28rpx 40rpx;
+  text-align: center;
+}
+
+.halo-action-sheet__item,
+.halo-action-sheet__cancel {
+  background: var(--halo-color-surface);
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: var(--halo-color-text);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--halo-font-size-md);
+  justify-content: center;
+  min-height: 96rpx;
+  margin: 0;
+  padding: 18rpx 32rpx;
+  text-align: center;
+
+  &::after {
+    border: 0;
+  }
+}
+
+.halo-action-sheet__item {
+  @include halo-hairline(top);
+}
+
+.halo-action-sheet__item--disabled {
+  opacity: 0.45;
+}
+
+.halo-action-sheet__subname {
+  color: var(--halo-color-text-secondary);
+  font-size: var(--halo-font-size-xs);
+  margin-top: 6rpx;
+}
+
+.halo-action-sheet__cancel {
+  border-top: 16rpx solid var(--halo-color-bg);
+  color: var(--halo-color-primary);
+}
+

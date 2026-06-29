@@ -1,0 +1,24 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-swiper {
+  border-radius: var(--halo-radius-lg);
+  height: 320rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.halo-swiper__item,
+.halo-swiper__image,
+.halo-swiper__fallback {
+  height: 100%;
+  width: 100%;
+}
+
+.halo-swiper__fallback {
+  align-items: center;
+  background: var(--halo-color-bg);
+  color: var(--halo-color-text-secondary);
+  display: flex;
+  justify-content: center;
+}
+

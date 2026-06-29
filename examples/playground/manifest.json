@@ -1,0 +1,19 @@
+{
+  "name": "Halo UI Playground",
+  "appid": "__UNI__HALO_UI",
+  "description": "Playground for Halo UI components",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "app-plus": {
+    "usingComponents": true
+  },
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false
+    },
+    "usingComponents": true
+  }
+}
+

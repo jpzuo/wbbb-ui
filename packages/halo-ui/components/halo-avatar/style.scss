@@ -1,0 +1,28 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-avatar {
+  align-items: center;
+  background: var(--halo-color-bg);
+  border-radius: var(--halo-radius-md);
+  box-sizing: border-box;
+  color: var(--halo-color-text-secondary);
+  display: inline-flex;
+  font-size: var(--halo-font-size-lg);
+  justify-content: center;
+  overflow: hidden;
+}
+
+.halo-avatar--round {
+  border-radius: 999rpx;
+}
+
+.halo-avatar__image {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.halo-avatar__text {
+  line-height: 1;
+}
+

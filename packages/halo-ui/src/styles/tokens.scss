@@ -1,0 +1,59 @@
+$halo-font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif !default;
+$halo-color-primary: #1677ff !default;
+$halo-color-success: #20a162 !default;
+$halo-color-warning: #d88400 !default;
+$halo-color-danger: #d93026 !default;
+$halo-color-info: #5f6b7a !default;
+$halo-color-text: #172033 !default;
+$halo-color-text-secondary: #667085 !default;
+$halo-color-border: #d9e1ec !default;
+$halo-color-bg: #f6f8fb !default;
+$halo-color-surface: #ffffff !default;
+$halo-radius-sm: 6rpx !default;
+$halo-radius-md: 10rpx !default;
+$halo-radius-lg: 16rpx !default;
+$halo-spacing-xs: 8rpx !default;
+$halo-spacing-sm: 12rpx !default;
+$halo-spacing-md: 20rpx !default;
+$halo-spacing-lg: 28rpx !default;
+$halo-font-size-xs: 22rpx !default;
+$halo-font-size-sm: 24rpx !default;
+$halo-font-size-md: 28rpx !default;
+$halo-font-size-lg: 32rpx !default;
+$halo-line-height: 1.5 !default;
+$halo-duration-fast: 160ms !default;
+$halo-duration-base: 220ms !default;
+$halo-z-index-popup: 900 !default;
+$halo-z-index-toast: 1100 !default;
+
+page,
+:root {
+  --halo-font-family: #{$halo-font-family};
+  --halo-color-primary: #{$halo-color-primary};
+  --halo-color-success: #{$halo-color-success};
+  --halo-color-warning: #{$halo-color-warning};
+  --halo-color-danger: #{$halo-color-danger};
+  --halo-color-info: #{$halo-color-info};
+  --halo-color-text: #{$halo-color-text};
+  --halo-color-text-secondary: #{$halo-color-text-secondary};
+  --halo-color-border: #{$halo-color-border};
+  --halo-color-bg: #{$halo-color-bg};
+  --halo-color-surface: #{$halo-color-surface};
+  --halo-radius-sm: #{$halo-radius-sm};
+  --halo-radius-md: #{$halo-radius-md};
+  --halo-radius-lg: #{$halo-radius-lg};
+  --halo-spacing-xs: #{$halo-spacing-xs};
+  --halo-spacing-sm: #{$halo-spacing-sm};
+  --halo-spacing-md: #{$halo-spacing-md};
+  --halo-spacing-lg: #{$halo-spacing-lg};
+  --halo-font-size-xs: #{$halo-font-size-xs};
+  --halo-font-size-sm: #{$halo-font-size-sm};
+  --halo-font-size-md: #{$halo-font-size-md};
+  --halo-font-size-lg: #{$halo-font-size-lg};
+  --halo-line-height: #{$halo-line-height};
+  --halo-duration-fast: #{$halo-duration-fast};
+  --halo-duration-base: #{$halo-duration-base};
+  --halo-z-index-popup: #{$halo-z-index-popup};
+  --halo-z-index-toast: #{$halo-z-index-toast};
+}
+

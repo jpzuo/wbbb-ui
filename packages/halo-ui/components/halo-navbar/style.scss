@@ -1,0 +1,69 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-navbar {
+  background: var(--halo-color-surface);
+  color: var(--halo-color-text);
+  width: 100%;
+  z-index: 800;
+}
+
+.halo-navbar--safe {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+.halo-navbar--fixed {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.halo-navbar--border {
+  @include halo-hairline(bottom);
+}
+
+.halo-navbar__placeholder {
+  height: 88rpx;
+}
+
+.halo-navbar__inner {
+  align-items: center;
+  display: flex;
+  height: 88rpx;
+  padding: 0 24rpx;
+  position: relative;
+}
+
+.halo-navbar__left,
+.halo-navbar__right {
+  align-items: center;
+  color: var(--halo-color-primary);
+  display: flex;
+  flex: 1;
+  font-size: var(--halo-font-size-md);
+  min-width: 0;
+}
+
+.halo-navbar__right {
+  justify-content: flex-end;
+}
+
+.halo-navbar__title {
+  font-size: var(--halo-font-size-lg);
+  font-weight: 600;
+  left: 28%;
+  overflow: hidden;
+  position: absolute;
+  right: 28%;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.halo-navbar__arrow {
+  font-size: 36rpx;
+  margin-right: 4rpx;
+}
+

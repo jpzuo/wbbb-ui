@@ -1,0 +1,53 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-steps {
+  display: flex;
+  width: 100%;
+}
+
+.halo-steps--vertical {
+  flex-direction: column;
+}
+
+.halo-steps__item {
+  color: var(--halo-color-text-secondary);
+  display: flex;
+  flex: 1;
+  gap: var(--halo-spacing-sm);
+  min-width: 0;
+}
+
+.halo-steps__item--active {
+  color: var(--halo-color-primary);
+}
+
+.halo-steps__dot {
+  align-items: center;
+  background: currentcolor;
+  border-radius: 999rpx;
+  color: #fff;
+  display: flex;
+  flex: none;
+  font-size: 20rpx;
+  height: 36rpx;
+  justify-content: center;
+  width: 36rpx;
+}
+
+.halo-steps__body {
+  min-width: 0;
+}
+
+.halo-steps__title {
+  color: inherit;
+  display: block;
+  font-size: var(--halo-font-size-sm);
+}
+
+.halo-steps__description {
+  color: var(--halo-color-text-secondary);
+  display: block;
+  font-size: var(--halo-font-size-xs);
+  margin-top: 4rpx;
+}
+

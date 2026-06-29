@@ -1,0 +1,24 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-image {
+  background: var(--halo-color-bg);
+  display: block;
+  overflow: hidden;
+}
+
+.halo-image__inner {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.halo-image__fallback {
+  align-items: center;
+  color: var(--halo-color-text-secondary);
+  display: flex;
+  font-size: var(--halo-font-size-sm);
+  height: 100%;
+  justify-content: center;
+  min-height: 120rpx;
+}
+

@@ -1,0 +1,35 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-field {
+  align-items: flex-start;
+  background: var(--halo-color-surface);
+  box-sizing: border-box;
+  display: flex;
+  padding: 18rpx 0;
+}
+
+.halo-field__label {
+  color: var(--halo-color-text);
+  flex: none;
+  font-size: var(--halo-font-size-md);
+  line-height: 76rpx;
+  min-width: 0;
+}
+
+.halo-field__required {
+  color: var(--halo-color-danger);
+  margin-right: 4rpx;
+}
+
+.halo-field__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.halo-field__error {
+  color: var(--halo-color-danger);
+  display: block;
+  font-size: var(--halo-font-size-xs);
+  margin-top: 8rpx;
+}
+

@@ -1,0 +1,33 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-input {
+  align-items: center;
+  background: var(--halo-color-surface);
+  border: 1rpx solid var(--halo-color-border);
+  border-radius: var(--halo-radius-md);
+  box-sizing: border-box;
+  display: flex;
+  min-height: 76rpx;
+  padding: 0 22rpx;
+}
+
+.halo-input--disabled {
+  @include halo-disabled;
+  background: var(--halo-color-bg);
+}
+
+.halo-input__control {
+  color: var(--halo-color-text);
+  flex: 1;
+  font-size: var(--halo-font-size-md);
+  min-width: 0;
+}
+
+.halo-input__clear {
+  color: var(--halo-color-text-secondary);
+  flex: none;
+  font-size: var(--halo-font-size-md);
+  padding-left: var(--halo-spacing-sm);
+}
+

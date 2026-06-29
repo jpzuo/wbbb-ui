@@ -1,0 +1,74 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-tag {
+  align-items: center;
+  border-radius: var(--halo-radius-sm);
+  box-sizing: border-box;
+  display: inline-flex;
+  gap: 6rpx;
+  line-height: 1.2;
+  padding: 6rpx 12rpx;
+}
+
+.halo-tag--mini {
+  font-size: var(--halo-font-size-xs);
+  padding: 4rpx 8rpx;
+}
+
+.halo-tag--small {
+  font-size: var(--halo-font-size-sm);
+}
+
+.halo-tag--medium,
+.halo-tag--large {
+  font-size: var(--halo-font-size-md);
+}
+
+.halo-tag--large {
+  padding: 10rpx 16rpx;
+}
+
+.halo-tag--round {
+  border-radius: 999rpx;
+}
+
+.halo-tag--default {
+  background: var(--halo-color-bg);
+  color: var(--halo-color-text-secondary);
+}
+
+.halo-tag--primary {
+  background: rgba(22, 119, 255, 0.12);
+  color: var(--halo-color-primary);
+}
+
+.halo-tag--success {
+  background: rgba(32, 161, 98, 0.12);
+  color: var(--halo-color-success);
+}
+
+.halo-tag--warning {
+  background: rgba(216, 132, 0, 0.14);
+  color: var(--halo-color-warning);
+}
+
+.halo-tag--danger {
+  background: rgba(217, 48, 38, 0.12);
+  color: var(--halo-color-danger);
+}
+
+.halo-tag--info {
+  background: rgba(95, 107, 122, 0.12);
+  color: var(--halo-color-info);
+}
+
+.halo-tag--plain {
+  background: transparent;
+  border: 1rpx solid currentcolor;
+}
+
+.halo-tag__close {
+  font-size: 20rpx;
+  line-height: 1;
+}
+

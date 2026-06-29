@@ -1,0 +1,21 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-icon {
+  align-items: center;
+  color: currentcolor;
+  display: inline-flex;
+  font-size: var(--halo-font-size-md);
+  justify-content: center;
+  line-height: 1;
+  min-height: 1em;
+  min-width: 1em;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.halo-icon--image {
+  display: inline-block;
+}
+

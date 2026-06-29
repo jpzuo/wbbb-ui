@@ -1,0 +1,36 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-text {
+  color: var(--halo-color-text);
+  font-family: var(--halo-font-family);
+  font-size: var(--halo-font-size-md);
+  line-height: var(--halo-line-height);
+}
+
+.halo-text--secondary {
+  color: var(--halo-color-text-secondary);
+}
+
+.halo-text--primary {
+  color: var(--halo-color-primary);
+}
+
+.halo-text--success {
+  color: var(--halo-color-success);
+}
+
+.halo-text--warning {
+  color: var(--halo-color-warning);
+}
+
+.halo-text--danger {
+  color: var(--halo-color-danger);
+}
+
+.halo-text--ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

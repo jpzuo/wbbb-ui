@@ -1,0 +1,32 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-collapse {
+  background: var(--halo-color-surface);
+}
+
+.halo-collapse__item {
+  @include halo-hairline(bottom);
+}
+
+.halo-collapse__header {
+  align-items: center;
+  color: var(--halo-color-text);
+  display: flex;
+  font-size: var(--halo-font-size-md);
+  justify-content: space-between;
+  min-height: 88rpx;
+  padding: 0 28rpx;
+}
+
+.halo-collapse__header--disabled {
+  opacity: 0.45;
+}
+
+.halo-collapse__content {
+  color: var(--halo-color-text-secondary);
+  font-size: var(--halo-font-size-sm);
+  line-height: 1.7;
+  padding: 0 28rpx 28rpx;
+}
+

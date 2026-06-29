@@ -1,0 +1,23 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-picker {
+  align-items: center;
+  border: 1rpx solid var(--halo-color-border);
+  border-radius: var(--halo-radius-md);
+  color: var(--halo-color-text);
+  display: flex;
+  font-size: var(--halo-font-size-md);
+  justify-content: space-between;
+  min-height: 76rpx;
+  padding: 0 22rpx;
+}
+
+.halo-picker--placeholder {
+  color: var(--halo-color-text-secondary);
+}
+
+.halo-picker__arrow {
+  color: var(--halo-color-text-secondary);
+  margin-left: var(--halo-spacing-sm);
+}
+

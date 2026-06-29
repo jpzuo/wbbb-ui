@@ -1,0 +1,25 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-notice-bar {
+  align-items: center;
+  background: rgba(216, 132, 0, 0.12);
+  box-sizing: border-box;
+  color: var(--halo-color-warning);
+  display: flex;
+  font-size: var(--halo-font-size-sm);
+  gap: var(--halo-spacing-sm);
+  min-height: 72rpx;
+  padding: 0 24rpx;
+}
+
+.halo-notice-bar__text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.halo-notice-bar__close {
+  flex: none;
+}
+

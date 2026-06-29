@@ -1,0 +1,19 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--halo-spacing-md);
+}
+
+.halo-checkbox__item {
+  align-items: center;
+  color: var(--halo-color-text);
+  display: inline-flex;
+  font-size: var(--halo-font-size-md);
+}
+
+.halo-checkbox__control {
+  margin-right: var(--halo-spacing-xs);
+}
+

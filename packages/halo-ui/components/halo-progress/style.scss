@@ -1,0 +1,44 @@
+@use "../../src/styles/tokens.scss";
+
+.halo-progress {
+  align-items: center;
+  display: flex;
+  gap: var(--halo-spacing-sm);
+  width: 100%;
+}
+
+.halo-progress__track {
+  background: var(--halo-color-bg);
+  flex: 1;
+  overflow: hidden;
+}
+
+.halo-progress__bar {
+  background: var(--halo-color-primary);
+  transition: width var(--halo-duration-base);
+}
+
+.halo-progress__bar--success {
+  background: var(--halo-color-success);
+}
+
+.halo-progress__bar--warning {
+  background: var(--halo-color-warning);
+}
+
+.halo-progress__bar--danger {
+  background: var(--halo-color-danger);
+}
+
+.halo-progress__bar--info {
+  background: var(--halo-color-info);
+}
+
+.halo-progress__text {
+  color: var(--halo-color-text-secondary);
+  flex: none;
+  font-size: var(--halo-font-size-sm);
+  min-width: 64rpx;
+  text-align: right;
+}
+
