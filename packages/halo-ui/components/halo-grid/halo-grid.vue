@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<HaloGridProps>(), {
 
 const gridStyle = computed(() => [
   `grid-template-columns:repeat(${props.columns}, minmax(0, 1fr))`,
-  `gap:${props.gap}rpx`,
+  `gap:${props.bordered ? 1 : props.gap}rpx`,
   toStyleText(props.customStyle)
 ].filter(Boolean).join(';'))
 </script>

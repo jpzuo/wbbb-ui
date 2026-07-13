@@ -98,6 +98,10 @@ if (packageJson.exports?.['./styles/*'] !== './dist/components/halo-*/style.scss
   missing.push('package.json wildcard export for ./styles/*')
 }
 
+if (packageJson.exports?.['./icons']?.import !== './dist/src/icons.js') {
+  missing.push('package.json export for ./icons')
+}
+
 for (const [path, target] of Object.entries(expectedComponentExports)) {
   const actual = packageJson.exports?.[path]
   if (actual?.types !== target.types || actual?.import !== target.import) {

@@ -46,7 +46,10 @@ All components support `customClass` and `customStyle` through `HaloCommonProps`
 
 | Name | Type | Required | Default |
 | --- | --- | --- | --- |
+| code | `string` | No | `''` |
 | color | `string` | No | `''` |
+| fontFamily | `string` | No | `''` |
+| fontSet | `string` | No | `''` |
 | name | `string` | No | `''` |
 | size | `HaloNumeric` | No | `32` |
 | src | `string` | No | `''` |

@@ -7,6 +7,8 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const packageRoot = join(root, 'packages', 'halo-ui')
 const output = join(packageRoot, 'dist')
 
+execFileSync(process.execPath, [join(root, 'scripts', 'generate-icons.mjs')], { cwd: root, stdio: 'inherit' })
+
 rmSync(output, { force: true, recursive: true })
 mkdirSync(output, { recursive: true })
 
@@ -31,7 +33,7 @@ for (const name of ['components', 'src']) {
           return true
         }
 
-        return /\.(vue|scss|png|jpe?g|webp|gif|svg)$/i.test(path)
+        return /\.(vue|scss|png|jpe?g|webp|gif|svg|ttf|woff2?|woff)$/i.test(path)
       },
       recursive: true
     })

@@ -1,7 +1,7 @@
 <template>
   <view class="demo">
     <view v-if="slug === 'button'" class="demo__row"><halo-button>默认</halo-button><halo-button type="primary">主色</halo-button><halo-button type="success">成功</halo-button><halo-button type="warning">警告</halo-button><halo-button type="danger">危险</halo-button><halo-button type="info">信息</halo-button><halo-button disabled>禁用</halo-button><halo-button loading type="primary">加载</halo-button></view>
-    <view v-else-if="slug === 'icon'" class="demo__row"><halo-icon name="calendar" :size="42" /><halo-icon name="check" color="var(--halo-color-primary)" :size="42" /><halo-icon name="warning" color="var(--halo-color-warning)" :size="42" /></view>
+    <view v-else-if="slug === 'icon'" class="demo__stack"><view class="icon-demo__grid"><view v-for="icon in haloCoreIcons" :key="icon" class="icon-demo__item"><halo-icon :name="icon" :size="34" /><text>{{ icon }}</text></view></view><view class="icon-demo__sources"><view><halo-icon font-family="Halo Icons" :code="directIconCode" :size="36" /><text>直接码点</text></view><view><halo-icon font-set="playground" name="dashboard" :size="36" /><text>注册字体集</text></view><view><halo-icon :src="coverBlue" :size="36" /><text>图片资源</text></view></view></view>
     <view v-else-if="slug === 'text'" class="demo__stack"><view class="demo__row"><halo-text type="primary">主色文本</halo-text><halo-text type="success">成功</halo-text><halo-text type="warning">警告</halo-text><halo-text type="danger">危险</halo-text><halo-text type="secondary">辅助信息</halo-text></view><halo-text ellipsis>这是一段超出容器后自动省略的辅助说明文本。</halo-text></view>
     <view v-else-if="slug === 'image'" class="demo__row"><halo-image :src="coverBlue" width="200" height="120" radius="12" /><halo-image loading width="200" height="120" radius="12" /><halo-image :src="missingMedia" width="200" height="120" radius="12"><template #error><halo-icon name="warning" :size="30" /><text>资源不存在</text></template></halo-image></view>
     <view v-else-if="slug === 'badge'" class="demo__row"><halo-badge v-for="type in semanticTypes" :key="type" :type="type" :value="8"><halo-avatar :alt="type.slice(0, 1).toUpperCase()" /></halo-badge><halo-badge dot type="danger"><halo-button size="small">消息</halo-button></halo-badge></view>
@@ -11,7 +11,7 @@
     <view v-else-if="slug === 'loading'" class="demo__row"><halo-loading text="正在同步" /><halo-loading vertical color="var(--halo-color-primary)" text="加载中" /></view>
 
     <view v-else-if="slug === 'cell'" class="demo__stack"><halo-cell-group title="项目设置" inset><halo-cell title="通知" label="接收更新提醒" value="已开启" clickable /><halo-cell title="成员" value="8 人" icon="info" clickable /></halo-cell-group></view>
-    <view v-else-if="slug === 'grid'" class="demo__stack"><halo-grid :columns="3" bordered><halo-grid-item v-for="item in ['概览', '任务', '设置']" :key="item" :text="item" icon="calendar" clickable /></halo-grid></view>
+    <view v-else-if="slug === 'grid'" class="demo__stack"><halo-grid :columns="3" bordered><halo-grid-item v-for="item in gridItems" :key="item.text" :text="item.text" :icon="item.icon" clickable /></halo-grid><text class="demo__hint">点击任一入口可验证网格项交互。</text></view>
     <view v-else-if="slug === 'list'" class="demo__stack"><halo-list :items="listItems" @select="selectItem" /></view>
     <view v-else-if="slug === 'card'" class="demo__stack"><halo-card title="本周进展" extra="查看全部" shadow><halo-progress :percentage="72" status="success" /></halo-card></view>
     <view v-else-if="slug === 'sticky'" class="demo__stack"><halo-sticky><halo-notice-bar text="吸顶区域示例" /></halo-sticky><text class="demo__hint">滚动页面时观察顶部定位。</text></view>
@@ -62,6 +62,8 @@ import coverBlue from '../static/media/cover-blue.png'
 import coverGreen from '../static/media/cover-green.png'
 import coverWarm from '../static/media/cover-warm.png'
 import { showActionSheet, showDialog, showNotify, showToast } from '../uni_modules/halo-ui/src/services'
+import { haloCoreIconCodepoints, haloCoreIcons, registerHaloIconFont } from '../uni_modules/halo-ui/src/icons'
+import { HaloGridItem } from '../uni_modules/halo-ui/components/halo-grid'
 import { HaloTabPanel } from '../uni_modules/halo-ui/components/halo-tabs'
 import type { HaloUploadFile } from '../uni_modules/halo-ui/components/halo-upload/props'
 
@@ -88,12 +90,20 @@ const formModel = reactive({ date: '', name: '' })
 const semanticTypes = ['primary', 'success', 'warning', 'danger', 'info'] as const
 const semanticLabels = { danger: '危险', info: '信息', primary: '主色', success: '成功', warning: '警告' }
 const missingMedia = '/static/media/missing-media.png'
+const directIconCode = haloCoreIconCodepoints['grid-2x2'].toString(16)
+
+registerHaloIconFont({
+  fontFamily: 'Halo Icons',
+  glyphs: { dashboard: haloCoreIconCodepoints['bar-chart-3'].toString(16) },
+  name: 'playground'
+})
 
 const choiceOptions = [{ label: '低', value: 'low' }, { label: '中', value: 'medium' }, { label: '高', value: 'high' }]
 const pickerOptions = choiceOptions
 const tabItems = [{ name: 'overview', title: '概览' }, { name: 'activity', title: '动态' }]
 const tabbarItems = [{ icon: 'calendar', name: 'overview', text: '概览' }, { badge: 2, icon: 'info', name: 'activity', text: '动态' }]
 const listItems = [{ label: '今日 · 10:30', title: '设计评审', value: '进行中' }, { label: '明日 · 14:00', title: '体验走查', value: '待开始' }]
+const gridItems = [{ icon: 'home', text: '概览' }, { icon: 'calendar', text: '任务' }, { icon: 'bell', text: '提醒' }]
 const collapseItems = [{ content: '这里展示可展开的内容区域。', name: 'detail', title: '项目说明' }, { content: '已同步到团队成员。', name: 'activity', title: '活动记录' }]
 const swiperItems = [{ image: coverBlue, title: '新品发布' }, { image: coverGreen, title: '团队协作' }, { image: coverWarm, title: '数据洞察' }]
 const stepItems = [{ description: '填写基础信息', title: '创建项目' }, { description: '邀请协作成员', title: '配置团队' }, { description: '开始推进工作', status: 'wait' as const, title: '完成发布' }]
@@ -133,4 +143,5 @@ async function validateForm() {
 .demo__error { color: var(--halo-color-danger); font-size: 24rpx; }
 .safe-demo { background: var(--halo-color-fill); border-radius: var(--halo-radius-md); color: var(--halo-color-text-secondary); padding: 24rpx; }
 .popup-content { background: var(--halo-color-surface); border-radius: 28rpx 28rpx 0 0; display: flex; flex-direction: column; gap: 28rpx; padding: 36rpx 32rpx 44rpx; }
+.icon-demo__grid { display: grid; gap: 12rpx; grid-template-columns: repeat(4, minmax(0, 1fr)); }.icon-demo__item { align-items: center; background: var(--halo-color-surface-subtle); border: 1rpx solid var(--halo-color-separator); border-radius: var(--halo-radius-md); color: var(--halo-color-text); display: flex; flex-direction: column; font-size: 18rpx; gap: 10rpx; min-height: 112rpx; justify-content: center; padding: 12rpx 6rpx; text-align: center; }.icon-demo__item text { line-height: 1.25; word-break: break-word; }.icon-demo__sources { display: grid; gap: 16rpx; grid-template-columns: repeat(3, minmax(0, 1fr)); }.icon-demo__sources view { align-items: center; background: var(--halo-color-surface-subtle); border: 1rpx solid var(--halo-color-separator); border-radius: var(--halo-radius-md); color: var(--halo-color-text-secondary); display: flex; flex-direction: column; font-size: 20rpx; gap: 10rpx; justify-content: center; min-height: 110rpx; padding: 12rpx; text-align: center; }
 </style>

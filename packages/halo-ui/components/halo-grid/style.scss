@@ -8,7 +8,8 @@
 }
 
 .halo-grid--bordered {
-  @include halo-hairline(all);
+  background: var(--halo-color-separator);
+  border: 1rpx solid var(--halo-color-separator);
   border-radius: var(--halo-radius-md);
   overflow: hidden;
 }
@@ -22,7 +23,7 @@
   flex-direction: column;
   font-size: var(--halo-font-size-sm);
   justify-content: center;
-  min-height: 128rpx;
+  min-height: 148rpx;
   padding: 20rpx;
   text-align: center;
 }

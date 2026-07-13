@@ -24,6 +24,8 @@ import 'halo-ui/styles/button'
 | Feedback | Toast, Dialog, Popup, ActionSheet, Notify, Skeleton, Empty, Progress | `halo-ui/components/toast`, `halo-ui/components/dialog`, `halo-ui/components/popup`, `halo-ui/components/action-sheet`, `halo-ui/components/notify`, `halo-ui/components/skeleton`, `halo-ui/components/empty`, `halo-ui/components/progress` |
 | Display | NoticeBar, Collapse, Swiper, Steps, Timeline, CountDown, Rate, Calendar | `halo-ui/components/notice-bar`, `halo-ui/components/collapse`, `halo-ui/components/swiper`, `halo-ui/components/steps`, `halo-ui/components/timeline`, `halo-ui/components/count-down`, `halo-ui/components/rate`, `halo-ui/components/calendar` |
 
+See the [Icon Guide](icons.md) for core Lucide names, image sources, direct iconfont code points, and registered iconfont sets.
+
 The style path mirrors the component path:
 
 ```ts

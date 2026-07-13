@@ -18,6 +18,7 @@ jobs:
       - run: npm run check:exports
       - run: npm run check:playground
       - run: npm run check:tokens
+      - run: npm run check:icons
       - run: npm run check:api-docs
       - run: npm run check:accessibility
       - run: npm run audit:production

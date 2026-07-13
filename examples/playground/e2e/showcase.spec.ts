@@ -26,6 +26,14 @@ test('design token page switches its full semantic palette', async ({ page }) =>
   await expect(page.locator('.tokens-page')).toHaveAttribute('data-theme', 'dark')
 })
 
+test('icon detail renders the core set and all three icon sources', async ({ page }) => {
+  await page.goto('/#/pages/component/detail?name=icon')
+  await page.reload()
+  await expect(page.locator('.icon-demo__item')).toHaveCount(64)
+  await expect(page.locator('.icon-demo__sources .halo-icon')).toHaveCount(3)
+  await expect(page.locator('.icon-demo__sources .halo-icon--asset')).toHaveCount(1)
+})
+
 test('media, disclosure, progress and calendar details render their real states', async ({ page }) => {
   await page.goto('/#/pages/component/detail?name=image')
   await page.reload()
@@ -46,6 +54,18 @@ test('media, disclosure, progress and calendar details render their real states'
   await page.goto('/#/pages/component/detail?name=calendar')
   await page.reload()
   await expect(page.locator('.halo-calendar__day--empty.halo-calendar__day--active')).toHaveCount(0)
+})
+
+test('grid and stepper details expose visible content and controls', async ({ page }) => {
+  await page.goto('/#/pages/component/detail?name=grid')
+  await expect(page.locator('.halo-grid-item')).toHaveCount(3)
+  await expect(page.getByText('概览', { exact: true })).toHaveCount(1)
+  await expect(page.getByText('任务', { exact: true })).toHaveCount(1)
+  await expect(page.getByText('提醒', { exact: true })).toHaveCount(1)
+
+  await page.goto('/#/pages/component/detail?name=stepper')
+  await page.reload()
+  await expect(page.locator('.halo-stepper:not(.halo-stepper--disabled) .halo-stepper__button .halo-icon')).toHaveCount(2)
 })
 
 test('component details cover stateful controls and overlay services', async ({ page }) => {

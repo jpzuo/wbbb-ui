@@ -96,7 +96,25 @@ export const componentApiMetadata = {
     "props": [
       {
         "defaultValue": "''",
+        "name": "code",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "defaultValue": "''",
         "name": "color",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "defaultValue": "''",
+        "name": "fontFamily",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "defaultValue": "''",
+        "name": "fontSet",
         "required": false,
         "type": "string"
       },

@@ -51,6 +51,10 @@ const baseExports = {
     types: './dist/src/services/toast.d.ts',
     import: './dist/src/services/toast.js'
   },
+  './icons': {
+    types: './dist/src/icons.d.ts',
+    import: './dist/src/icons.js'
+  },
   './styles': './dist/src/styles/index.scss',
   './styles/*': './dist/components/halo-*/style.scss',
   './theme': './dist/src/styles/tokens.scss'
