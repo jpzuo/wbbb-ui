@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { toStyleText } from '../../src/shared/utils'
 import type { HaloGridProps } from './props'
 
 const props = withDefaults(defineProps<HaloGridProps>(), {
@@ -19,11 +20,10 @@ const props = withDefaults(defineProps<HaloGridProps>(), {
 const gridStyle = computed(() => [
   `grid-template-columns:repeat(${props.columns}, minmax(0, 1fr))`,
   `gap:${props.gap}rpx`,
-  typeof props.customStyle === 'string' ? props.customStyle : ''
+  toStyleText(props.customStyle)
 ].filter(Boolean).join(';'))
 </script>
 
 <style lang="scss">
 @use "./style.scss";
 </style>
-

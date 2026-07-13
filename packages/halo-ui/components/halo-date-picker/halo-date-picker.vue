@@ -10,12 +10,13 @@
   >
     <view class="halo-date-picker" :class="[customClass, { 'halo-date-picker--placeholder': !modelValue }]" :style="customStyle">
       <text>{{ modelValue || placeholder }}</text>
-      <text class="halo-date-picker__arrow">></text>
+      <halo-icon class="halo-date-picker__arrow" name="right" :size="26" />
     </view>
   </picker>
 </template>
 
 <script setup lang="ts">
+import HaloIcon from '../halo-icon'
 import type { HaloDatePickerProps } from './props'
 
 withDefaults(defineProps<HaloDatePickerProps>(), {
@@ -24,6 +25,7 @@ withDefaults(defineProps<HaloDatePickerProps>(), {
   disabled: false,
   end: '',
   fields: 'day',
+  locale: 'zh-cn',
   modelValue: '',
   placeholder: 'Select date',
   start: ''
@@ -44,4 +46,3 @@ function handleChange(event: unknown) {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

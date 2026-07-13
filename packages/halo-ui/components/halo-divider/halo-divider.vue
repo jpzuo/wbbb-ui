@@ -1,6 +1,6 @@
 <template>
   <view class="halo-divider" :class="classes" :style="customStyle">
-    <text v-if="$slots.default" class="halo-divider__text"><slot /></text>
+    <text class="halo-divider__text"><slot /></text>
   </view>
 </template>
 
@@ -27,4 +27,3 @@ const classes = computed(() => [
 <style lang="scss">
 @use "./style.scss";
 </style>
-

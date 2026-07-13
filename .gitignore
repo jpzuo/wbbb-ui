@@ -1,10 +1,16 @@
 node_modules/
+.npm-cache/
 dist/
 coverage/
+test-results/
+playwright-report/
 .DS_Store
 .idea/
 .vscode/
 *.log
 *.local
+*.tsbuildinfo
 unpackage/
-
+examples/playground/uni_modules/
+examples/playground/src/uni_modules/
+.halo-ui-consumer-smoke/

@@ -1,13 +1,13 @@
 <template>
   <image
     v-if="src"
-    class="halo-icon halo-icon--image"
+    class="halo-icon halo-icon--asset"
     :class="customClass"
     :src="src"
     :style="mergedStyle"
     mode="aspectFit"
   />
-  <text v-else class="halo-icon" :class="customClass" :style="mergedStyle">{{ glyph }}</text>
+  <view v-else class="halo-icon" :class="[customClass, `halo-icon--${name || 'default'}`]" :style="mergedStyle"><view class="halo-icon__shape" /></view>
 </template>
 
 <script setup lang="ts">
@@ -23,23 +23,6 @@ const props = withDefaults(defineProps<HaloIconProps>(), {
   size: 32,
   src: ''
 })
-
-const glyphMap: Record<string, string> = {
-  back: '<',
-  check: 'check',
-  close: 'x',
-  down: 'v',
-  info: 'i',
-  left: '<',
-  minus: '-',
-  plus: '+',
-  right: '>',
-  search: 'search',
-  up: '^',
-  warning: '!'
-}
-
-const glyph = computed(() => glyphMap[props.name] ?? props.name)
 
 const mergedStyle = computed(() => {
   const size = addUnit(props.size)
@@ -57,4 +40,3 @@ const mergedStyle = computed(() => {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

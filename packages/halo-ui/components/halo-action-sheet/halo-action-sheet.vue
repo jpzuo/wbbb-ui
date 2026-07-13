@@ -1,6 +1,7 @@
 <template>
-  <halo-popup :model-value="modelValue" placement="bottom" @update:model-value="close">
-    <view class="halo-action-sheet" :class="customClass" :style="customStyle">
+  <view v-if="modelValue" ref="root" class="halo-action-sheet-root" :class="customClass" role="dialog" aria-modal="true" tabindex="-1">
+    <view class="halo-action-sheet-root__overlay" @tap="close" />
+    <view class="halo-action-sheet" :style="customStyle">
       <view v-if="title" class="halo-action-sheet__title">{{ title }}</view>
       <button
         v-for="(action, index) in actions"
@@ -16,14 +17,15 @@
       </button>
       <button v-if="cancelText" class="halo-action-sheet__cancel" @tap="close">{{ cancelText }}</button>
     </view>
-  </halo-popup>
+  </view>
 </template>
 
 <script setup lang="ts">
-import HaloPopup from '../halo-popup/halo-popup.vue'
+import { ref } from 'vue'
+import { useOverlayAccessibility } from '../../src/shared/overlay-accessibility'
 import type { HaloActionSheetAction, HaloActionSheetProps } from './props'
 
-withDefaults(defineProps<HaloActionSheetProps>(), {
+const props = withDefaults(defineProps<HaloActionSheetProps>(), {
   actions: () => [],
   cancelText: 'Cancel',
   customClass: '',
@@ -38,6 +40,10 @@ const emit = defineEmits<{
   close: []
   select: [action: HaloActionSheetAction, index: number]
 }>()
+
+const root = ref<HTMLElement | null>(null)
+
+useOverlayAccessibility(() => props.modelValue, close, root)
 
 function close() {
   emit('update:modelValue', false)
@@ -57,4 +63,3 @@ function select(action: HaloActionSheetAction, index: number) {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

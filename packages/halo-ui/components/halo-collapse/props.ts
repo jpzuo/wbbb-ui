@@ -9,7 +9,7 @@ export interface HaloCollapseItem {
 
 export interface HaloCollapseProps extends HaloCommonProps {
   accordion?: boolean
+  animated?: boolean
   items?: HaloCollapseItem[]
   modelValue?: Array<string | number> | string | number
 }
-

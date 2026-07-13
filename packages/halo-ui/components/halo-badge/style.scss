@@ -7,10 +7,10 @@
 
 .halo-badge__content {
   align-items: center;
-  border: 2rpx solid #fff;
+  border: 2rpx solid var(--halo-color-surface);
   border-radius: 999rpx;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--halo-badge-foreground, var(--halo-color-danger-foreground));
   display: inline-flex;
   font-size: 20rpx;
   height: 32rpx;
@@ -33,22 +33,31 @@
 
 .halo-badge__content--primary {
   background: var(--halo-color-primary);
+
+  --halo-badge-foreground: var(--halo-color-primary-foreground);
 }
 
 .halo-badge__content--success {
   background: var(--halo-color-success);
+
+  --halo-badge-foreground: var(--halo-color-success-foreground);
 }
 
 .halo-badge__content--warning {
   background: var(--halo-color-warning);
+
+  --halo-badge-foreground: var(--halo-color-warning-foreground);
 }
 
 .halo-badge__content--danger,
 .halo-badge__content--default {
   background: var(--halo-color-danger);
+
+  --halo-badge-foreground: var(--halo-color-danger-foreground);
 }
 
 .halo-badge__content--info {
   background: var(--halo-color-info);
-}
 
+  --halo-badge-foreground: var(--halo-color-info-foreground);
+}

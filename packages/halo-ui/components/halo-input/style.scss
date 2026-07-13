@@ -10,11 +10,29 @@
   display: flex;
   min-height: 76rpx;
   padding: 0 22rpx;
+  transition: border-color var(--halo-duration-fast), box-shadow var(--halo-duration-fast);
+}
+
+.halo-input--focus {
+  border-color: var(--halo-color-primary);
+  box-shadow: 0 0 0 6rpx var(--halo-color-primary-light);
+}
+
+.halo-input--error {
+  border-color: var(--halo-color-danger);
+
+  &.halo-input--focus {
+    box-shadow: 0 0 0 6rpx var(--halo-color-danger-soft);
+  }
 }
 
 .halo-input--disabled {
   @include halo-disabled;
-  background: var(--halo-color-bg);
+  background: var(--halo-color-disabled);
+}
+
+.halo-input--readonly {
+  background: var(--halo-color-surface-subtle);
 }
 
 .halo-input__control {
@@ -30,4 +48,3 @@
   font-size: var(--halo-font-size-md);
   padding-left: var(--halo-spacing-sm);
 }
-

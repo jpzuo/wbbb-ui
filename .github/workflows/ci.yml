@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: ['**']
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check:exports
+      - run: npm run check:playground
+      - run: npm run check:tokens
+      - run: npm run check:api-docs
+      - run: npm run check:accessibility
+      - run: npm run audit:production
+      - run: npm run audit:development
+      - run: npm run lint
+      - run: npm run lint:styles
+      - run: npm run typecheck
+      - run: npm run test
+      - run: npm run build
+      - run: npm run check:budgets
+      - run: npm run test:consumer
+      - run: npm run release:dry
+
+  platform-build:
+    needs: quality
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [h5, app, mp-weixin, mp-alipay, mp-toutiao]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build:${{ matrix.target }} -w @halo-ui/playground
+      - if: matrix.target == 'h5'
+        run: npm run check:budgets:h5
+
+  visual-regression:
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:visual

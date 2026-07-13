@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { formatCountDown } from '../../src/shared/date'
 import type { HaloCountDownProps } from './props'
 
 const props = withDefaults(defineProps<HaloCountDownProps>(), {
@@ -23,16 +24,7 @@ const remaining = ref(props.time)
 let timer: ReturnType<typeof setInterval> | undefined
 
 const displayText = computed(() => {
-  const total = Math.max(0, remaining.value)
-  const seconds = Math.floor(total / 1000)
-  const hour = Math.floor(seconds / 3600)
-  const minute = Math.floor((seconds % 3600) / 60)
-  const second = seconds % 60
-
-  return props.format
-    .replace('HH', pad(hour))
-    .replace('mm', pad(minute))
-    .replace('ss', pad(second))
+  return formatCountDown(remaining.value, props.format)
 })
 
 watch(() => props.time, (value) => {
@@ -49,10 +41,6 @@ onMounted(() => {
 })
 
 onBeforeUnmount(stop)
-
-function pad(value: number) {
-  return String(value).padStart(2, '0')
-}
 
 function start() {
   stop()
@@ -84,4 +72,3 @@ defineExpose({ reset, start, stop })
 <style lang="scss">
 @use "./style.scss";
 </style>
-

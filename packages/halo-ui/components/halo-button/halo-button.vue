@@ -6,10 +6,9 @@
     :form-type="formType"
     :open-type="openType"
     :style="customStyle"
-    hover-class="halo-button--hover"
     @tap="handleTap"
   >
-    <halo-loading v-if="loading" class="halo-button__loading" :size="loadingSize" />
+    <view v-if="loading" class="halo-button__loading" :style="loadingStyle" />
     <halo-icon v-else-if="icon" class="halo-button__icon" :name="icon" :size="iconSize" />
     <text class="halo-button__text"><slot>{{ loading ? loadingText : '' }}</slot></text>
   </button>
@@ -17,8 +16,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import HaloIcon from '../halo-icon/halo-icon.vue'
-import HaloLoading from '../halo-loading/halo-loading.vue'
+import HaloIcon from '../halo-icon'
 import type { HaloButtonProps } from './props'
 
 const props = withDefaults(defineProps<HaloButtonProps>(), {
@@ -56,6 +54,7 @@ const classes = computed(() => [
 
 const iconSize = computed(() => (props.size === 'large' ? 34 : props.size === 'mini' ? 22 : 28))
 const loadingSize = computed(() => (props.size === 'large' ? 32 : props.size === 'mini' ? 22 : 28))
+const loadingStyle = computed(() => `width:${loadingSize.value}rpx;height:${loadingSize.value}rpx`)
 
 function handleTap(event: unknown) {
   if (!props.disabled && !props.loading) {
@@ -67,4 +66,3 @@ function handleTap(event: unknown) {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

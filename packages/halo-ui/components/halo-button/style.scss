@@ -16,7 +16,7 @@
   line-height: 1.2;
   margin: 0;
   min-width: 128rpx;
-  overflow: visible;
+  overflow: hidden;
   padding: 0 28rpx;
   position: relative;
   text-align: center;
@@ -67,31 +67,33 @@
 .halo-button--default {
   background: var(--halo-color-surface);
   border: 1rpx solid var(--halo-color-border);
+  box-shadow: var(--halo-shadow-sm);
 }
 
 .halo-button--primary {
   background: var(--halo-color-primary);
-  color: #fff;
+  box-shadow: var(--halo-shadow-primary);
+  color: var(--halo-color-primary-foreground);
 }
 
 .halo-button--success {
   background: var(--halo-color-success);
-  color: #fff;
+  color: var(--halo-color-success-foreground);
 }
 
 .halo-button--warning {
   background: var(--halo-color-warning);
-  color: #fff;
+  color: var(--halo-color-warning-foreground);
 }
 
 .halo-button--danger {
   background: var(--halo-color-danger);
-  color: #fff;
+  color: var(--halo-color-danger-foreground);
 }
 
 .halo-button--info {
   background: var(--halo-color-info);
-  color: #fff;
+  color: var(--halo-color-info-foreground);
 }
 
 .halo-button--plain {
@@ -118,9 +120,22 @@
   color: var(--halo-color-danger);
 }
 
+.halo-button--plain.halo-button--info {
+  border: 1rpx solid var(--halo-color-info);
+  color: var(--halo-color-info);
+}
+
 .halo-button__icon,
 .halo-button__loading {
   flex: none;
+}
+
+.halo-button__loading {
+  animation: halo-button-loading-rotate 0.75s linear infinite;
+  border: 3rpx solid currentcolor;
+  border-radius: 999rpx;
+  border-right-color: transparent;
+  box-sizing: border-box;
 }
 
 .halo-button__text {
@@ -129,3 +144,8 @@
   white-space: nowrap;
 }
 
+@keyframes halo-button-loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

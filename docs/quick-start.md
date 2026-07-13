@@ -2,6 +2,8 @@
 
 Halo UI targets uni-app Vue 3 + TypeScript projects.
 
+The npm package distributes uni-app source files. It must be consumed by a uni-app/Vite compilation pipeline and is not a direct Node.js runtime dependency.
+
 ## Install
 
 ```bash
@@ -24,6 +26,17 @@ export function createApp() {
 }
 ```
 
+To use the library-managed Toast, Notify, Dialog, and ActionSheet service visuals, place one host near the application root:
+
+```vue
+<template>
+  <App />
+  <halo-overlay-host />
+</template>
+```
+
+Services fall back to the corresponding uni-app native API when no host is mounted.
+
 ## Single Component Import
 
 ```vue
@@ -37,3 +50,18 @@ import 'halo-ui/styles/button'
 </template>
 ```
 
+## uni_modules Usage
+
+Copy or publish `packages/halo-ui` as `uni_modules/halo-ui`. The package uses `components/halo-*` directories, so uni-app easycom can discover components without importing the whole library.
+
+## Verification
+
+```bash
+npm run check:exports
+npm run typecheck
+npm run test
+npm run lint:styles
+npm run build
+```
+
+Run H5/App/mini-program builds from `examples/playground` when dependencies are installed.

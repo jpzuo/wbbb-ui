@@ -8,7 +8,8 @@
 }
 
 .halo-progress__track {
-  background: var(--halo-color-bg);
+  background: var(--halo-color-neutral-soft);
+  border-radius: var(--halo-radius-full);
   flex: 1;
   overflow: hidden;
 }
@@ -16,6 +17,7 @@
 .halo-progress__bar {
   background: var(--halo-color-primary);
   transition: width var(--halo-duration-base);
+  border-radius: inherit;
 }
 
 .halo-progress__bar--success {
@@ -41,4 +43,3 @@
   min-width: 64rpx;
   text-align: right;
 }
-

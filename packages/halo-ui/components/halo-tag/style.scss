@@ -1,3 +1,4 @@
+@use "../../src/styles/mixins.scss" as *;
 @use "../../src/styles/tokens.scss";
 
 .halo-tag {
@@ -8,6 +9,11 @@
   gap: 6rpx;
   line-height: 1.2;
   padding: 6rpx 12rpx;
+
+  &[role="button"] {
+    @include halo-focus-ring;
+    @include halo-tap-active;
+  }
 }
 
 .halo-tag--mini {
@@ -33,32 +39,32 @@
 }
 
 .halo-tag--default {
-  background: var(--halo-color-bg);
+  background: var(--halo-color-neutral-soft);
   color: var(--halo-color-text-secondary);
 }
 
 .halo-tag--primary {
-  background: rgba(22, 119, 255, 0.12);
+  background: var(--halo-color-primary-soft);
   color: var(--halo-color-primary);
 }
 
 .halo-tag--success {
-  background: rgba(32, 161, 98, 0.12);
+  background: var(--halo-color-success-soft);
   color: var(--halo-color-success);
 }
 
 .halo-tag--warning {
-  background: rgba(216, 132, 0, 0.14);
+  background: var(--halo-color-warning-soft);
   color: var(--halo-color-warning);
 }
 
 .halo-tag--danger {
-  background: rgba(217, 48, 38, 0.12);
+  background: var(--halo-color-danger-soft);
   color: var(--halo-color-danger);
 }
 
 .halo-tag--info {
-  background: rgba(95, 107, 122, 0.12);
+  background: var(--halo-color-info-soft);
   color: var(--halo-color-info);
 }
 
@@ -71,4 +77,3 @@
   font-size: 20rpx;
   line-height: 1;
 }
-

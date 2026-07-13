@@ -1,10 +1,12 @@
 @use "../../src/styles/tokens.scss";
+@use "../../src/styles/mixins.scss" as *;
 
 .halo-calendar {
   background: var(--halo-color-surface);
   border-radius: var(--halo-radius-lg);
   color: var(--halo-color-text);
   padding: 24rpx;
+  box-shadow: var(--halo-shadow-sm);
 }
 
 .halo-calendar__header {
@@ -20,7 +22,8 @@
 }
 
 .halo-calendar__nav {
-  background: var(--halo-color-bg);
+  @include halo-tap-active;
+  background: var(--halo-color-surface-subtle);
   border: 0;
   border-radius: var(--halo-radius-sm);
   color: var(--halo-color-text);
@@ -59,12 +62,17 @@
   margin: 4rpx;
 }
 
-.halo-calendar__day--empty {
+.halo-calendar__day--today {
+  color: var(--halo-color-primary);
+  font-weight: 700;
+}
+
+.halo-calendar__day--disabled {
+  color: var(--halo-color-text-disabled);
   pointer-events: none;
 }
 
 .halo-calendar__day--active {
   background: var(--halo-color-primary);
-  color: #fff;
+  color: var(--halo-color-primary-foreground);
 }
-

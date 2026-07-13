@@ -1,8 +1,10 @@
+@use "../../src/styles/mixins.scss" as *;
 @use "../../src/styles/tokens.scss";
 
 .halo-notice-bar {
   align-items: center;
-  background: rgba(216, 132, 0, 0.12);
+  background: var(--halo-color-warning-soft);
+  border-radius: var(--halo-radius-md);
   box-sizing: border-box;
   color: var(--halo-color-warning);
   display: flex;
@@ -10,6 +12,31 @@
   gap: var(--halo-spacing-sm);
   min-height: 72rpx;
   padding: 0 24rpx;
+}
+
+.halo-notice-bar--primary {
+  background: var(--halo-color-primary-soft);
+  color: var(--halo-color-primary);
+}
+
+.halo-notice-bar--success {
+  background: var(--halo-color-success-soft);
+  color: var(--halo-color-success);
+}
+
+.halo-notice-bar--warning {
+  background: var(--halo-color-warning-soft);
+  color: var(--halo-color-warning);
+}
+
+.halo-notice-bar--danger {
+  background: var(--halo-color-danger-soft);
+  color: var(--halo-color-danger);
+}
+
+.halo-notice-bar--info {
+  background: var(--halo-color-info-soft);
+  color: var(--halo-color-info);
 }
 
 .halo-notice-bar__text {
@@ -20,6 +47,7 @@
 }
 
 .halo-notice-bar__close {
+  @include halo-focus-ring;
+  @include halo-tap-active;
   flex: none;
 }
-

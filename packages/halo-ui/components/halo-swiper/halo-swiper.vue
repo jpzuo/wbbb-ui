@@ -10,7 +10,7 @@
     @change="emit('change', $event)"
   >
     <swiper-item v-for="item in items" :key="item.image || item.title" class="halo-swiper__item">
-      <image v-if="item.image" class="halo-swiper__image" :src="item.image" mode="aspectFill" />
+      <halo-image v-if="item.image" class="halo-swiper__image" :src="item.image" mode="aspectFill" width="100%" height="100%" />
       <view v-else class="halo-swiper__fallback">{{ item.title }}</view>
     </swiper-item>
     <slot />
@@ -18,6 +18,7 @@
 </template>
 
 <script setup lang="ts">
+import HaloImage from '../halo-image'
 import type { HaloSwiperProps } from './props'
 
 withDefaults(defineProps<HaloSwiperProps>(), {
@@ -38,4 +39,3 @@ const emit = defineEmits<{
 <style lang="scss">
 @use "./style.scss";
 </style>
-

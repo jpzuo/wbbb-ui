@@ -1,3 +1,4 @@
+import { haloOverlayBus, hasOverlayHost } from './overlay'
 import { showToast } from './toast'
 
 export interface HaloNotifyOptions {
@@ -8,10 +9,15 @@ export interface HaloNotifyOptions {
 
 export function showNotify(options: HaloNotifyOptions | string) {
   const normalized: HaloNotifyOptions = typeof options === 'string' ? { message: options } : options
+
+  if (hasOverlayHost()) {
+    haloOverlayBus.emit('notify', normalized)
+    return
+  }
+
   showToast({
     duration: normalized.duration ?? 2200,
-    icon: normalized.type === 'success' ? 'success' : 'none',
+    icon: normalized.type === 'success' ? 'success' : normalized.type === 'danger' ? 'error' : 'none',
     title: normalized.message
   })
 }
-

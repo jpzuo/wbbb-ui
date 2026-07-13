@@ -10,3 +10,8 @@ export interface HaloCellProps extends HaloCommonProps {
   value?: string
 }
 
+export interface HaloCellGroupProps extends HaloCommonProps {
+  border?: boolean
+  inset?: boolean
+  title?: string
+}

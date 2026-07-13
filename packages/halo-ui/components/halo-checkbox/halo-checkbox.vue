@@ -1,11 +1,11 @@
 <template>
   <checkbox-group class="halo-checkbox" :class="customClass" :style="customStyle" @change="handleChange">
-    <label v-for="item in options" :key="item.value" class="halo-checkbox__item">
+    <label v-for="(item, index) in options" :key="item.value" class="halo-checkbox__item">
       <checkbox
         class="halo-checkbox__control"
         :checked="modelValue.includes(item.value)"
         :disabled="disabled || item.disabled"
-        :value="String(item.value)"
+        :value="String(index)"
       />
       <text class="halo-checkbox__label">{{ item.label }}</text>
     </label>
@@ -13,9 +13,10 @@
 </template>
 
 <script setup lang="ts">
+import { getOptionsByIndex } from '../../src/shared/selection'
 import type { HaloCheckboxProps } from './props'
 
-withDefaults(defineProps<HaloCheckboxProps>(), {
+const props = withDefaults(defineProps<HaloCheckboxProps>(), {
   customClass: '',
   customStyle: '',
   disabled: false,
@@ -29,7 +30,8 @@ const emit = defineEmits<{
 }>()
 
 function handleChange(event: unknown) {
-  const values = ((event as { detail?: { value?: string[] } }).detail?.value ?? []) as Array<string | number>
+  const rawIndexes = (event as { detail?: { value?: string[] } }).detail?.value ?? []
+  const values = getOptionsByIndex(props.options, rawIndexes).map((option) => option.value)
   emit('update:modelValue', values)
   emit('change', values)
 }
@@ -38,4 +40,3 @@ function handleChange(event: unknown) {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

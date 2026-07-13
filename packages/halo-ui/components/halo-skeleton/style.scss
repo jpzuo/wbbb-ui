@@ -9,7 +9,7 @@
 .halo-skeleton__avatar,
 .halo-skeleton__title,
 .halo-skeleton__row {
-  background: #edf1f6;
+  background: var(--halo-color-fill);
   border-radius: var(--halo-radius-sm);
 }
 
@@ -55,4 +55,3 @@
     opacity: 1;
   }
 }
-

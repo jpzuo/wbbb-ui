@@ -1,13 +1,18 @@
 <template>
   <view class="halo-stepper" :class="[customClass, { 'halo-stepper--disabled': disabled }]" :style="customStyle">
-    <button class="halo-stepper__button" :disabled="disabled || modelValue <= min" @tap="change(modelValue - step)">-</button>
+    <button class="halo-stepper__button" :disabled="disabled || modelValue <= min" @tap="decrease">
+      <halo-icon name="minus" :size="26" />
+    </button>
     <input class="halo-stepper__input" :disabled="disabled" type="number" :value="modelValue" @input="handleInput" />
-    <button class="halo-stepper__button" :disabled="disabled || modelValue >= max" @tap="change(modelValue + step)">+</button>
+    <button class="halo-stepper__button" :disabled="disabled || modelValue >= max" @tap="increase">
+      <halo-icon name="plus" :size="26" />
+    </button>
   </view>
 </template>
 
 <script setup lang="ts">
-import { clamp } from '../../src/shared/utils'
+import HaloIcon from '../halo-icon'
+import { addStep, normalizeNumber } from '../../src/shared/number'
 import type { HaloStepperProps } from './props'
 
 const props = withDefaults(defineProps<HaloStepperProps>(), {
@@ -26,18 +31,27 @@ const emit = defineEmits<{
 }>()
 
 function change(next: number) {
-  const value = clamp(next, props.min, props.max)
+  const value = normalizeNumber(next, props.min, props.max, props.step)
   emit('update:modelValue', value)
   emit('change', value)
 }
 
+function decrease() {
+  change(addStep(props.modelValue, props.step, -1, props.min, props.max))
+}
+
+function increase() {
+  change(addStep(props.modelValue, props.step, 1, props.min, props.max))
+}
+
 function handleInput(event: unknown) {
   const raw = (event as { detail?: { value?: string } }).detail?.value ?? ''
-  change(Number(raw))
+  if (raw) {
+    change(Number(raw))
+  }
 }
 </script>
 
 <style lang="scss">
 @use "./style.scss";
 </style>
-

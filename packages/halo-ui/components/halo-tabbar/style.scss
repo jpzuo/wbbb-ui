@@ -1,0 +1,75 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-tabbar {
+  @include halo-hairline(top);
+  background: var(--halo-color-surface);
+  box-sizing: border-box;
+  display: flex;
+  min-height: 104rpx;
+  box-shadow: var(--halo-shadow-sm);
+  width: 100%;
+}
+
+.halo-tabbar--fixed {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+}
+
+.halo-tabbar--safe {
+  @include halo-safe-bottom;
+}
+
+.halo-tabbar__placeholder {
+  height: 104rpx;
+}
+
+.halo-tabbar__item {
+  @include halo-focus-ring;
+  @include halo-tap-active;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: var(--halo-font-size-xs);
+  justify-content: center;
+  min-width: 0;
+}
+
+.halo-tabbar__icon-wrap {
+  line-height: 1;
+  position: relative;
+}
+
+.halo-tabbar__icon {
+  font-size: 34rpx;
+}
+
+.halo-tabbar__badge {
+  align-items: center;
+  background: var(--halo-color-danger);
+  border-radius: 999rpx;
+  color: var(--halo-color-danger-foreground);
+  display: flex;
+  font-size: 18rpx;
+  height: 28rpx;
+  justify-content: center;
+  min-width: 28rpx;
+  padding: 0 6rpx;
+  position: absolute;
+  right: -18rpx;
+  top: -8rpx;
+}
+
+.halo-tabbar__badge--dot {
+  height: 14rpx;
+  min-width: 14rpx;
+  padding: 0;
+  width: 14rpx;
+}
+
+.halo-tabbar__text {
+  margin-top: 6rpx;
+}

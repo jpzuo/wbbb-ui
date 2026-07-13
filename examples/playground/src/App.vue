@@ -6,8 +6,9 @@
 </template>
 
 <style lang="scss">
+@use "../uni_modules/halo-ui/src/styles/index.scss";
+
 page {
-  background: #f6f8fb;
+  background: var(--halo-color-bg);
 }
 </style>
-

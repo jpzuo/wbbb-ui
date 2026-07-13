@@ -16,9 +16,10 @@
 </template>
 
 <script setup lang="ts">
+import { normalizeNumber } from '../../src/shared/number'
 import type { HaloSliderProps } from './props'
 
-withDefaults(defineProps<HaloSliderProps>(), {
+const props = withDefaults(defineProps<HaloSliderProps>(), {
   activeColor: '',
   customClass: '',
   customStyle: '',
@@ -37,7 +38,8 @@ const emit = defineEmits<{
 }>()
 
 function getValue(event: unknown) {
-  return Number((event as { detail?: { value?: number } }).detail?.value ?? 0)
+  const value = Number((event as { detail?: { value?: number } }).detail?.value ?? props.min)
+  return normalizeNumber(value, props.min, props.max, props.step)
 }
 
 function handleChange(event: unknown) {
@@ -54,4 +56,3 @@ function handleChanging(event: unknown) {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

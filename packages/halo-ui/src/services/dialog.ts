@@ -1,3 +1,5 @@
+import { haloOverlayBus, hasOverlayHost } from './overlay'
+
 export interface HaloDialogOptions {
   title?: string
   content?: string
@@ -9,6 +11,11 @@ export interface HaloDialogOptions {
 export function showDialog(options: HaloDialogOptions | string) {
   return new Promise<boolean>((resolve) => {
     const normalized: HaloDialogOptions = typeof options === 'string' ? { content: options } : options
+
+    if (hasOverlayHost()) {
+      haloOverlayBus.emit('dialog', { options: normalized, resolve })
+      return
+    }
 
     uni?.showModal?.({
       cancelText: normalized.cancelText ?? 'Cancel',
@@ -25,4 +32,3 @@ export function showDialog(options: HaloDialogOptions | string) {
     })
   })
 }
-

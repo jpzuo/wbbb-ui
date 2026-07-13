@@ -19,6 +19,7 @@
 
 .halo-cell--clickable {
   @include halo-tap-active;
+  @include halo-focus-ring;
 }
 
 .halo-cell__icon {
@@ -68,3 +69,27 @@
   margin-left: var(--halo-spacing-sm);
 }
 
+.halo-cell-group-wrap {
+  display: block;
+}
+
+.halo-cell-group__title {
+  color: var(--halo-color-text-secondary);
+  display: block;
+  font-size: var(--halo-font-size-sm);
+  padding: 24rpx 28rpx 12rpx;
+}
+
+.halo-cell-group {
+  background: var(--halo-color-surface);
+  overflow: hidden;
+}
+
+.halo-cell-group--border {
+  @include halo-hairline(all);
+}
+
+.halo-cell-group--inset {
+  border-radius: var(--halo-radius-lg);
+  margin: 0 24rpx;
+}

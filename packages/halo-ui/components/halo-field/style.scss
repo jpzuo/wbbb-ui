@@ -33,3 +33,6 @@
   margin-top: 8rpx;
 }
 
+.halo-field--error .halo-field__label {
+  color: var(--halo-color-danger);
+}

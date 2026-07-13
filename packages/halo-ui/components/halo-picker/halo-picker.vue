@@ -8,13 +8,14 @@
   >
     <view class="halo-picker" :class="[customClass, { 'halo-picker--placeholder': !selectedOption }]" :style="customStyle">
       <text>{{ selectedOption?.label || placeholder }}</text>
-      <text class="halo-picker__arrow">></text>
+      <halo-icon class="halo-picker__arrow" name="right" :size="26" />
     </view>
   </picker>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import HaloIcon from '../halo-icon'
 import type { HaloPickerProps } from './props'
 
 const props = withDefaults(defineProps<HaloPickerProps>(), {
@@ -48,4 +49,3 @@ function handleChange(event: unknown) {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

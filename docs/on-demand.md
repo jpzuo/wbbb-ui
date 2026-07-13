@@ -22,3 +22,4 @@ import { showDialog } from 'halo-ui/services/dialog'
 
 The check script verifies each `components/halo-*` folder has `index.ts`, `props.ts`, Vue source, and `style.scss`.
 
+`package.json` contains wildcard exports such as `./components/* -> ./components/halo-*/index.ts`, plus explicit generated paths for tool compatibility.

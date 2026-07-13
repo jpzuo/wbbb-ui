@@ -1,53 +1,13 @@
 @use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/motion.scss";
 @use "../../src/styles/tokens.scss";
 
-.halo-dialog {
-  color: var(--halo-color-text);
-  overflow: hidden;
-  text-align: center;
-}
-
-.halo-dialog__title {
-  font-size: var(--halo-font-size-lg);
-  font-weight: 600;
-  padding: 36rpx 40rpx 0;
-}
-
-.halo-dialog__content {
-  color: var(--halo-color-text-secondary);
-  font-size: var(--halo-font-size-md);
-  line-height: 1.7;
-  padding: 36rpx 40rpx;
-}
-
-.halo-dialog__actions {
-  @include halo-hairline(top);
-  display: flex;
-}
-
-.halo-dialog__button {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  color: var(--halo-color-text);
-  flex: 1;
-  font-size: var(--halo-font-size-md);
-  height: 92rpx;
-  line-height: 92rpx;
-  margin: 0;
-  padding: 0;
-
-  &::after {
-    border: 0;
-  }
-}
-
-.halo-dialog__button--confirm {
-  color: var(--halo-color-primary);
-  font-weight: 600;
-}
-
-.halo-dialog__button + .halo-dialog__button {
-  border-left: 1rpx solid var(--halo-color-border);
-}
-
+.halo-dialog-root { bottom: 0; left: 0; position: fixed; right: 0; top: 0; z-index: var(--halo-z-index-dialog); }
+.halo-dialog-root__overlay { background: var(--halo-color-overlay); bottom: 0; left: 0; position: absolute; right: 0; top: 0; }
+.halo-dialog { background: var(--halo-color-surface-elevated); border-radius: var(--halo-radius-lg); box-shadow: var(--halo-shadow-lg); color: var(--halo-color-text); left: 50%; max-width: 640rpx; overflow: hidden; position: absolute; text-align: center; top: 50%; transform: translate(-50%, -50%); width: 80%; }
+.halo-dialog__title { font-size: var(--halo-font-size-lg); font-weight: 600; padding: 36rpx 40rpx 0; }
+.halo-dialog__content { color: var(--halo-color-text-secondary); font-size: var(--halo-font-size-md); line-height: 1.7; padding: 36rpx 40rpx; }
+.halo-dialog__actions { @include halo-hairline(top); display: flex; }
+.halo-dialog__button { background: transparent; border: 0; border-radius: 0; color: var(--halo-color-text); flex: 1; font-size: var(--halo-font-size-md); height: 92rpx; line-height: 92rpx; margin: 0; padding: 0; &::after { border: 0; } }
+.halo-dialog__button--confirm { color: var(--halo-color-primary); font-weight: 600; }
+.halo-dialog__button + .halo-dialog__button { border-left: 1rpx solid var(--halo-color-border); }

@@ -1,0 +1,20 @@
+<template>
+  <view class="tokens-page" :data-theme="theme">
+    <halo-navbar title="状态规范" left-arrow left-text="首页" @click-left="goBack" />
+    <view class="tokens-page__hero"><text>设计色板</text><text>亮色、深色与交互状态均来自同一组 Halo token。</text><halo-button size="small" plain type="primary" @click="theme = theme === 'light' ? 'dark' : 'light'">切换{{ theme === 'light' ? '深色' : '浅色' }}</halo-button></view>
+    <view class="tokens-page__section"><text>语义色</text><view class="tokens-page__grid"><view v-for="item in semanticColors" :key="item.type" class="color-card"><view class="color-card__solid" :class="`color-card__solid--${item.type}`"><text>{{ item.name }}</text></view><view class="color-card__soft" :class="`color-card__soft--${item.type}`">浅色容器 / 边界 / 错误提示</view></view></view></view>
+    <view class="tokens-page__section"><text>控件状态</text><halo-card><view class="tokens-page__buttons"><halo-button>默认</halo-button><halo-button type="primary">按压反馈</halo-button><halo-button type="success">成功</halo-button><halo-button type="warning">警告</halo-button><halo-button type="danger">危险</halo-button><halo-button type="info">信息</halo-button><halo-button disabled>禁用</halo-button><halo-button loading type="primary">加载</halo-button></view></halo-card></view>
+  </view>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const theme = ref<'light' | 'dark'>('light')
+const semanticColors = [{ name: '主色', type: 'primary' }, { name: '成功', type: 'success' }, { name: '警告', type: 'warning' }, { name: '危险', type: 'danger' }, { name: '信息', type: 'info' }]
+function goBack() { uni.navigateBack() }
+</script>
+
+<style lang="scss">
+.tokens-page { background: var(--halo-color-bg); min-height: 100vh; padding-bottom: 52rpx; }.tokens-page__hero { background: var(--halo-color-surface); display: flex; flex-direction: column; gap: 16rpx; padding: 40rpx 32rpx; }.tokens-page__hero text:first-child, .tokens-page__section > text { color: var(--halo-color-text); display: block; font-size: 34rpx; font-weight: 700; }.tokens-page__hero text:nth-child(2) { color: var(--halo-color-text-secondary); font-size: 24rpx; line-height: 1.6; }.tokens-page__hero .halo-button { align-self: flex-start; }.tokens-page__section { padding: 32rpx 24rpx 0; }.tokens-page__section > text { font-size: 30rpx; margin-bottom: 16rpx; }.tokens-page__grid { display: grid; gap: 16rpx; grid-template-columns: repeat(2, minmax(0, 1fr)); }.color-card { background: var(--halo-color-surface); border: 1rpx solid var(--halo-color-separator); border-radius: var(--halo-radius-lg); overflow: hidden; }.color-card__solid { align-items: center; color: var(--halo-color-primary-foreground); display: flex; font-size: 26rpx; font-weight: 700; height: 104rpx; justify-content: center; }.color-card__soft { font-size: 20rpx; line-height: 1.45; padding: 16rpx; }.color-card__solid--primary { background: var(--halo-color-primary); color: var(--halo-color-primary-foreground); }.color-card__soft--primary { background: var(--halo-color-primary-soft); color: var(--halo-color-primary); }.color-card__solid--success { background: var(--halo-color-success); color: var(--halo-color-success-foreground); }.color-card__soft--success { background: var(--halo-color-success-soft); color: var(--halo-color-success); }.color-card__solid--warning { background: var(--halo-color-warning); color: var(--halo-color-warning-foreground); }.color-card__soft--warning { background: var(--halo-color-warning-soft); color: var(--halo-color-warning); }.color-card__solid--danger { background: var(--halo-color-danger); color: var(--halo-color-danger-foreground); }.color-card__soft--danger { background: var(--halo-color-danger-soft); color: var(--halo-color-danger); }.color-card__solid--info { background: var(--halo-color-info); color: var(--halo-color-info-foreground); }.color-card__soft--info { background: var(--halo-color-info-soft); color: var(--halo-color-info); }.tokens-page__section .halo-card { padding: 24rpx; }.tokens-page__buttons { display: flex; flex-wrap: wrap; gap: 16rpx; }
+</style>

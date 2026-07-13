@@ -24,6 +24,7 @@
   margin: 0;
   padding: 0;
   width: 56rpx;
+  transition: background var(--halo-duration-fast), transform var(--halo-duration-fast);
 
   &::after {
     border: 0;
@@ -31,13 +32,12 @@
 }
 
 .halo-stepper__input {
-  background: var(--halo-color-bg);
+  background: var(--halo-color-surface-subtle);
   border-radius: var(--halo-radius-sm);
   color: var(--halo-color-text);
   font-size: var(--halo-font-size-md);
   height: 56rpx;
-  margin: 0 8rpx;
+  margin: 0 6rpx;
   text-align: center;
   width: 88rpx;
 }
-

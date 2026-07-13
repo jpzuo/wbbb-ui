@@ -4,22 +4,24 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:app": "uni build -p app",
-    "build:h5": "uni build -p h5",
-    "build:mp-alipay": "uni build -p mp-alipay",
-    "build:mp-toutiao": "uni build -p mp-toutiao",
-    "build:mp-weixin": "uni build -p mp-weixin",
-    "dev:h5": "uni -p h5"
+    "build:app": "node ../../scripts/sync-playground-uni-modules.mjs && uni build -p app",
+    "build:h5": "node ../../scripts/sync-playground-uni-modules.mjs && uni build -p h5",
+    "build:mp-alipay": "node ../../scripts/sync-playground-uni-modules.mjs && uni build -p mp-alipay",
+    "build:mp-toutiao": "node ../../scripts/sync-playground-uni-modules.mjs && uni build -p mp-toutiao",
+    "build:mp-weixin": "node ../../scripts/sync-playground-uni-modules.mjs && uni build -p mp-weixin",
+    "dev:h5": "node ../../scripts/sync-playground-uni-modules.mjs && uni -p h5"
   },
   "dependencies": {
-    "halo-ui": "workspace:*",
     "vue": "^3.5.0"
   },
   "devDependencies": {
-    "@dcloudio/uni-app": "^3.0.0",
-    "@dcloudio/vite-plugin-uni": "^3.0.0",
+    "@dcloudio/uni-app": "3.0.0-alpha-1000920260626810",
+    "@dcloudio/uni-h5": "3.0.0-alpha-1000920260626810",
+    "@dcloudio/uni-mp-alipay": "3.0.0-alpha-1000920260626810",
+    "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-1000920260626810",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-1000920260626810",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-1000920260626810",
     "typescript": "^5.5.0",
-    "vite": "^6.0.0"
+    "vite": "8.1.0"
   }
 }
-

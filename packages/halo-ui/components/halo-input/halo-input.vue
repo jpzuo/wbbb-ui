@@ -1,5 +1,5 @@
 <template>
-  <view class="halo-input" :class="[customClass, { 'halo-input--disabled': disabled }]" :style="customStyle">
+  <view class="halo-input" :class="[customClass, { 'halo-input--disabled': disabled, 'halo-input--error': error, 'halo-input--focus': focused, 'halo-input--readonly': readonly }]" :style="customStyle">
     <input
       class="halo-input__control"
       :disabled="disabled || readonly"
@@ -7,16 +7,18 @@
       :placeholder="placeholder"
       :type="type"
       :value="modelValue"
-      @blur="emit('blur', $event)"
+      @blur="handleBlur"
       @confirm="emit('confirm', $event)"
-      @focus="emit('focus', $event)"
+      @focus="handleFocus"
       @input="handleInput"
     />
-    <text v-if="clearable && modelValue && !disabled && !readonly" class="halo-input__clear" @tap="clear">x</text>
+    <halo-icon v-if="clearable && modelValue && !disabled && !readonly" class="halo-input__clear" name="close" :size="24" @tap="clear" />
   </view>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import HaloIcon from '../halo-icon'
 import type { HaloInputProps } from './props'
 
 withDefaults(defineProps<HaloInputProps>(), {
@@ -24,6 +26,7 @@ withDefaults(defineProps<HaloInputProps>(), {
   customClass: '',
   customStyle: '',
   disabled: false,
+  error: false,
   maxlength: 140,
   modelValue: '',
   placeholder: '',
@@ -40,6 +43,8 @@ const emit = defineEmits<{
   focus: [event: unknown]
 }>()
 
+const focused = ref(false)
+
 function getEventValue(event: unknown) {
   return (event as { detail?: { value?: string } }).detail?.value ?? ''
 }
@@ -48,6 +53,16 @@ function handleInput(event: unknown) {
   const value = getEventValue(event)
   emit('update:modelValue', value)
   emit('change', value)
+}
+
+function handleFocus(event: unknown) {
+  focused.value = true
+  emit('focus', event)
+}
+
+function handleBlur(event: unknown) {
+  focused.value = false
+  emit('blur', event)
 }
 
 function clear() {
@@ -60,4 +75,3 @@ function clear() {
 <style lang="scss">
 @use "./style.scss";
 </style>
-

@@ -1,13 +1,18 @@
 import type { InjectionKey } from 'vue'
-import { isPromise } from './utils'
+import Schema from 'async-validator'
 
 export type HaloFormTrigger = 'change' | 'blur' | 'submit'
 
 export interface HaloFormRule {
+  max?: number
   message?: string
+  min?: number
+  pattern?: RegExp | string
   required?: boolean
   trigger?: HaloFormTrigger | HaloFormTrigger[]
+  type?: 'string' | 'number' | 'boolean' | 'array' | 'object' | 'email' | 'url'
   validator?: (value: unknown, model?: Record<string, unknown>) => boolean | string | Promise<boolean | string>
+  whitespace?: boolean
 }
 
 export interface HaloFieldValidationResult {
@@ -57,28 +62,41 @@ export async function validateRules(
   trigger?: HaloFormTrigger,
   model?: Record<string, unknown>
 ): Promise<HaloFieldValidationResult> {
-  for (const rule of rules) {
-    if (!isRuleMatched(rule, trigger)) {
+  const matchedRules = rules.filter((rule) => isRuleMatched(rule, trigger))
+  if (matchedRules.length === 0) {
+    return { valid: true }
+  }
+
+  const descriptor = {
+    value: matchedRules.map((rule) => ({
+      max: rule.max,
+      message: rule.message,
+      min: rule.min,
+      pattern: rule.pattern,
+      required: rule.required,
+      type: rule.type,
+      whitespace: rule.whitespace,
+      validator: undefined
+    }))
+  }
+
+  try {
+    await new Schema(descriptor).validate({ value })
+  } catch (error) {
+    const message = (error as { errors?: Array<{ message?: string }> }).errors?.[0]?.message
+    return { valid: false, message: message ?? 'Invalid value' }
+  }
+
+  for (const rule of matchedRules) {
+    if (!rule.validator) {
       continue
     }
 
-    if (rule.required && (value === undefined || value === null || value === '')) {
-      return { valid: false, message: rule.message ?? 'This field is required' }
-    }
-
-    if (rule.validator) {
-      const result = rule.validator(value, model)
-      const resolved = isPromise<boolean | string>(result) ? await result : result
-
-      if (resolved !== true) {
-        return {
-          valid: false,
-          message: typeof resolved === 'string' ? resolved : rule.message ?? 'Invalid value'
-        }
-      }
+    const result = await rule.validator(value, model)
+    if (result !== true) {
+      return { valid: false, message: typeof result === 'string' ? result : rule.message ?? 'Invalid value' }
     }
   }
 
   return { valid: true }
 }
-

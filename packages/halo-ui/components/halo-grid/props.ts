@@ -6,3 +6,8 @@ export interface HaloGridProps extends HaloCommonProps {
   gap?: number
 }
 
+export interface HaloGridItemProps extends HaloCommonProps {
+  clickable?: boolean
+  icon?: string
+  text?: string
+}

@@ -1,0 +1,53 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.halo-card {
+  background: var(--halo-color-surface);
+  border-radius: var(--halo-radius-lg);
+  box-sizing: border-box;
+  box-shadow: var(--halo-shadow-sm);
+  overflow: hidden;
+}
+
+.halo-card--bordered {
+  @include halo-hairline(all);
+}
+
+.halo-card--shadow {
+  box-shadow: var(--halo-shadow-md);
+}
+
+.halo-card__header,
+.halo-card__footer {
+  align-items: center;
+  display: flex;
+  min-height: 88rpx;
+  padding: 0 28rpx;
+}
+
+.halo-card__header {
+  @include halo-hairline(bottom);
+}
+
+.halo-card__title {
+  color: var(--halo-color-text);
+  flex: 1;
+  font-size: var(--halo-font-size-lg);
+  font-weight: 600;
+  min-width: 0;
+}
+
+.halo-card__extra {
+  color: var(--halo-color-text-secondary);
+  font-size: var(--halo-font-size-sm);
+  margin-left: var(--halo-spacing-md);
+}
+
+.halo-card__body {
+  padding: 28rpx;
+}
+
+.halo-card__footer {
+  @include halo-hairline(top);
+  color: var(--halo-color-text-secondary);
+}
