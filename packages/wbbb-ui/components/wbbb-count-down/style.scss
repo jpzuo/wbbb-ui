@@ -1,0 +1,8 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-count-down {
+  color: var(--wbbb-color-text);
+  font-family: var(--wbbb-font-family);
+  font-size: var(--wbbb-font-size-md);
+}
+

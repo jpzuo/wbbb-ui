@@ -3,22 +3,22 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
-const tokens = readFileSync(join(root, 'packages', 'halo-ui', 'src', 'styles', 'tokens.scss'), 'utf8')
-const keyboard = readFileSync(join(root, 'packages', 'halo-ui', 'src', 'shared', 'keyboard.ts'), 'utf8')
+const tokens = readFileSync(join(root, 'packages', 'wbbb-ui', 'src', 'styles', 'tokens.scss'), 'utf8')
+const keyboard = readFileSync(join(root, 'packages', 'wbbb-ui', 'src', 'shared', 'keyboard.ts'), 'utf8')
 const interactiveComponents = [
-  ['halo-cell', 'halo-cell.vue'],
-  ['halo-grid', 'halo-grid-item.vue'],
-  ['halo-collapse', 'halo-collapse.vue'],
-  ['halo-list', 'halo-list.vue'],
-  ['halo-rate', 'halo-rate.vue'],
-  ['halo-tabs', 'halo-tabs.vue'],
-  ['halo-navbar', 'halo-navbar.vue'],
-  ['halo-notice-bar', 'halo-notice-bar.vue'],
-  ['halo-upload', 'halo-upload.vue'],
-  ['halo-tabbar', 'halo-tabbar.vue'],
-  ['halo-tabbar', 'halo-tabbar-item.vue'],
-  ['halo-popup', 'halo-popup.vue', 'useOverlayAccessibility'],
-  ['halo-action-sheet', 'halo-action-sheet.vue', 'useOverlayAccessibility']
+  ['wbbb-cell', 'wbbb-cell.vue'],
+  ['wbbb-grid', 'wbbb-grid-item.vue'],
+  ['wbbb-collapse', 'wbbb-collapse.vue'],
+  ['wbbb-list', 'wbbb-list.vue'],
+  ['wbbb-rate', 'wbbb-rate.vue'],
+  ['wbbb-tabs', 'wbbb-tabs.vue'],
+  ['wbbb-navbar', 'wbbb-navbar.vue'],
+  ['wbbb-notice-bar', 'wbbb-notice-bar.vue'],
+  ['wbbb-upload', 'wbbb-upload.vue'],
+  ['wbbb-tabbar', 'wbbb-tabbar.vue'],
+  ['wbbb-tabbar', 'wbbb-tabbar-item.vue'],
+  ['wbbb-popup', 'wbbb-popup.vue', 'useOverlayAccessibility'],
+  ['wbbb-action-sheet', 'wbbb-action-sheet.vue', 'useOverlayAccessibility']
 ]
 
 if (!tokens.includes('@media (prefers-reduced-motion: reduce)')) {
@@ -30,7 +30,7 @@ if (!keyboard.includes("key === 'Enter'") || !keyboard.includes("key === ' '")) 
 }
 
 for (const [directory, file, activationMarker = '@keydown='] of interactiveComponents) {
-  const source = readFileSync(join(root, 'packages', 'halo-ui', 'components', directory, file), 'utf8')
+  const source = readFileSync(join(root, 'packages', 'wbbb-ui', 'components', directory, file), 'utf8')
   if (!source.includes('role=') || !source.includes(activationMarker)) {
     throw new Error(`${directory}/${file} must declare role and keyboard activation.`)
   }

@@ -1,10 +1,10 @@
 ---
-title: Cell
+title: 单元格 Cell
 description: 信息行与分组容器
 outline: [2, 3]
 ---
 
-# Cell
+# 单元格 Cell
 
 <ComponentDoc slug="cell" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="cell" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="cell" section="api" />
 

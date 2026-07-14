@@ -1,0 +1,123 @@
+@mixin wbbb-font {
+  color: var(--wbbb-color-text);
+  font-family: var(--wbbb-font-family);
+  line-height: var(--wbbb-line-height);
+}
+
+@mixin wbbb-hairline($side: all) {
+  position: relative;
+
+  &::after {
+    border-color: var(--wbbb-color-border);
+    border-style: solid;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 0;
+  }
+
+  @if $side == all {
+    &::after {
+      border-width: 1px;
+      inset: 0;
+      transform: scale(0.5);
+      width: 200%;
+      height: 200%;
+    }
+  } @else if $side == bottom {
+    &::after {
+      border-bottom-width: 1px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: scaleY(0.5);
+    }
+  } @else if $side == top {
+    &::after {
+      border-top-width: 1px;
+      left: 0;
+      right: 0;
+      top: 0;
+      transform: scaleY(0.5);
+    }
+  } @else if $side == left {
+    &::after {
+      border-left-width: 1px;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      transform: scaleX(0.5);
+    }
+  } @else if $side == right {
+    &::after {
+      border-right-width: 1px;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      transform: scaleX(0.5);
+    }
+  }
+}
+
+@mixin wbbb-disabled {
+  color: var(--wbbb-color-disabled-foreground);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+@mixin wbbb-tap-active {
+  transition: background var(--wbbb-duration-fast) var(--wbbb-easing-standard), box-shadow var(--wbbb-duration-fast) var(--wbbb-easing-standard), color var(--wbbb-duration-fast) var(--wbbb-easing-standard), opacity var(--wbbb-duration-fast) var(--wbbb-easing-standard), transform var(--wbbb-duration-fast) var(--wbbb-easing-standard);
+
+  &:active {
+    opacity: 0.92;
+    transform: scale(var(--wbbb-motion-press-scale));
+  }
+}
+
+@mixin wbbb-safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@mixin wbbb-ellipsis($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if $lines == 1 {
+    white-space: nowrap;
+  } @else {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    display: -webkit-box;
+  }
+}
+
+@mixin wbbb-skeleton-shine {
+  background-image: linear-gradient(90deg, transparent, var(--wbbb-color-skeleton-shine), transparent);
+  background-size: 200% 100%;
+  animation: wbbb-skeleton-shine 1.4s ease-in-out infinite;
+}
+
+@mixin wbbb-focus-ring {
+  &:focus-visible {
+    box-shadow: 0 0 0 6rpx var(--wbbb-color-focus-ring);
+    outline: 0;
+  }
+}
+
+@mixin wbbb-dark-override {
+  page[data-theme="dark"] &,
+  :root[data-theme="dark"] & {
+    @content;
+  }
+}
+
+@keyframes wbbb-skeleton-shine {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}

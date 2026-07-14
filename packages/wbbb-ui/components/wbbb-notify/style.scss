@@ -1,0 +1,49 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-notify {
+  box-sizing: border-box;
+  color: var(--wbbb-notify-foreground, var(--wbbb-color-info-foreground));
+  font-size: var(--wbbb-font-size-md);
+  left: 0;
+  line-height: 1.5;
+  padding: 22rpx 28rpx;
+  position: fixed;
+  right: 0;
+  box-shadow: var(--wbbb-shadow-md);
+  top: 0;
+  text-align: center;
+}
+
+.wbbb-notify--info {
+  background: var(--wbbb-color-info);
+
+  --wbbb-notify-foreground: var(--wbbb-color-info-foreground);
+}
+
+.wbbb-notify--primary {
+  background: var(--wbbb-color-primary);
+
+  --wbbb-notify-foreground: var(--wbbb-color-primary-foreground);
+}
+
+.wbbb-notify--success {
+  background: var(--wbbb-color-success);
+
+  --wbbb-notify-foreground: var(--wbbb-color-success-foreground);
+}
+
+.wbbb-notify--warning {
+  background: var(--wbbb-color-warning);
+
+  --wbbb-notify-foreground: var(--wbbb-color-warning-foreground);
+}
+
+.wbbb-notify--danger {
+  background: var(--wbbb-color-danger);
+
+  --wbbb-notify-foreground: var(--wbbb-color-danger-foreground);
+}
+
+.wbbb-notify__message {
+  display: block;
+}

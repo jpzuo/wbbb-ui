@@ -1,10 +1,10 @@
 ---
-title: Rate
+title: 评分 Rate
 description: 评分选择
 outline: [2, 3]
 ---
 
-# Rate
+# 评分 Rate
 
 <ComponentDoc slug="rate" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="rate" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="rate" section="api" />
 

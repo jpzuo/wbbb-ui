@@ -1,10 +1,10 @@
 ---
-title: Tabs
+title: 标签页 Tabs
 description: 内容标签切换
 outline: [2, 3]
 ---
 
-# Tabs
+# 标签页 Tabs
 
 <ComponentDoc slug="tabs" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="tabs" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="tabs" section="api" />
 

@@ -1,0 +1,44 @@
+@use "./tokens.scss";
+
+.wbbb-fade-enter { animation: wbbb-fade-in var(--wbbb-duration-base) var(--wbbb-easing-enter) both; }
+.wbbb-fade-leave { animation: wbbb-fade-out var(--wbbb-duration-fast) var(--wbbb-easing-exit) both; }
+.wbbb-zoom-enter { animation: wbbb-zoom-in var(--wbbb-duration-base) var(--wbbb-easing-enter) both; }
+.wbbb-zoom-leave { animation: wbbb-zoom-out var(--wbbb-duration-fast) var(--wbbb-easing-exit) both; }
+.wbbb-dialog-zoom-enter { animation: wbbb-dialog-zoom-in var(--wbbb-duration-base) var(--wbbb-easing-enter) both; }
+.wbbb-dialog-zoom-leave { animation: wbbb-dialog-zoom-out var(--wbbb-duration-fast) var(--wbbb-easing-exit) both; }
+.wbbb-slide-up-enter { animation: wbbb-slide-up-in var(--wbbb-duration-base) var(--wbbb-easing-enter) both; }
+.wbbb-slide-up-leave { animation: wbbb-slide-up-out var(--wbbb-duration-fast) var(--wbbb-easing-exit) both; }
+.wbbb-slide-down-enter { animation: wbbb-slide-down-in var(--wbbb-duration-base) var(--wbbb-easing-enter) both; }
+.wbbb-slide-down-leave { animation: wbbb-slide-down-out var(--wbbb-duration-fast) var(--wbbb-easing-exit) both; }
+.wbbb-slide-left-enter { animation: wbbb-slide-left-in var(--wbbb-duration-base) var(--wbbb-easing-enter) both; }
+.wbbb-slide-left-leave { animation: wbbb-slide-left-out var(--wbbb-duration-fast) var(--wbbb-easing-exit) both; }
+.wbbb-slide-right-enter { animation: wbbb-slide-right-in var(--wbbb-duration-base) var(--wbbb-easing-enter) both; }
+.wbbb-slide-right-leave { animation: wbbb-slide-right-out var(--wbbb-duration-fast) var(--wbbb-easing-exit) both; }
+
+@keyframes wbbb-fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+@keyframes wbbb-fade-out { from { opacity: 1; } to { opacity: 0; } }
+
+@keyframes wbbb-zoom-in { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+
+@keyframes wbbb-zoom-out { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.92); } }
+
+@keyframes wbbb-dialog-zoom-in { from { opacity: 0; transform: translate(-50%, -50%) scale(0.92); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+
+@keyframes wbbb-dialog-zoom-out { from { opacity: 1; transform: translate(-50%, -50%) scale(1); } to { opacity: 0; transform: translate(-50%, -50%) scale(0.92); } }
+
+@keyframes wbbb-slide-up-in { from { transform: translateY(var(--wbbb-motion-overlay-distance)); } to { transform: translateY(0); } }
+
+@keyframes wbbb-slide-up-out { from { transform: translateY(0); } to { transform: translateY(var(--wbbb-motion-overlay-distance)); } }
+
+@keyframes wbbb-slide-down-in { from { transform: translateY(calc(var(--wbbb-motion-overlay-distance) * -1)); } to { transform: translateY(0); } }
+
+@keyframes wbbb-slide-down-out { from { transform: translateY(0); } to { transform: translateY(calc(var(--wbbb-motion-overlay-distance) * -1)); } }
+
+@keyframes wbbb-slide-left-in { from { transform: translateX(var(--wbbb-motion-overlay-distance)); } to { transform: translateX(0); } }
+
+@keyframes wbbb-slide-left-out { from { transform: translateX(0); } to { transform: translateX(var(--wbbb-motion-overlay-distance)); } }
+
+@keyframes wbbb-slide-right-in { from { transform: translateX(calc(var(--wbbb-motion-overlay-distance) * -1)); } to { transform: translateX(0); } }
+
+@keyframes wbbb-slide-right-out { from { transform: translateX(0); } to { transform: translateX(calc(var(--wbbb-motion-overlay-distance) * -1)); } }

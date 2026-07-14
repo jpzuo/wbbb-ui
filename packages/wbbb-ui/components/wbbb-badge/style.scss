@@ -1,0 +1,63 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-badge {
+  display: inline-block;
+  position: relative;
+}
+
+.wbbb-badge__content {
+  align-items: center;
+  border: 1rpx solid var(--wbbb-color-surface);
+  border-radius: 999rpx;
+  box-sizing: border-box;
+  color: var(--wbbb-badge-foreground, var(--wbbb-color-danger-foreground));
+  display: inline-flex;
+  font-size: 20rpx;
+  height: 32rpx;
+  justify-content: center;
+  min-width: 32rpx;
+  padding: 0 8rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  z-index: 1;
+}
+
+.wbbb-badge__content--dot {
+  height: 16rpx;
+  min-width: 16rpx;
+  padding: 0;
+  width: 16rpx;
+}
+
+.wbbb-badge__content--primary {
+  background: var(--wbbb-color-primary);
+
+  --wbbb-badge-foreground: var(--wbbb-color-primary-foreground);
+}
+
+.wbbb-badge__content--success {
+  background: var(--wbbb-color-success);
+
+  --wbbb-badge-foreground: var(--wbbb-color-success-foreground);
+}
+
+.wbbb-badge__content--warning {
+  background: var(--wbbb-color-warning);
+
+  --wbbb-badge-foreground: var(--wbbb-color-warning-foreground);
+}
+
+.wbbb-badge__content--danger,
+.wbbb-badge__content--default {
+  background: var(--wbbb-color-danger);
+
+  --wbbb-badge-foreground: var(--wbbb-color-danger-foreground);
+}
+
+.wbbb-badge__content--info {
+  background: var(--wbbb-color-info);
+
+  --wbbb-badge-foreground: var(--wbbb-color-info-foreground);
+}

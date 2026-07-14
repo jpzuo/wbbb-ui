@@ -1,10 +1,10 @@
 ---
-title: Dialog
+title: 对话框 Dialog
 description: 确认和取消对话框
 outline: [2, 3]
 ---
 
-# Dialog
+# 对话框 Dialog
 
 <ComponentDoc slug="dialog" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="dialog" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="dialog" section="api" />
 

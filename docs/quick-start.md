@@ -1,67 +1,35 @@
-# Quick Start
+# 快速开始
 
-Halo UI targets uni-app Vue 3 + TypeScript projects.
+Wbbb UI 面向 uni-app Vue 3 与 TypeScript 项目。npm 包发布的是可由 uni-app/Vite 编译的源码，不作为 Node.js 运行时依赖直接执行。
 
-The npm package distributes uni-app source files. It must be consumed by a uni-app/Vite compilation pipeline and is not a direct Node.js runtime dependency.
-
-## Install
+## 安装
 
 ```bash
-npm install halo-ui
+npm install wbbb-ui
 ```
 
-For HBuilderX or DCloud plugin usage, place the package under `uni_modules/halo-ui`. The package root already contains `components/halo-*` folders for easycom discovery.
+使用 HBuilderX 或 DCloud 插件市场时，将包放到 `uni_modules/wbbb-ui`。
 
-## Full Import
+## 全量导入
 
 ```ts
 import { createSSRApp } from 'vue'
-import HaloUI from 'halo-ui'
-import 'halo-ui/styles'
+import WbbbUI from 'wbbb-ui'
+import 'wbbb-ui/styles'
 
 export function createApp() {
   const app = createSSRApp(App)
-  app.use(HaloUI)
+  app.use(WbbbUI, { locale: 'zh-CN' })
   return { app }
 }
 ```
 
-To use the library-managed Toast, Notify, Dialog, and ActionSheet service visuals, place one host near the application root:
+## 国际化
 
-```vue
-<template>
-  <App />
-  <halo-overlay-host />
-</template>
+```ts
+import { setLocale } from 'wbbb-ui/locale'
+
+setLocale('en-US')
 ```
 
-Services fall back to the corresponding uni-app native API when no host is mounted.
-
-## Single Component Import
-
-```vue
-<script setup lang="ts">
-import { HaloButton } from 'halo-ui/components/button'
-import 'halo-ui/styles/button'
-</script>
-
-<template>
-  <HaloButton type="primary">Submit</HaloButton>
-</template>
-```
-
-## uni_modules Usage
-
-Copy or publish `packages/halo-ui` as `uni_modules/halo-ui`. The package uses `components/halo-*` directories, so uni-app easycom can discover components without importing the whole library.
-
-## Verification
-
-```bash
-npm run check:exports
-npm run typecheck
-npm run test
-npm run lint:styles
-npm run build
-```
-
-Run H5/App/mini-program builds from `examples/playground` when dependencies are installed.
+单组件可通过 `locale="en-US"` 覆盖全局语言；显式传入的文本属性始终优先。

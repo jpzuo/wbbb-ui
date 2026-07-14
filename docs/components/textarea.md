@@ -1,10 +1,10 @@
 ---
-title: Textarea
+title: 文本域 Textarea
 description: 多行文本与字数控制
 outline: [2, 3]
 ---
 
-# Textarea
+# 文本域 Textarea
 
 <ComponentDoc slug="textarea" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="textarea" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="textarea" section="api" />
 

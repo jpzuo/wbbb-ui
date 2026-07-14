@@ -9,7 +9,7 @@ if (!rawName) {
 }
 
 const kebab = rawName
-  .replace(/^halo-/, '')
+  .replace(/^wbbb-/, '')
   .replace(/[A-Z]/g, (value) => `-${value.toLowerCase()}`)
   .replace(/^-/, '')
 
@@ -18,10 +18,10 @@ if (!/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(kebab)) {
   process.exit(1)
 }
 
-const dirName = `halo-${kebab}`
-const pascal = `Halo${kebab.split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join('')}`
+const dirName = `wbbb-${kebab}`
+const pascal = `Wbbb${kebab.split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join('')}`
 const workspaceRoot = process.cwd()
-const packageRoot = join(workspaceRoot, 'packages', 'halo-ui')
+const packageRoot = join(workspaceRoot, 'packages', 'wbbb-ui')
 const componentDir = join(packageRoot, 'components', dirName)
 const docsDir = join(workspaceRoot, 'docs', 'components')
 const playgroundPageDir = join(workspaceRoot, 'examples', 'playground', 'src', 'pages', kebab)
@@ -39,7 +39,7 @@ mkdirSync(testDir, { recursive: true })
 
 writeFileSync(
   join(componentDir, 'props.ts'),
-  `import type { HaloCommonProps } from '../../src/shared/types'\n\nexport interface ${pascal}Props extends HaloCommonProps {}\n`
+  `import type { WbbbCommonProps } from '../../src/shared/types'\n\nexport interface ${pascal}Props extends WbbbCommonProps {}\n`
 )
 
 writeFileSync(
@@ -54,7 +54,7 @@ writeFileSync(
 
 writeFileSync(
   join(componentDir, 'style.scss'),
-  `@use "../../src/styles/tokens.scss";\n\n.${dirName} {\n  color: var(--halo-color-text);\n  font-family: var(--halo-font-family);\n}\n`
+  `@use "../../src/styles/tokens.scss";\n\n.${dirName} {\n  color: var(--wbbb-color-text);\n  font-family: var(--wbbb-font-family);\n}\n`
 )
 
 writeFileSync(
@@ -64,12 +64,12 @@ writeFileSync(
 
 writeFileSync(
   join(docsDir, `${kebab}.md`),
-  `# ${pascal}\n\n## Full Import\n\n\`\`\`ts\nimport HaloUI from 'halo-ui'\nimport 'halo-ui/styles'\n\napp.use(HaloUI)\n\`\`\`\n\n## On-Demand Import\n\n\`\`\`ts\nimport { ${pascal} } from 'halo-ui/components/${kebab}'\nimport 'halo-ui/styles/${kebab}'\n\`\`\`\n\n## Basic Usage\n\n\`\`\`vue\n<template>\n  <${dirName}>${pascal}</${dirName}>\n</template>\n\`\`\`\n\n## Props\n\n| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| customClass | string | '' | Extra class name. |\n| customStyle | string | '' | Inline style text. |\n`
+  `# ${pascal}\n\n## Full Import\n\n\`\`\`ts\nimport WbbbUI from 'wbbb-ui'\nimport 'wbbb-ui/styles'\n\napp.use(WbbbUI)\n\`\`\`\n\n## On-Demand Import\n\n\`\`\`ts\nimport { ${pascal} } from 'wbbb-ui/components/${kebab}'\nimport 'wbbb-ui/styles/${kebab}'\n\`\`\`\n\n## Basic Usage\n\n\`\`\`vue\n<template>\n  <${dirName}>${pascal}</${dirName}>\n</template>\n\`\`\`\n\n## Props\n\n| Name | Type | Default | Description |\n| --- | --- | --- | --- |\n| customClass | string | '' | Extra class name. |\n| customStyle | string | '' | Inline style text. |\n`
 )
 
 writeFileSync(
   join(playgroundPageDir, 'index.vue'),
-  `<template>\n  <view class="page">\n    <halo-navbar title="${pascal}" />\n    <view class="section">\n      <${dirName}>${pascal}</${dirName}>\n    </view>\n  </view>\n</template>\n\n<style lang="scss">\n.page {\n  box-sizing: border-box;\n  min-height: 100vh;\n  padding: 24rpx;\n}\n\n.section {\n  background: #fff;\n  border-radius: 16rpx;\n  padding: 24rpx;\n}\n</style>\n`
+  `<template>\n  <view class="page">\n    <wbbb-navbar title="${pascal}" />\n    <view class="section">\n      <${dirName}>${pascal}</${dirName}>\n    </view>\n  </view>\n</template>\n\n<style lang="scss">\n.page {\n  box-sizing: border-box;\n  min-height: 100vh;\n  padding: 24rpx;\n}\n\n.section {\n  background: #fff;\n  border-radius: 16rpx;\n  padding: 24rpx;\n}\n</style>\n`
 )
 
 appendOnce(join(packageRoot, 'src', 'components.ts'), `export * from '../components/${dirName}'\n`)

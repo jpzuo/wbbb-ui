@@ -1,10 +1,10 @@
 ---
-title: Skeleton
+title: 骨架屏 Skeleton
 description: 内容加载骨架
 outline: [2, 3]
 ---
 
-# Skeleton
+# 骨架屏 Skeleton
 
 <ComponentDoc slug="skeleton" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="skeleton" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="skeleton" section="api" />
 

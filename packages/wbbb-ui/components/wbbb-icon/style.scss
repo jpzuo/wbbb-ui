@@ -1,0 +1,4 @@
+@font-face { font-family: "Wbbb Icons"; font-style: normal; font-weight: normal; src: url("../../src/icons/wbbb-icons.woff") format("woff"), url("../../src/icons/wbbb-icons.ttf") format("truetype"); }
+
+.wbbb-icon { align-items: center; color: currentcolor; display: inline-flex; flex: none; font-style: normal; font-weight: normal; height: 1em; justify-content: center; line-height: 1; min-height: 1em; min-width: 1em; overflow: hidden; text-align: center; width: 1em; }
+.wbbb-icon--asset { display: inline-block; object-fit: contain; }

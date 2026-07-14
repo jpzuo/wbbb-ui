@@ -1,0 +1,77 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-tabs {
+  background: var(--wbbb-color-surface);
+  border-radius: var(--wbbb-radius-lg);
+  box-shadow: var(--wbbb-shadow-sm);
+  overflow: hidden;
+  width: 100%;
+}
+
+.wbbb-tabs__list {
+  display: flex;
+  min-width: 100%;
+}
+
+.wbbb-tabs__item {
+  @include wbbb-focus-ring;
+  @include wbbb-tap-active;
+  align-items: center;
+  color: var(--wbbb-color-text-secondary);
+  display: flex;
+  flex: 1;
+  font-size: var(--wbbb-font-size-md);
+  justify-content: center;
+  min-height: 84rpx;
+  min-width: 0;
+  padding: 0 24rpx;
+  position: relative;
+}
+
+.wbbb-tabs--scrollable .wbbb-tabs__item {
+  flex: none;
+}
+
+.wbbb-tabs__item--active {
+  color: var(--wbbb-color-primary);
+  font-weight: 600;
+}
+
+.wbbb-tabs__item--active::after {
+  background: currentcolor;
+  border-radius: 999rpx;
+  bottom: 0;
+  content: "";
+  height: 8rpx;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 48rpx;
+}
+
+.wbbb-tabs__item--disabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.wbbb-tabs__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wbbb-tabs__badge {
+  background: var(--wbbb-color-danger);
+  border-radius: 999rpx;
+  color: var(--wbbb-color-danger-foreground);
+  font-size: 20rpx;
+  line-height: 1;
+  margin-left: 6rpx;
+  padding: 4rpx 8rpx;
+}
+
+.wbbb-tab-panel {
+  box-sizing: border-box;
+  padding: 24rpx 0;
+}

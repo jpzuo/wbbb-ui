@@ -1,0 +1,77 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-navbar {
+  background: var(--wbbb-color-surface);
+  color: var(--wbbb-color-text);
+  width: 100%;
+  z-index: 800;
+}
+
+.wbbb-navbar--safe {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+.wbbb-navbar--fixed {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.wbbb-navbar--border {
+  @include wbbb-hairline(bottom);
+  box-shadow: var(--wbbb-shadow-sm);
+}
+
+.wbbb-navbar__placeholder {
+  height: 88rpx;
+}
+
+.wbbb-navbar__inner {
+  align-items: center;
+  display: flex;
+  height: 88rpx;
+  padding: 0 24rpx;
+  position: relative;
+}
+
+.wbbb-navbar__left,
+.wbbb-navbar__right {
+  @include wbbb-focus-ring;
+  @include wbbb-tap-active;
+  align-items: center;
+  color: var(--wbbb-color-primary);
+  display: flex;
+  flex: 1;
+  font-size: var(--wbbb-font-size-md);
+  min-width: 0;
+}
+
+.wbbb-navbar__left[tabindex="-1"],
+.wbbb-navbar__right[tabindex="-1"] {
+  pointer-events: none;
+}
+
+.wbbb-navbar__right {
+  justify-content: flex-end;
+}
+
+.wbbb-navbar__title {
+  font-size: var(--wbbb-font-size-lg);
+  font-weight: 600;
+  left: 28%;
+  overflow: hidden;
+  position: absolute;
+  right: 28%;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wbbb-navbar__arrow {
+  font-size: 44rpx;
+  font-weight: 400;
+  margin-right: 4rpx;
+}

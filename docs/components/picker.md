@@ -1,10 +1,10 @@
 ---
-title: Picker
+title: 选择器 Picker
 description: 基础选项选择器
 outline: [2, 3]
 ---
 
-# Picker
+# 选择器 Picker
 
 <ComponentDoc slug="picker" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="picker" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="picker" section="api" />
 

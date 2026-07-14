@@ -1,10 +1,10 @@
 ---
-title: Tabbar
+title: 底部导航栏 Tabbar
 description: 底部应用导航
 outline: [2, 3]
 ---
 
-# Tabbar
+# 底部导航栏 Tabbar
 
 <ComponentDoc slug="tabbar" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="tabbar" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="tabbar" section="api" />
 

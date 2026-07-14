@@ -1,0 +1,10 @@
+@use "../../src/styles/motion.scss";
+@use "../../src/styles/tokens.scss";
+
+.wbbb-toast { align-items: center; bottom: 0; display: flex; justify-content: center; left: 0; position: fixed; right: 0; top: 0; }
+.wbbb-toast__box { align-items: center; background: var(--wbbb-color-inverse-surface); border-radius: var(--wbbb-radius-lg); box-shadow: var(--wbbb-shadow-lg); box-sizing: border-box; color: var(--wbbb-color-inverse-foreground); display: flex; flex-direction: column; font-size: var(--wbbb-font-size-md); gap: var(--wbbb-spacing-sm); max-width: 72%; min-width: 176rpx; padding: 28rpx 32rpx; text-align: center; }
+.wbbb-toast__icon { font-size: 40rpx; line-height: 1; }
+.wbbb-toast__loading { animation: wbbb-toast-loading-rotate 0.75s linear infinite; border: 3rpx solid currentcolor; border-radius: var(--wbbb-radius-full); border-right-color: transparent; box-sizing: border-box; height: 36rpx; width: 36rpx; }
+.wbbb-toast__message { line-height: 1.5; }
+
+@keyframes wbbb-toast-loading-rotate { to { transform: rotate(360deg); } }

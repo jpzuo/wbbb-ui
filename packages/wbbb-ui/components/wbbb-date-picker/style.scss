@@ -1,0 +1,14 @@
+@use "../wbbb-picker/style.scss";
+
+.wbbb-date-picker {
+  @extend .wbbb-picker;
+}
+
+.wbbb-date-picker--placeholder {
+  @extend .wbbb-picker--placeholder;
+}
+
+.wbbb-date-picker__arrow {
+  @extend .wbbb-picker__arrow;
+}
+

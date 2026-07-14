@@ -6,9 +6,9 @@
 </template>
 
 <style lang="scss">
-@use "../uni_modules/halo-ui/src/styles/index.scss";
+@use "../uni_modules/wbbb-ui/src/styles/index.scss";
 
 page {
-  background: var(--halo-color-bg);
+  background: var(--wbbb-color-bg);
 }
 </style>

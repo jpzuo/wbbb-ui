@@ -1,10 +1,10 @@
 ---
-title: Toast
+title: 轻提示 Toast
 description: 轻量短消息
 outline: [2, 3]
 ---
 
-# Toast
+# 轻提示 Toast
 
 <ComponentDoc slug="toast" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="toast" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="toast" section="api" />
 

@@ -1,0 +1,41 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-empty {
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--wbbb-color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72rpx 32rpx;
+  text-align: center;
+}
+
+.wbbb-empty__image,
+.wbbb-empty__placeholder {
+  margin-bottom: var(--wbbb-spacing-md);
+}
+
+.wbbb-empty__placeholder {
+  align-items: center;
+  background: var(--wbbb-color-bg);
+  border-radius: var(--wbbb-radius-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.wbbb-empty__placeholder-line {
+  background: var(--wbbb-color-border);
+  border-radius: 999rpx;
+  height: 12rpx;
+  width: 88rpx;
+}
+
+.wbbb-empty__description {
+  font-size: var(--wbbb-font-size-md);
+}
+
+.wbbb-empty__action {
+  margin-top: var(--wbbb-spacing-md);
+}
+

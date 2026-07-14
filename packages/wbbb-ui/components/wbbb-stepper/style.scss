@@ -1,0 +1,43 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-stepper {
+  align-items: center;
+  display: inline-flex;
+}
+
+.wbbb-stepper--disabled {
+  @include wbbb-disabled;
+}
+
+.wbbb-stepper__button {
+  align-items: center;
+  background: var(--wbbb-color-bg);
+  border: 0;
+  border-radius: var(--wbbb-radius-sm);
+  color: var(--wbbb-color-text);
+  display: flex;
+  font-size: var(--wbbb-font-size-lg);
+  height: 56rpx;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: 56rpx;
+  transition: background var(--wbbb-duration-fast), transform var(--wbbb-duration-fast);
+
+  &::after {
+    border: 0;
+  }
+}
+
+.wbbb-stepper__input {
+  background: var(--wbbb-color-surface-subtle);
+  border-radius: var(--wbbb-radius-sm);
+  color: var(--wbbb-color-text);
+  font-size: var(--wbbb-font-size-md);
+  height: 56rpx;
+  margin: 0 6rpx;
+  text-align: center;
+  width: 88rpx;
+}

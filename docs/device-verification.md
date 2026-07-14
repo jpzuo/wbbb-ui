@@ -1,22 +1,22 @@
-# Runtime Verification Checklist
+# 运行时验收清单
 
-Build success verifies generated code only. Before a public release, record the device or official developer-tool version, operating system, test date, and result for each target below.
+构建成功只能验证生成代码。公开发布前，请为每个目标记录设备或官方开发者工具版本、操作系统、测试日期和结果。
 
-| Target | Build verified | Runtime verified |
+| 目标 | 构建已验证 | 运行时已验证 |
 | --- | --- | --- |
-| H5 | Yes | Pending browser/device record |
-| App Vue | Yes | Pending device record |
-| WeChat Mini Program | Yes | Pending developer-tool or device record |
-| Alipay Mini Program | Yes | Pending developer-tool or device record |
-| Douyin Mini Program | Yes | Pending developer-tool or device record |
+| H5 | 是 | 等待浏览器或设备记录 |
+| App Vue | 是 | 等待设备记录 |
+| 微信小程序 | 是 | 等待开发者工具或设备记录 |
+| 支付宝小程序 | 是 | 等待开发者工具或设备记录 |
+| 抖音小程序 | 是 | 等待开发者工具或设备记录 |
 
-For every verified target, check the Playground for:
+每个已验证目标都应在 Playground 检查：
 
-- SafeArea at the top and bottom, including a fixed Tabbar.
-- Native keyboard focus, input, validation errors, and return navigation.
-- DatePicker and Calendar boundary/disabled-date behavior.
-- Upload selection, failure, retry, deletion, and cancellation.
-- Popup, Dialog, ActionSheet, Toast, and Notify close/back behavior.
-- Light/dark theme switching, touch feedback, and reduced-motion behavior.
+- 顶部与底部 SafeArea，包括固定 Tabbar。
+- 原生键盘焦点、输入、校验错误与返回导航。
+- DatePicker 与 Calendar 的边界日期和禁用日期。
+- Upload 的选择、失败、重试、删除与取消。
+- Popup、Dialog、ActionSheet、Toast 与 Notify 的关闭和返回行为。
+- 亮/暗主题切换、触摸反馈与减弱动效。
 
-Attach the recorded result to the release issue or changelog entry. Baidu, QQ, and Kuaishou remain unverified until they have matching dependencies, CI builds, and a completed runtime record.
+将验收结果附加到发布 Issue 或更新日志。百度、QQ 与快手在拥有对应依赖、CI 构建和完成运行时记录前继续标记为未验证。

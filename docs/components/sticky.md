@@ -1,10 +1,10 @@
 ---
-title: Sticky
+title: 吸顶 Sticky
 description: 吸顶内容区
 outline: [2, 3]
 ---
 
-# Sticky
+# 吸顶 Sticky
 
 <ComponentDoc slug="sticky" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="sticky" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="sticky" section="api" />
 

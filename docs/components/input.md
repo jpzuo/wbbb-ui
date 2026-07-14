@@ -1,10 +1,10 @@
 ---
-title: Input
+title: 输入框 Input
 description: 单行文本输入
 outline: [2, 3]
 ---
 
-# Input
+# 输入框 Input
 
 <ComponentDoc slug="input" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="input" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="input" section="api" />
 

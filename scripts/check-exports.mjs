@@ -3,7 +3,7 @@ import { basename, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
-const packageRoot = join(root, 'packages', 'halo-ui')
+const packageRoot = join(root, 'packages', 'wbbb-ui')
 const componentsRoot = join(packageRoot, 'components')
 const packageJson = JSON.parse(readFileSync(join(packageRoot, 'package.json'), 'utf8'))
 const styleIndex = readFileSync(join(packageRoot, 'src', 'styles', 'index.scss'), 'utf8')
@@ -13,7 +13,7 @@ const installerIndex = readFileSync(join(packageRoot, 'src', 'installer.ts'), 'u
 const catalogPath = join(root, 'examples', 'playground', 'src', 'shared', 'component-catalog.ts')
 
 const components = readdirSync(componentsRoot, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory() && entry.name.startsWith('halo-'))
+  .filter((entry) => entry.isDirectory() && entry.name.startsWith('wbbb-'))
   .map((entry) => entry.name)
   .sort()
 
@@ -23,8 +23,8 @@ const expectedStyleExports = {}
 
 for (const component of components) {
   const componentDir = join(componentsRoot, component)
-  const importName = component.replace(/^halo-/, '')
-  const pascalName = `Halo${importName.split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join('')}`
+  const importName = component.replace(/^wbbb-/, '')
+  const pascalName = `Wbbb${importName.split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join('')}`
   const componentExportPath = `./components/${importName}`
   const styleExportPath = `./styles/${importName}`
 
@@ -57,7 +57,7 @@ for (const component of components) {
   }
 
   if (!existsSync(join(componentsRoot, component, 'index.ts'))) {
-    missing.push(`halo-ui/components/${importName} entry`)
+    missing.push(`wbbb-ui/components/${importName} entry`)
   }
 
   const indexSource = readFileSync(join(componentDir, 'index.ts'), 'utf8')
@@ -66,7 +66,7 @@ for (const component of components) {
     .map((file) => basename(file, '.vue'))
 
   for (const fileName of vueFiles) {
-    const publicName = `Halo${fileName.replace(/^halo-/, '').split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join('')}`
+    const publicName = `Wbbb${fileName.replace(/^wbbb-/, '').split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join('')}`
 
     if (!indexSource.includes(publicName)) {
       missing.push(`${component}/index.ts export for ${publicName}`)
@@ -86,7 +86,7 @@ if (!packageJson.sideEffects?.includes('**/*.scss')) {
   missing.push('package.json must mark scss files as side effects')
 }
 
-if (packageJson.exports?.['./components/*']?.import !== './dist/components/halo-*/index.js') {
+if (packageJson.exports?.['./components/*']?.import !== './dist/components/wbbb-*/index.js') {
   missing.push('package.json wildcard export for ./components/*')
 }
 
@@ -94,12 +94,16 @@ if (packageJson.exports?.['./services/*']?.import !== './dist/src/services/*.js'
   missing.push('package.json wildcard export for ./services/*')
 }
 
-if (packageJson.exports?.['./styles/*'] !== './dist/components/halo-*/style.scss') {
+if (packageJson.exports?.['./styles/*'] !== './dist/components/wbbb-*/style.scss') {
   missing.push('package.json wildcard export for ./styles/*')
 }
 
 if (packageJson.exports?.['./icons']?.import !== './dist/src/icons.js') {
   missing.push('package.json export for ./icons')
+}
+
+if (packageJson.exports?.['./locale']?.import !== './dist/src/locale.js') {
+  missing.push('package.json export for ./locale')
 }
 
 for (const [path, target] of Object.entries(expectedComponentExports)) {
@@ -129,7 +133,7 @@ for (const [field, value] of Object.entries(expectedRootEntries)) {
 
 if (existsSync(catalogPath)) {
   const catalogSource = readFileSync(catalogPath, 'utf8')
-  const catalogSlugs = [...catalogSource.matchAll(/slug:\s*'([^']+)'/g)].map((match) => `halo-${match[1]}`).sort()
+  const catalogSlugs = [...catalogSource.matchAll(/slug:\s*'([^']+)'/g)].map((match) => `wbbb-${match[1]}`).sort()
   const duplicateCatalogEntries = catalogSlugs.filter((entry, index) => catalogSlugs.indexOf(entry) !== index)
 
   if (catalogSlugs.length !== components.length) {

@@ -1,60 +1,21 @@
-# Icon Guide
+# 图标
 
-Halo UI ships a curated 64-icon Lucide subset as a local font. The generated TTF is kept under 60 KiB for mini-program main packages; Lucide tooling is only used during library development and is never a runtime dependency.
+Wbbb UI 发布 64 个 Lucide 核心图标的本地字体子集，运行时不依赖完整图标库，适合小程序主包限制。
 
-## Core Icons
-
-Use a core icon by name:
+## 内置图标
 
 ```vue
-<halo-icon name="search" :size="32" color="var(--halo-color-primary)" />
+<wbbb-icon name="search" :size="32" color="var(--wbbb-color-primary)" />
 ```
 
-The core set includes navigation, actions, feedback, people, media, dates, settings, commerce, and data icons. Existing names remain supported: `left`, `back`, `right`, `up`, `down`, `close`, `warning`, and `default` map to their Lucide equivalents.
+兼容 `left`、`back`、`right`、`up`、`down`、`close`、`warning` 与 `default` 等旧名称。
 
-## Image Icons
-
-Use `src` for a business image asset. It has the highest source priority.
+## 图片与 Iconfont
 
 ```vue
-<halo-icon src="/static/brand-mark.png" :size="40" />
+<wbbb-icon src="/static/brand-mark.png" :size="40" />
+<wbbb-icon font-family="business-icons" code="e600" />
+<wbbb-icon font-set="business" name="dashboard" />
 ```
 
-## Direct iconfont Code Point
-
-Register the font file in the application, then provide its family and glyph code point. `code` accepts `e600`, `0xe600`, or a literal glyph.
-
-```scss
-@font-face {
-  font-family: "business-icons";
-  src: url("/static/business-icons.ttf") format("truetype");
-}
-```
-
-```vue
-<halo-icon font-family="business-icons" code="e600" :size="32" />
-```
-
-## Registered iconfont Set
-
-For long-lived business icon fonts, register semantic names once and use `font-set` with `name`.
-
-```ts
-import { registerHaloIconFont } from 'halo-ui/icons'
-
-registerHaloIconFont({
-  name: 'business',
-  fontFamily: 'business-icons',
-  glyphs: { dashboard: 'e600', order: 'e601' }
-})
-```
-
-```vue
-<halo-icon font-set="business" name="dashboard" />
-```
-
-Source resolution is `src` → `fontFamily + code` → `fontSet + name` → core `name` → help fallback. An explicit `font-set` never falls through to a same-named core icon.
-
-## Attribution
-
-The generated core set is derived from Lucide (ISC) through `@react-native-vector-icons/lucide` (MIT). Both are development-time sources; Halo UI publishes only the generated subset font.
+通过 `registerWbbbIconFont()` 注册长期使用的业务 Iconfont。图标来源优先级为 `src` → `fontFamily + code` → `fontSet + name` → 内置 `name`。

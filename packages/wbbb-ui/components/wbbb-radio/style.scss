@@ -1,0 +1,19 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wbbb-spacing-md);
+}
+
+.wbbb-radio__item {
+  align-items: center;
+  color: var(--wbbb-color-text);
+  display: inline-flex;
+  font-size: var(--wbbb-font-size-md);
+}
+
+.wbbb-radio__control {
+  margin-right: var(--wbbb-spacing-xs);
+}
+

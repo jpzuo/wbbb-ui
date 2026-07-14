@@ -1,0 +1,57 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-skeleton {
+  display: flex;
+  gap: var(--wbbb-spacing-md);
+  width: 100%;
+}
+
+.wbbb-skeleton__avatar,
+.wbbb-skeleton__title,
+.wbbb-skeleton__row {
+  background: var(--wbbb-color-fill);
+  border-radius: var(--wbbb-radius-sm);
+}
+
+.wbbb-skeleton__avatar {
+  flex: none;
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.wbbb-skeleton__content {
+  flex: 1;
+}
+
+.wbbb-skeleton__title {
+  height: 32rpx;
+  margin-bottom: 24rpx;
+  width: 40%;
+}
+
+.wbbb-skeleton__row {
+  height: 28rpx;
+  margin-bottom: 18rpx;
+  width: 100%;
+}
+
+.wbbb-skeleton__row--last {
+  width: 68%;
+}
+
+.wbbb-skeleton--animated .wbbb-skeleton__avatar,
+.wbbb-skeleton--animated .wbbb-skeleton__title,
+.wbbb-skeleton--animated .wbbb-skeleton__row {
+  animation: wbbb-skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes wbbb-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
-const packageRoot = join(root, 'packages', 'halo-ui')
+const packageRoot = join(root, 'packages', 'wbbb-ui')
 const output = join(packageRoot, 'dist')
 
 execFileSync(process.execPath, [join(root, 'scripts', 'generate-icons.mjs')], { cwd: root, stdio: 'inherit' })
@@ -80,4 +80,4 @@ function addVueReference(directory) {
 
 addVueReference(join(output, 'components'))
 
-console.log('Built Halo UI ESM source distribution and declarations.')
+console.log('Built Wbbb UI ESM source distribution and declarations.')

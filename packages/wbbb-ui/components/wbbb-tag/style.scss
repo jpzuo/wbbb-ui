@@ -1,0 +1,79 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-tag {
+  align-items: center;
+  border-radius: var(--wbbb-radius-sm);
+  box-sizing: border-box;
+  display: inline-flex;
+  gap: 6rpx;
+  line-height: 1.2;
+  padding: 6rpx 12rpx;
+
+  &[role="button"] {
+    @include wbbb-focus-ring;
+    @include wbbb-tap-active;
+  }
+}
+
+.wbbb-tag--mini {
+  font-size: var(--wbbb-font-size-xs);
+  padding: 4rpx 8rpx;
+}
+
+.wbbb-tag--small {
+  font-size: var(--wbbb-font-size-sm);
+}
+
+.wbbb-tag--medium,
+.wbbb-tag--large {
+  font-size: var(--wbbb-font-size-md);
+}
+
+.wbbb-tag--large {
+  padding: 10rpx 16rpx;
+}
+
+.wbbb-tag--round {
+  border-radius: 999rpx;
+}
+
+.wbbb-tag--default {
+  background: var(--wbbb-color-neutral-soft);
+  color: var(--wbbb-color-text-secondary);
+}
+
+.wbbb-tag--primary {
+  background: var(--wbbb-color-primary-soft);
+  color: var(--wbbb-color-primary);
+}
+
+.wbbb-tag--success {
+  background: var(--wbbb-color-success-soft);
+  color: var(--wbbb-color-success);
+}
+
+.wbbb-tag--warning {
+  background: var(--wbbb-color-warning-soft);
+  color: var(--wbbb-color-warning);
+}
+
+.wbbb-tag--danger {
+  background: var(--wbbb-color-danger-soft);
+  color: var(--wbbb-color-danger);
+}
+
+.wbbb-tag--info {
+  background: var(--wbbb-color-info-soft);
+  color: var(--wbbb-color-info);
+}
+
+.wbbb-tag--plain {
+  background: transparent;
+  border: 1rpx solid currentcolor;
+}
+
+.wbbb-tag__close {
+  font-size: 20rpx;
+  line-height: 1;
+}

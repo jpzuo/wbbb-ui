@@ -1,0 +1,23 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-picker {
+  align-items: center;
+  border: 1rpx solid var(--wbbb-color-border);
+  border-radius: var(--wbbb-radius-md);
+  color: var(--wbbb-color-text);
+  display: flex;
+  font-size: var(--wbbb-font-size-md);
+  justify-content: space-between;
+  min-height: 76rpx;
+  padding: 0 22rpx;
+}
+
+.wbbb-picker--placeholder {
+  color: var(--wbbb-color-text-secondary);
+}
+
+.wbbb-picker__arrow {
+  color: var(--wbbb-color-text-secondary);
+  margin-left: var(--wbbb-spacing-sm);
+}
+

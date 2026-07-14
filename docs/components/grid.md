@@ -1,10 +1,10 @@
 ---
-title: Grid
+title: 宫格 Grid
 description: 网格布局与子项
 outline: [2, 3]
 ---
 
-# Grid
+# 宫格 Grid
 
 <ComponentDoc slug="grid" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="grid" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="grid" section="api" />
 

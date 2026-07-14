@@ -1,0 +1,45 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-progress {
+  align-items: center;
+  display: flex;
+  gap: var(--wbbb-spacing-sm);
+  width: 100%;
+}
+
+.wbbb-progress__track {
+  background: var(--wbbb-color-neutral-soft);
+  border-radius: var(--wbbb-radius-full);
+  flex: 1;
+  overflow: hidden;
+}
+
+.wbbb-progress__bar {
+  background: var(--wbbb-color-primary);
+  transition: width var(--wbbb-duration-base);
+  border-radius: inherit;
+}
+
+.wbbb-progress__bar--success {
+  background: var(--wbbb-color-success);
+}
+
+.wbbb-progress__bar--warning {
+  background: var(--wbbb-color-warning);
+}
+
+.wbbb-progress__bar--danger {
+  background: var(--wbbb-color-danger);
+}
+
+.wbbb-progress__bar--info {
+  background: var(--wbbb-color-info);
+}
+
+.wbbb-progress__text {
+  color: var(--wbbb-color-text-secondary);
+  flex: none;
+  font-size: var(--wbbb-font-size-sm);
+  min-width: 64rpx;
+  text-align: right;
+}

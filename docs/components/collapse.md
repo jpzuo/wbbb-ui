@@ -1,10 +1,10 @@
 ---
-title: Collapse
+title: 折叠面板 Collapse
 description: 可展开的信息块
 outline: [2, 3]
 ---
 
-# Collapse
+# 折叠面板 Collapse
 
 <ComponentDoc slug="collapse" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="collapse" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="collapse" section="api" />
 

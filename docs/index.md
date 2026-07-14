@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: Halo UI
+  name: Wbbb UI
   text: 为 uni-app 产品体验而生
   tagline: 47 个跨端组件、完整主题 Token 与可验证的 H5 / App / 小程序交互体验。
   actions:
@@ -14,7 +14,7 @@ hero:
       link: /components/button
     - theme: alt
       text: 打开 Playground
-      link: https://play.halo-ui.pages.dev
+      link: https://wbbb-ui.pages.dev/#/
 
 features:
   - icon: 🎛️
@@ -40,4 +40,4 @@ features:
 
 ## 两个站点，各自专注
 
-正式文档用于查阅 API、复制代码和理解设计规范；[Playground](https://play.halo-ui.pages.dev) 用于验证真实移动端交互、异常状态和跨端视觉表现。
+正式文档用于查阅 API、复制代码和理解设计规范；[Playground](https://wbbb-ui.pages.dev/#/) 用于验证真实移动端交互、异常状态和跨端视觉表现。

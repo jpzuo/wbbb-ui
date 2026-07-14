@@ -1,10 +1,10 @@
 ---
-title: List
+title: 列表 List
 description: 可选择的业务列表
 outline: [2, 3]
 ---
 
-# List
+# 列表 List
 
 <ComponentDoc slug="list" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="list" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="list" section="api" />
 

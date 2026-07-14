@@ -1,0 +1,78 @@
+@use "../../src/styles/tokens.scss";
+@use "../../src/styles/mixins.scss" as *;
+
+.wbbb-calendar {
+  background: var(--wbbb-color-surface);
+  border-radius: var(--wbbb-radius-lg);
+  color: var(--wbbb-color-text);
+  padding: 24rpx;
+  box-shadow: var(--wbbb-shadow-sm);
+}
+
+.wbbb-calendar__header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.wbbb-calendar__title {
+  font-size: var(--wbbb-font-size-lg);
+  font-weight: 600;
+}
+
+.wbbb-calendar__nav {
+  @include wbbb-tap-active;
+  background: var(--wbbb-color-surface-subtle);
+  border: 0;
+  border-radius: var(--wbbb-radius-sm);
+  color: var(--wbbb-color-text);
+  font-size: var(--wbbb-font-size-md);
+  height: 56rpx;
+  line-height: 56rpx;
+  margin: 0;
+  padding: 0;
+  width: 56rpx;
+
+  &::after {
+    border: 0;
+  }
+}
+
+.wbbb-calendar__week,
+.wbbb-calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.wbbb-calendar__week-day {
+  color: var(--wbbb-color-text-secondary);
+  font-size: var(--wbbb-font-size-xs);
+  padding: 12rpx 0;
+  text-align: center;
+}
+
+.wbbb-calendar__day {
+  align-items: center;
+  border-radius: var(--wbbb-radius-sm);
+  display: flex;
+  font-size: var(--wbbb-font-size-md);
+  height: 68rpx;
+  justify-content: center;
+  margin: 4rpx;
+}
+
+.wbbb-calendar__day--today {
+  color: var(--wbbb-color-primary);
+  font-weight: 700;
+}
+
+.wbbb-calendar__day--disabled {
+  color: var(--wbbb-color-text-disabled);
+  pointer-events: none;
+}
+
+.wbbb-calendar__day--active {
+  background: var(--wbbb-color-primary);
+  color: var(--wbbb-color-primary-foreground);
+}

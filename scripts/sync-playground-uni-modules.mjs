@@ -3,11 +3,11 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
-const source = join(root, 'packages', 'halo-ui')
-const lock = join(root, 'examples', 'playground', '.halo-ui-sync.lock')
+const source = join(root, 'packages', 'wbbb-ui')
+const lock = join(root, 'examples', 'playground', '.wbbb-ui-sync.lock')
 const targets = [
-  join(root, 'examples', 'playground', 'uni_modules', 'halo-ui'),
-  join(root, 'examples', 'playground', 'src', 'uni_modules', 'halo-ui')
+  join(root, 'examples', 'playground', 'uni_modules', 'wbbb-ui'),
+  join(root, 'examples', 'playground', 'src', 'uni_modules', 'wbbb-ui')
 ]
 
 const startedAt = Date.now()
@@ -40,14 +40,14 @@ try {
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'))
     packageJson.style = './src/styles/index.scss'
     packageJson.exports['./styles'] = './src/styles/index.scss'
-    packageJson.exports['./styles/*'] = './components/halo-*/style.scss'
+    packageJson.exports['./styles/*'] = './components/wbbb-*/style.scss'
     // uni-app injects a package's ./theme export into every SFC style block.
     // The Playground loads tokens once from its application root instead.
     packageJson.exports['./theme'] = './src/styles/theme.scss'
     Object.keys(packageJson.exports)
       .filter((key) => key.startsWith('./styles/') && key !== './styles/*')
       .forEach((key) => {
-        packageJson.exports[key] = `./components/halo-${key.slice('./styles/'.length)}/style.scss`
+        packageJson.exports[key] = `./components/wbbb-${key.slice('./styles/'.length)}/style.scss`
       })
     writeFileSync(packageJsonPath, `${JSON.stringify(packageJson, null, 2)}\n`)
 

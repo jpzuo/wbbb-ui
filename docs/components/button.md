@@ -1,10 +1,10 @@
 ---
-title: Button
+title: 按钮 Button
 description: 主要操作、禁用与加载反馈
 outline: [2, 3]
 ---
 
-# Button
+# 按钮 Button
 
 <ComponentDoc slug="button" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="button" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="button" section="api" />
 

@@ -3,14 +3,14 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
-const packageRoot = join(root, 'packages', 'halo-ui')
+const packageRoot = join(root, 'packages', 'wbbb-ui')
 const componentsRoot = join(packageRoot, 'components')
 const packageJsonPath = join(packageRoot, 'package.json')
 const styleIndexPath = join(packageRoot, 'src', 'styles', 'index.scss')
 const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'))
 
 const components = readdirSync(componentsRoot, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory() && entry.name.startsWith('halo-'))
+  .filter((entry) => entry.isDirectory() && entry.name.startsWith('wbbb-'))
   .map((entry) => entry.name)
   .sort()
 
@@ -24,8 +24,8 @@ const baseExports = {
     import: './dist/src/components.js'
   },
   './components/*': {
-    types: './dist/components/halo-*/index.d.ts',
-    import: './dist/components/halo-*/index.js'
+    types: './dist/components/wbbb-*/index.d.ts',
+    import: './dist/components/wbbb-*/index.js'
   },
   './services': {
     types: './dist/src/services/index.d.ts',
@@ -55,13 +55,17 @@ const baseExports = {
     types: './dist/src/icons.d.ts',
     import: './dist/src/icons.js'
   },
+  './locale': {
+    types: './dist/src/locale.d.ts',
+    import: './dist/src/locale.js'
+  },
   './styles': './dist/src/styles/index.scss',
-  './styles/*': './dist/components/halo-*/style.scss',
+  './styles/*': './dist/components/wbbb-*/style.scss',
   './theme': './dist/src/styles/tokens.scss'
 }
 
 for (const component of components) {
-  const importName = component.replace(/^halo-/, '')
+  const importName = component.replace(/^wbbb-/, '')
   baseExports[`./components/${importName}`] = {
     types: `./dist/components/${component}/index.d.ts`,
     import: `./dist/components/${component}/index.js`

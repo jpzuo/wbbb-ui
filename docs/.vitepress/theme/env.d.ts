@@ -1,1 +1,1 @@
-declare const __HALO_PLAYGROUND_URL__: string
+declare const __WBBB_PLAYGROUND_URL__: string

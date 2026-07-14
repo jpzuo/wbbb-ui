@@ -1,22 +1,11 @@
-# Theme
+# 主题定制
 
-Theme tokens live in `packages/halo-ui/src/styles/tokens.scss`.
-
-## Token Groups
-
-- Color: primary, success, warning, danger, info, text, border, background, surface.
-- Shape: small, medium, large radius.
-- Spacing: xs, sm, md, lg.
-- Typography: xs, sm, md, lg and base line-height.
-- Motion and z-index: popup, toast, fast/base duration.
-
-## Usage
+主题 Token 位于 `packages/wbbb-ui/src/styles/tokens.scss`。颜色、间距、圆角、阴影、字体与动效均通过 Token 管理。
 
 ```scss
-@use 'halo-ui/theme' with (
-  $halo-color-primary: #0f7c66
+@use 'wbbb-ui/theme' with (
+  $wbbb-color-primary: #0f7c66
 );
 ```
 
-Component styles only depend on tokens and mixins, so a single component style can be imported without the full stylesheet.
-
+使用既有 `setTheme('light' | 'dark')` 切换亮暗主题。组件样式不应直接写入散落的色值。

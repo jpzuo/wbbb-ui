@@ -1,10 +1,10 @@
 ---
-title: Checkbox
+title: 复选框 Checkbox
 description: 多项复选
 outline: [2, 3]
 ---
 
-# Checkbox
+# 复选框 Checkbox
 
 <ComponentDoc slug="checkbox" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="checkbox" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="checkbox" section="api" />
 

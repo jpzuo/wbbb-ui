@@ -1,0 +1,42 @@
+<template>
+  <checkbox-group class="wbbb-checkbox" :class="customClass" :style="customStyle" @change="handleChange">
+    <label v-for="(item, index) in options" :key="item.value" class="wbbb-checkbox__item">
+      <checkbox
+        class="wbbb-checkbox__control"
+        :checked="modelValue.includes(item.value)"
+        :disabled="disabled || item.disabled"
+        :value="String(index)"
+      />
+      <text class="wbbb-checkbox__label">{{ item.label }}</text>
+    </label>
+  </checkbox-group>
+</template>
+
+<script setup lang="ts">
+import { getOptionsByIndex } from '../../src/shared/selection'
+import type { WbbbCheckboxProps } from './props'
+
+const props = withDefaults(defineProps<WbbbCheckboxProps>(), {
+  customClass: '',
+  customStyle: '',
+  disabled: false,
+  modelValue: () => [],
+  options: () => []
+})
+
+const emit = defineEmits<{
+  'update:modelValue': [value: Array<string | number>]
+  change: [value: Array<string | number>]
+}>()
+
+function handleChange(event: unknown) {
+  const rawIndexes = (event as { detail?: { value?: string[] } }).detail?.value ?? []
+  const values = getOptionsByIndex(props.options, rawIndexes).map((option) => option.value)
+  emit('update:modelValue', values)
+  emit('change', values)
+}
+</script>
+
+<style lang="scss">
+@use "./style.scss";
+</style>

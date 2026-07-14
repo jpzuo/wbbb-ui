@@ -1,4 +1,4 @@
-import { createReadStream, existsSync } from 'node:fs'
+import { createReadStream, statSync } from 'node:fs'
 import { createServer } from 'node:http'
 import { dirname, extname, join, normalize } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -22,7 +22,13 @@ function resolveFile(pathname) {
     join(root, `${relativePath}.html`),
     join(root, relativePath, 'index.html')
   ]
-  return candidates.find(existsSync) ?? join(root, '404.html')
+  return candidates.find((candidate) => {
+    try {
+      return statSync(candidate).isFile()
+    } catch {
+      return false
+    }
+  }) ?? join(root, '404.html')
 }
 
 const server = createServer((request, response) => {

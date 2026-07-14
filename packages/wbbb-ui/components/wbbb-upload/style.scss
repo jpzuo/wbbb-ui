@@ -1,0 +1,88 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-upload {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wbbb-spacing-sm);
+}
+
+.wbbb-upload--disabled {
+  @include wbbb-disabled;
+}
+
+.wbbb-upload__item,
+.wbbb-upload__trigger {
+  @include wbbb-focus-ring;
+  border-radius: var(--wbbb-radius-md);
+  height: 156rpx;
+  overflow: hidden;
+  position: relative;
+  width: 156rpx;
+}
+
+.wbbb-upload__image {
+  height: 100%;
+  width: 100%;
+}
+
+.wbbb-upload__state {
+  align-items: center;
+  background: var(--wbbb-color-mask);
+  bottom: 0;
+  color: var(--wbbb-color-inverse-foreground);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--wbbb-font-size-xs);
+  gap: 6rpx;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.wbbb-upload__item--failed .wbbb-upload__state {
+  background: var(--wbbb-color-danger-soft);
+  color: var(--wbbb-color-danger);
+}
+
+.wbbb-upload__remove {
+  align-items: center;
+  background: var(--wbbb-color-mask);
+  border-radius: 999rpx;
+  color: var(--wbbb-color-inverse-foreground);
+  display: flex;
+  font-size: 20rpx;
+  height: 32rpx;
+  justify-content: center;
+  position: absolute;
+  right: 8rpx;
+  top: 8rpx;
+  width: 32rpx;
+}
+
+.wbbb-upload__trigger {
+  @include wbbb-tap-active;
+  align-items: center;
+  background: var(--wbbb-color-bg);
+  color: var(--wbbb-color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wbbb-upload--disabled .wbbb-upload__trigger,
+.wbbb-upload--disabled .wbbb-upload__item {
+  pointer-events: none;
+}
+
+.wbbb-upload__plus {
+  font-size: 44rpx;
+  line-height: 1;
+}
+
+.wbbb-upload__text {
+  font-size: var(--wbbb-font-size-xs);
+  margin-top: 8rpx;
+}

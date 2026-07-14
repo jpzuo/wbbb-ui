@@ -1,10 +1,10 @@
 ---
-title: Radio
+title: 单选框 Radio
 description: 单项选择
 outline: [2, 3]
 ---
 
-# Radio
+# 单选框 Radio
 
 <ComponentDoc slug="radio" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="radio" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="radio" section="api" />
 

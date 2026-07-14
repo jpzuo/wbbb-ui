@@ -1,0 +1,46 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-grid {
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+}
+
+.wbbb-grid--bordered {
+  background: var(--wbbb-color-separator);
+  border: 1rpx solid var(--wbbb-color-separator);
+  border-radius: var(--wbbb-radius-md);
+  overflow: hidden;
+}
+
+.wbbb-grid-item {
+  align-items: center;
+  background: var(--wbbb-color-surface);
+  box-sizing: border-box;
+  color: var(--wbbb-color-text);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--wbbb-font-size-sm);
+  justify-content: center;
+  min-height: 148rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+
+.wbbb-grid-item--clickable {
+  @include wbbb-tap-active;
+  @include wbbb-focus-ring;
+}
+
+.wbbb-grid-item__icon {
+  color: var(--wbbb-color-primary);
+  font-size: 40rpx;
+  line-height: 1;
+  margin-bottom: 10rpx;
+}
+
+.wbbb-grid-item__text {
+  color: var(--wbbb-color-text);
+  font-size: var(--wbbb-font-size-sm);
+}

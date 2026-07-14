@@ -1,10 +1,10 @@
 ---
-title: Switch
+title: 开关 Switch
 description: 布尔开关
 outline: [2, 3]
 ---
 
-# Switch
+# 开关 Switch
 
 <ComponentDoc slug="switch" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="switch" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="switch" section="api" />
 

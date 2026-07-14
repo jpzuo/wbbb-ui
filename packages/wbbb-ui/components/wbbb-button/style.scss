@@ -1,0 +1,151 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-button {
+  @include wbbb-tap-active;
+  align-items: center;
+  border: 0;
+  border-radius: var(--wbbb-radius-md);
+  box-sizing: border-box;
+  color: var(--wbbb-color-text);
+  display: inline-flex;
+  font-family: var(--wbbb-font-family);
+  font-size: var(--wbbb-font-size-md);
+  gap: var(--wbbb-spacing-xs);
+  justify-content: center;
+  line-height: 1.2;
+  margin: 0;
+  min-width: 128rpx;
+  overflow: hidden;
+  padding: 0 28rpx;
+  position: relative;
+  text-align: center;
+
+  &::after {
+    border: 0;
+  }
+}
+
+.wbbb-button--mini {
+  font-size: var(--wbbb-font-size-xs);
+  height: 48rpx;
+  min-width: 88rpx;
+  padding: 0 16rpx;
+}
+
+.wbbb-button--small {
+  font-size: var(--wbbb-font-size-sm);
+  height: 60rpx;
+  min-width: 108rpx;
+  padding: 0 22rpx;
+}
+
+.wbbb-button--medium {
+  height: 76rpx;
+}
+
+.wbbb-button--large {
+  font-size: var(--wbbb-font-size-lg);
+  height: 88rpx;
+  min-width: 160rpx;
+}
+
+.wbbb-button--block {
+  display: flex;
+  width: 100%;
+}
+
+.wbbb-button--round {
+  border-radius: 999rpx;
+}
+
+.wbbb-button--disabled,
+.wbbb-button--loading {
+  @include wbbb-disabled;
+}
+
+.wbbb-button--default {
+  background: var(--wbbb-color-surface);
+  border: 1rpx solid var(--wbbb-color-border);
+  box-shadow: var(--wbbb-shadow-sm);
+}
+
+.wbbb-button--primary {
+  background: var(--wbbb-color-primary);
+  box-shadow: var(--wbbb-shadow-primary);
+  color: var(--wbbb-color-primary-foreground);
+}
+
+.wbbb-button--success {
+  background: var(--wbbb-color-success);
+  color: var(--wbbb-color-success-foreground);
+}
+
+.wbbb-button--warning {
+  background: var(--wbbb-color-warning);
+  color: var(--wbbb-color-warning-foreground);
+}
+
+.wbbb-button--danger {
+  background: var(--wbbb-color-danger);
+  color: var(--wbbb-color-danger-foreground);
+}
+
+.wbbb-button--info {
+  background: var(--wbbb-color-info);
+  color: var(--wbbb-color-info-foreground);
+}
+
+.wbbb-button--plain {
+  background: transparent;
+}
+
+.wbbb-button--plain.wbbb-button--primary {
+  border: 1rpx solid var(--wbbb-color-primary);
+  color: var(--wbbb-color-primary);
+}
+
+.wbbb-button--plain.wbbb-button--success {
+  border: 1rpx solid var(--wbbb-color-success);
+  color: var(--wbbb-color-success);
+}
+
+.wbbb-button--plain.wbbb-button--warning {
+  border: 1rpx solid var(--wbbb-color-warning);
+  color: var(--wbbb-color-warning);
+}
+
+.wbbb-button--plain.wbbb-button--danger {
+  border: 1rpx solid var(--wbbb-color-danger);
+  color: var(--wbbb-color-danger);
+}
+
+.wbbb-button--plain.wbbb-button--info {
+  border: 1rpx solid var(--wbbb-color-info);
+  color: var(--wbbb-color-info);
+}
+
+.wbbb-button__icon,
+.wbbb-button__loading {
+  flex: none;
+}
+
+.wbbb-button__loading {
+  animation: wbbb-button-loading-rotate 0.75s linear infinite;
+  border: 3rpx solid currentcolor;
+  border-radius: 999rpx;
+  border-right-color: transparent;
+  box-sizing: border-box;
+}
+
+.wbbb-button__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes wbbb-button-loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

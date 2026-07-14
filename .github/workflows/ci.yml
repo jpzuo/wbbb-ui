@@ -16,6 +16,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check:exports
+      - run: npm run check:brand
       - run: npm run check:playground
       - run: npm run check:tokens
       - run: npm run check:icons
@@ -48,7 +49,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run build:${{ matrix.target }} -w @halo-ui/playground
+      - run: npm run build:${{ matrix.target }} -w @wbbb-ui/playground
       - if: matrix.target == 'h5'
         run: npm run check:budgets:h5
 

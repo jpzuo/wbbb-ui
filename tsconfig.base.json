@@ -11,8 +11,8 @@
     "moduleResolution": "Bundler",
     "noEmit": true,
     "paths": {
-      "halo-ui": ["packages/halo-ui/src/index.ts"],
-      "halo-ui/*": ["packages/halo-ui/*"]
+      "wbbb-ui": ["packages/wbbb-ui/src/index.ts"],
+      "wbbb-ui/*": ["packages/wbbb-ui/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

@@ -1,10 +1,10 @@
-# Halo UI：uni-app 全平台 UI 库规划
+# Wbbb UI：uni-app 全平台 UI 库规划
 
 ## Summary
 
 - 目标：建设一个面向 uni-app Vue3 + TypeScript 的通用业务 UI 库，覆盖 H5、App、微信/支付宝/抖音/百度/QQ/快手等小程序。
 - 项目必须支持完整引入和单组件按需引入，不能强制用户安装或打包整套 UI 库。
-- 发布形态同时支持 `uni_modules` 和 npm；默认项目名 `halo-ui`，组件标签前缀 `halo-`。
+- 发布形态同时支持 `uni_modules` 和 npm；默认项目名 `wbbb-ui`，组件标签前缀 `wbbb-`。
 
 ## Milestones
 
@@ -21,8 +21,8 @@
 - 按需引入：
   - 每个组件独立目录、独立入口、独立样式、独立类型声明。
   - 用户可以只引入 `Button`、`Input`、`Popup` 等单个组件，不需要注册全局插件。
-  - npm 包提供 `exports` 子路径，例如 `halo-ui/components/button`、`halo-ui/services/toast`、`halo-ui/styles/button`。
-  - `exports` 通配符约定：`./components/*` 映射到 `./components/halo-*/index.ts`，其中 `*` 匹配不含 `halo-` 前缀的组件名（如 `button` → `halo-button`）。`./services/*` 和 `./styles/*` 遵循同样规则。文档和 README 必须明确示例。
+  - npm 包提供 `exports` 子路径，例如 `wbbb-ui/components/button`、`wbbb-ui/services/toast`、`wbbb-ui/styles/button`。
+  - `exports` 通配符约定：`./components/*` 映射到 `./components/wbbb-*/index.ts`，其中 `*` 匹配不含 `wbbb-` 前缀的组件名（如 `button` → `wbbb-button`）。`./services/*` 和 `./styles/*` 遵循同样规则。文档和 README 必须明确示例。
   - `uni_modules` 模式为**整包引入**，通过 easycom 实现免注册按需使用（编译器 tree-shaking）；组件内部的相对路径依赖（如 `@use "../../src/styles/tokens.scss"`）决定了不支持物理拆分单个组件目录。
   - npm 模式才支持**物理按需引入**（只引入单组件入口）。
 - 样式策略：
@@ -38,10 +38,10 @@
   - 第二阶段：Search、DropdownMenu（含 DropdownMenuItem）、Waterfall、VirtualList、QRCode、Signature、Cropper。
   - 子组件放置规范：子组件与主组件放在同一目录下，由同一 `index.ts` 同时导出。例如：
     ```
-    components/halo-checkbox/
-    ├── halo-checkbox.vue
-    ├── halo-checkbox-group.vue
-    ├── index.ts              ← export { HaloCheckbox, HaloCheckboxGroup }
+    components/wbbb-checkbox/
+    ├── wbbb-checkbox.vue
+    ├── wbbb-checkbox-group.vue
+    ├── index.ts              ← export { WbbbCheckbox, WbbbCheckboxGroup }
     ├── props.ts              ← 包含两者的 props 定义
     └── style.scss
     ```
@@ -50,17 +50,17 @@
   - 所有组件必须在 H5、App Vue、微信小程序通过；其余小程序按组件风险分级验证并标注兼容矩阵。
 - 过渡动画策略：
   - 所有 overlay 类组件（Popup、Dialog、ActionSheet、Notify）必须有进入/退出过渡动画。
-  - 定义标准过渡名：`halo-fade`（遮罩淡入淡出）、`halo-slide-up`（底部弹出）、`halo-slide-down`（顶部弹出）、`halo-slide-left`（右侧弹出）、`halo-slide-right`（左侧弹出）、`halo-zoom`（中心缩放）。
-  - 过渡时长使用 token `$halo-duration-fast` / `$halo-duration-base`，不硬编码。
+  - 定义标准过渡名：`wbbb-fade`（遮罩淡入淡出）、`wbbb-slide-up`（底部弹出）、`wbbb-slide-down`（顶部弹出）、`wbbb-slide-left`（右侧弹出）、`wbbb-slide-right`（左侧弹出）、`wbbb-zoom`（中心缩放）。
+  - 过渡时长使用 token `$wbbb-duration-fast` / `$wbbb-duration-base`，不硬编码。
 - 服务类组件分层策略：
   - **轻量版（v0.1-alpha）**：直接包装 uni API（`uni.showToast`、`uni.showModal` 等），零成本，适合简单场景。
-  - **自定义版（v0.1-beta）**：基于 Popup + 自绘 UI 实现 `showHaloToast`、`showHaloDialog`、`showHaloNotify`，支持完整样式定制、自定义图标、富文本内容、队列管理。
+  - **自定义版（v0.1-beta）**：基于 Popup + 自绘 UI 实现 `showWbbbToast`、`showWbbbDialog`、`showWbbbNotify`，支持完整样式定制、自定义图标、富文本内容、队列管理。
   - 两层 API 并存，用户按需选用。
 
 ## Implementation Plan
 
 - 项目基础：
-  - 初始化 monorepo：`packages/halo-ui`、`examples/playground`、`docs`。
+  - 初始化 monorepo：`packages/wbbb-ui`、`examples/playground`、`docs`。
   - 配置 TypeScript、ESLint、Stylelint、Vitest、构建脚本、发布脚本和变更日志。
   - 建立组件生成模板，一次生成组件源码、样式、类型、demo、文档和测试：
     - 生成脚本需覆盖：`index.ts`、`component.vue`、`props.ts`、`style.scss`、`__tests__/component.test.ts`、对应 playground demo 页面模板、对应 docs/ 文档模板。
@@ -80,13 +80,13 @@
     - 动效时长：duration-fast、duration-base。
     - 表单高度：**height-sm**、**height-md**、**height-lg**。
   - 建立完整 mixin 集（mixins.scss）：
-    - 已有：`halo-font`、`halo-hairline`（需扩展支持 top/left/right）、`halo-disabled`、`halo-tap-active`、`halo-safe-bottom`。
-    - 新增：**`halo-ellipsis($lines: 1)`**（单行/多行文本截断）、**`halo-skeleton-shine`**（骨架屏闪光动画）、**`halo-dark-override`**（暗色模式辅助 mixin，在 `[data-theme="dark"]` 下覆写变量）。
+    - 已有：`wbbb-font`、`wbbb-hairline`（需扩展支持 top/left/right）、`wbbb-disabled`、`wbbb-tap-active`、`wbbb-safe-bottom`。
+    - 新增：**`wbbb-ellipsis($lines: 1)`**（单行/多行文本截断）、**`wbbb-skeleton-shine`**（骨架屏闪光动画）、**`wbbb-dark-override`**（暗色模式辅助 mixin，在 `[data-theme="dark"]` 下覆写变量）。
   - 确定组件 API 命名规范、事件规范、插槽规范和错误提示规范。
 - 核心组件：
   - 优先实现基础、布局、表单、反馈四类高频组件。
   - 复合组件需同步实现子组件（如 CheckboxGroup、RadioGroup、CellGroup、GridItem、TabPanel、CollapseItem、StepItem、TimelineItem、TabbarItem）。
-  - 表单组件统一接入 `halo-form`，支持校验、错误展示、异步校验和受控/非受控写法。
+  - 表单组件统一接入 `wbbb-form`，支持校验、错误展示、异步校验和受控/非受控写法。
   - 表单校验内置规则扩展：
     - 已有：`required`、自定义 `validator`。
     - 新增：`min`（最小值/最小长度）、`max`（最大值/最大长度）、`pattern`（正则匹配）、`type`（预设格式：`email`、`phone`、`url`、`number`）。
@@ -97,12 +97,12 @@
     ```scss
     page[data-theme="dark"],
     :root[data-theme="dark"] {
-      --halo-color-text: #e5e7eb;
-      --halo-color-text-secondary: #9ca3af;
-      --halo-color-text-disabled: #6b7280;
-      --halo-color-bg: #1a1a2e;
-      --halo-color-surface: #25253a;
-      --halo-color-border: #374151;
+      --wbbb-color-text: #e5e7eb;
+      --wbbb-color-text-secondary: #9ca3af;
+      --wbbb-color-text-disabled: #6b7280;
+      --wbbb-color-bg: #1a1a2e;
+      --wbbb-color-surface: #25253a;
+      --wbbb-color-border: #374151;
       // ...其余颜色 token 的暗色覆盖
     }
     ```
@@ -115,7 +115,7 @@
   - 小程序端受限于平台能力，a11y 属性仅在支持的平台生效，不影响不支持的平台。
   - 在 API Conventions 文档中补充 a11y 规范章节。
 - 国际化 (i18n) 预留：
-  - 提供 `setLocale(messages: Partial<HaloLocaleMessages>)` 机制，允许用户覆盖内部文案。
+  - 提供 `setLocale(messages: Partial<WbbbLocaleMessages>)` 机制，允许用户覆盖内部文案。
   - 默认使用中文（`'该字段为必填项'` 等）。
   - 内置消息统一定义在 `src/shared/locale.ts`，组件内部通过 `useLocale()` 取值，不硬编码。
 - 构建产物：
@@ -170,7 +170,7 @@
 ## Assumptions
 
 - 使用 Vue3 + TypeScript、`uni_modules + npm`、通用业务风格。
-- 组件前缀默认 `halo-`，包名默认 `halo-ui`。
+- 组件前缀默认 `wbbb-`，包名默认 `wbbb-ui`。
 - 第一版不承诺 Vue2、uni-app x、nvue 原生组件和复杂原生插件能力。
 - "全平台支持"定义为：能在 uni-app 官方主流编译目标中构建和运行；平台专有限制通过兼容矩阵明确标注。
 - "单独引入"是 v1 必达能力，不作为后续优化项。

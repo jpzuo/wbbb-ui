@@ -1,0 +1,48 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-textarea {
+  background: var(--wbbb-color-surface);
+  border: 1rpx solid var(--wbbb-color-border);
+  border-radius: var(--wbbb-radius-md);
+  box-sizing: border-box;
+  padding: 20rpx 22rpx;
+  transition: border-color var(--wbbb-duration-fast), box-shadow var(--wbbb-duration-fast);
+}
+
+.wbbb-textarea--focus {
+  border-color: var(--wbbb-color-primary);
+  box-shadow: 0 0 0 6rpx var(--wbbb-color-primary-light);
+}
+
+.wbbb-textarea--error {
+  border-color: var(--wbbb-color-danger);
+
+  &.wbbb-textarea--focus {
+    box-shadow: 0 0 0 6rpx var(--wbbb-color-danger-soft);
+  }
+}
+
+.wbbb-textarea--disabled {
+  @include wbbb-disabled;
+  background: var(--wbbb-color-disabled);
+}
+
+.wbbb-textarea--readonly {
+  background: var(--wbbb-color-surface-subtle);
+}
+
+.wbbb-textarea__control {
+  color: var(--wbbb-color-text);
+  font-size: var(--wbbb-font-size-md);
+  min-height: 160rpx;
+  width: 100%;
+}
+
+.wbbb-textarea__count {
+  color: var(--wbbb-color-text-secondary);
+  display: block;
+  font-size: var(--wbbb-font-size-xs);
+  margin-top: var(--wbbb-spacing-xs);
+  text-align: right;
+}

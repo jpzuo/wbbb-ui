@@ -9,10 +9,10 @@ module.exports = {
     'declaration-empty-line-before': null,
     'no-duplicate-selectors': null,
     'no-descending-specificity': null,
-    'selector-class-pattern': '^halo-[a-z0-9-]+(__[a-z0-9-]+)?(--[a-z0-9-]+)?$',
+    'selector-class-pattern': '^wbbb-[a-z0-9-]+(__[a-z0-9-]+)?(--[a-z0-9-]+)?$',
     'selector-type-no-unknown': [true, { ignoreTypes: ['page'] }],
     'scss/at-extend-no-missing-placeholder': null,
-    'scss/dollar-variable-pattern': '^halo-[a-z0-9-]+$',
+    'scss/dollar-variable-pattern': '^wbbb-[a-z0-9-]+$',
     'scss/load-partial-extension': null,
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }]
   }

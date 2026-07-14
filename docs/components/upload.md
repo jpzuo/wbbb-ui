@@ -1,10 +1,10 @@
 ---
-title: Upload
+title: 上传 Upload
 description: 本地选择、上传钩子和失败反馈
 outline: [2, 3]
 ---
 
-# Upload
+# 上传 Upload
 
 <ComponentDoc slug="upload" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="upload" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="upload" section="api" />
 

@@ -1,10 +1,10 @@
 ---
-title: Timeline
+title: 时间线 Timeline
 description: 时间线事件
 outline: [2, 3]
 ---
 
-# Timeline
+# 时间线 Timeline
 
 <ComponentDoc slug="timeline" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="timeline" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="timeline" section="api" />
 

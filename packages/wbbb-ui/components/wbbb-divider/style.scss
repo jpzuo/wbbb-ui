@@ -1,0 +1,48 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-divider {
+  align-items: center;
+  color: var(--wbbb-color-text-secondary);
+  display: flex;
+  font-size: var(--wbbb-font-size-sm);
+  line-height: 1;
+  margin: 28rpx 0;
+}
+
+.wbbb-divider::before,
+.wbbb-divider::after {
+  border-top: 1rpx solid var(--wbbb-color-border);
+  content: "";
+  flex: 1;
+}
+
+.wbbb-divider--dashed::before,
+.wbbb-divider--dashed::after {
+  border-top-style: dashed;
+}
+
+.wbbb-divider--vertical {
+  display: inline-flex;
+  height: 1em;
+  margin: 0 16rpx;
+  width: 1rpx;
+}
+
+.wbbb-divider--vertical::before,
+.wbbb-divider--vertical::after {
+  display: none;
+}
+
+.wbbb-divider--vertical {
+  background: var(--wbbb-color-border);
+}
+
+.wbbb-divider__text {
+  padding: 0 20rpx;
+}
+
+.wbbb-divider--text-left::before,
+.wbbb-divider--text-right::after {
+  max-width: 12%;
+}
+

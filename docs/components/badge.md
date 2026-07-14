@@ -1,10 +1,10 @@
 ---
-title: Badge
+title: 徽标 Badge
 description: 数字角标与状态点
 outline: [2, 3]
 ---
 
-# Badge
+# 徽标 Badge
 
 <ComponentDoc slug="badge" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="badge" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="badge" section="api" />
 

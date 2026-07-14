@@ -1,10 +1,10 @@
 ---
-title: Progress
+title: 进度条 Progress
 description: 进度反馈
 outline: [2, 3]
 ---
 
-# Progress
+# 进度条 Progress
 
 <ComponentDoc slug="progress" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="progress" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="progress" section="api" />
 

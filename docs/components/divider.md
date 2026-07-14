@@ -1,10 +1,10 @@
 ---
-title: Divider
+title: 分割线 Divider
 description: 内容分隔与文字说明
 outline: [2, 3]
 ---
 
-# Divider
+# 分割线 Divider
 
 <ComponentDoc slug="divider" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="divider" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="divider" section="api" />
 

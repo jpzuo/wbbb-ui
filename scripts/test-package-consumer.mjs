@@ -4,8 +4,8 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
-const packageRoot = join(root, 'packages', 'halo-ui')
-const sandbox = join(root, '.halo-ui-consumer-smoke')
+const packageRoot = join(root, 'packages', 'wbbb-ui')
+const sandbox = join(root, '.wbbb-ui-consumer-smoke')
 const cache = join(root, '.npm-cache')
 const packageManager = process.env.npm_execpath
 
@@ -38,20 +38,20 @@ try {
   }
 
   writeFileSync(join(sandbox, 'package.json'), `${JSON.stringify({
-    name: 'halo-ui-consumer-smoke',
+    name: 'wbbb-ui-consumer-smoke',
     private: true,
     type: 'module',
     dependencies: {
-      'halo-ui': `file:${tarball.replace(/\\/g, '/')}`
+      'wbbb-ui': `file:${tarball.replace(/\\/g, '/')}`
     }
   }, null, 2)}\n`)
   writeFileSync(join(sandbox, 'index.html'), '<!doctype html><html><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head><body><div id="app"></div><script type="module" src="/src/main.ts"></script></body></html>\n')
   writeFileSync(join(sandbox, 'vite.config.ts'), "import uniModule from '@dcloudio/vite-plugin-uni'\nimport { defineConfig } from 'vite'\n\nconst uni = typeof uniModule === 'function' ? uniModule : uniModule.default\n\nexport default defineConfig({ plugins: [uni()] })\n")
-  writeFileSync(join(sandbox, 'src', 'manifest.json'), '{"name":"Halo UI consumer smoke","appid":"__UNI__HALO_SMOKE","versionName":"1.0.0","versionCode":"100"}\n')
-  writeFileSync(join(sandbox, 'src', 'pages.json'), '{"pages":[{"path":"pages/index/index","style":{"navigationBarTitleText":"Halo UI"}}]}\n')
+  writeFileSync(join(sandbox, 'src', 'manifest.json'), '{"name":"Wbbb UI consumer smoke","appid":"__UNI__WBBB_SMOKE","versionName":"1.0.0","versionCode":"100"}\n')
+  writeFileSync(join(sandbox, 'src', 'pages.json'), '{"pages":[{"path":"pages/index/index","style":{"navigationBarTitleText":"Wbbb UI"}}]}\n')
   writeFileSync(join(sandbox, 'src', 'main.ts'), "import { createSSRApp } from 'vue'\nimport App from './App.vue'\n\nexport function createApp() { const app = createSSRApp(App); return { app } }\n")
-  writeFileSync(join(sandbox, 'src', 'App.vue'), '<template><slot /></template>\n<style lang="scss">@use "halo-ui/styles/button";</style>\n')
-  writeFileSync(join(sandbox, 'src', 'pages', 'index', 'index.vue'), '<template><view><halo-button type="primary" @click="clicked = true">Consumer {{ clicked ? "ready" : "smoke" }}</halo-button></view></template>\n<script setup lang="ts">\nimport { ref } from "vue"\nimport { HaloButton } from "halo-ui/components/button"\nimport { showToast } from "halo-ui/services/toast"\nconst clicked = ref(false)\nvoid HaloButton\nvoid showToast\n</script>\n')
+  writeFileSync(join(sandbox, 'src', 'App.vue'), '<template><slot /></template>\n<style lang="scss">@use "wbbb-ui/styles/button";</style>\n')
+  writeFileSync(join(sandbox, 'src', 'pages', 'index', 'index.vue'), '<template><view><wbbb-button type="primary" @click="clicked = true">Consumer {{ clicked ? "ready" : "smoke" }}</wbbb-button></view></template>\n<script setup lang="ts">\nimport { ref } from "vue"\nimport { WbbbButton } from "wbbb-ui/components/button"\nimport { showToast } from "wbbb-ui/services/toast"\nconst clicked = ref(false)\nvoid WbbbButton\nvoid showToast\n</script>\n')
 
   runNpm(['install', '--ignore-scripts', '--legacy-peer-deps', '--no-package-lock'], sandbox)
   const uniCli = join(root, 'node_modules', '@dcloudio', 'vite-plugin-uni', 'bin', 'uni.js')

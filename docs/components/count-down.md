@@ -1,10 +1,10 @@
 ---
-title: CountDown
+title: 倒计时 CountDown
 description: 倒计时状态
 outline: [2, 3]
 ---
 
-# CountDown
+# 倒计时 CountDown
 
 <ComponentDoc slug="count-down" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="count-down" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="count-down" section="api" />
 

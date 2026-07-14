@@ -1,7 +1,7 @@
 {
-  "name": "Halo UI Playground",
-  "appid": "__UNI__HALO_UI",
-  "description": "Playground for Halo UI components",
+  "name": "Wbbb UI Playground",
+  "appid": "__UNI__WBBB_UI",
+  "description": "Playground for Wbbb UI components",
   "versionName": "0.1.0",
   "versionCode": "100",
   "transformPx": false,

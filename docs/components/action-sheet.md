@@ -1,10 +1,10 @@
 ---
-title: ActionSheet
+title: 动作面板 ActionSheet
 description: 操作项面板
 outline: [2, 3]
 ---
 
-# ActionSheet
+# 动作面板 ActionSheet
 
 <ComponentDoc slug="action-sheet" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="action-sheet" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="action-sheet" section="api" />
 

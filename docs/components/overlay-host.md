@@ -1,10 +1,10 @@
 ---
-title: OverlayHost
+title: 遮罩宿主 OverlayHost
 description: 服务弹层的统一宿主
 outline: [2, 3]
 ---
 
-# OverlayHost
+# 遮罩宿主 OverlayHost
 
 <ComponentDoc slug="overlay-host" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="overlay-host" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="overlay-host" section="api" />
 

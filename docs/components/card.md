@@ -1,10 +1,10 @@
 ---
-title: Card
+title: 卡片 Card
 description: 内容卡片与层级容器
 outline: [2, 3]
 ---
 
-# Card
+# 卡片 Card
 
 <ComponentDoc slug="card" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="card" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="card" section="api" />
 

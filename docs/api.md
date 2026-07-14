@@ -1,494 +1,494 @@
-# Halo UI API
+# Wbbb UI API 参考
 
-> This file is generated from component props and SFC contracts. Run `npm run docs:api` after a public API change.
+> 此文件由组件 Props 与 SFC 契约自动生成。公开 API 变更后请执行 `npm run docs:api`。
 
-All components support `customClass` and `customStyle` through `HaloCommonProps` unless noted otherwise.
+除非另有说明，所有组件都通过 `WbbbCommonProps` 支持 `customClass` 与 `customStyle`。
 
-## Button
+## 按钮 Button
 
 主要操作、禁用与加载反馈
 
-- Category: basic
-- Import: `halo-ui/components/button`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/button`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| block | `boolean` | No | `false` |
-| disabled | `boolean` | No | `false` |
-| formType | `'submit' \| 'reset'` | No | `undefined` |
-| icon | `string` | No | `''` |
-| loading | `boolean` | No | `false` |
-| loadingText | `string` | No | `''` |
-| openType | `string` | No | `''` |
-| plain | `boolean` | No | `false` |
-| round | `boolean` | No | `false` |
-| size | `HaloSize` | No | `'medium'` |
-| type | `HaloType` | No | `'default'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| block | 是否让按钮占满可用宽度。 | `boolean` | 否 | `false` |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| formType | 设置按钮触发的原生表单动作。 | `'submit' \| 'reset'` | 否 | `undefined` |
+| icon | 设置图标名称或图标内容。 | `string` | 否 | `''` |
+| loading | 是否显示加载状态，并在适用时阻止重复交互。 | `boolean` | 否 | `false` |
+| loadingText | 设置加载过程显示的文案。 | `string` | 否 | `''` |
+| openType | 设置按钮使用的 uni-app 开放能力类型。 | `string` | 否 | `''` |
+| plain | 是否使用描边或低强调视觉样式。 | `boolean` | 否 | `false` |
+| round | 是否使用全圆角或胶囊形外观。 | `boolean` | 否 | `false` |
+| size | 设置组件尺寸。 | `WbbbSize` | 否 | `'medium'` |
+| type | 设置组件的语义类型或样式变体。 | `WbbbType` | 否 | `'default'` |
 
-### Events
+### 事件（Events）
 
 - `click`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Icon
+## 图标 Icon
 
 受控图标与自定义资源
 
-- Category: basic
-- Import: `halo-ui/components/icon`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/icon`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| code | `string` | No | `''` |
-| color | `string` | No | `''` |
-| fontFamily | `string` | No | `''` |
-| fontSet | `string` | No | `''` |
-| name | `string` | No | `''` |
-| size | `HaloNumeric` | No | `32` |
-| src | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| code | 直接渲染字体图标时提供字形码点。 | `string` | 否 | `''` |
+| color | 设置主要显示颜色。 | `string` | 否 | `''` |
+| fontFamily | 设置直接字体图标使用的字体族。 | `string` | 否 | `''` |
+| fontSet | 选择已注册的 Iconfont 图标集。 | `string` | 否 | `''` |
+| name | 提供项目名称或唯一标识。 | `string` | 否 | `''` |
+| size | 设置组件尺寸。 | `WbbbNumeric` | 否 | `32` |
+| src | 设置资源的 URL 或本地路径。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Text
+## 文本 Text
 
 语义化文字与省略处理
 
-- Category: basic
-- Import: `halo-ui/components/text`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/text`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| color | `string` | No | `''` |
-| ellipsis | `boolean` | No | `false` |
-| size | `HaloNumeric` | No | `''` |
-| type | `'default' \| 'secondary' \| 'primary' \| 'success' \| 'warning' \| 'danger'` | No | `'default'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| color | 设置主要显示颜色。 | `string` | 否 | `''` |
+| ellipsis | 文本溢出时是否以省略号截断。 | `boolean` | 否 | `false` |
+| size | 设置组件尺寸。 | `WbbbNumeric` | 否 | `''` |
+| type | 设置组件的语义类型或样式变体。 | `'default' \| 'secondary' \| 'primary' \| 'success' \| 'warning' \| 'danger'` | 否 | `'default'` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Image
+## 图片 Image
 
 图片加载与失败占位
 
-- Category: basic
-- Import: `halo-ui/components/image`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/image`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| errorText | `string` | No | `'图片加载失败'` |
-| height | `HaloNumeric` | No | `''` |
-| lazyLoad | `boolean` | No | `true` |
-| mode | `string` | No | `'aspectFill'` |
-| radius | `HaloNumeric` | No | `0` |
-| showError | `boolean` | No | `true` |
-| showLoading | `boolean` | No | `true` |
-| src | `string` | No | `''` |
-| loading | `boolean` | No | `false` |
-| loadingText | `string` | No | `'加载中'` |
-| width | `HaloNumeric` | No | `'100%'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| errorText | 设置加载失败时显示的默认提示文案。 | `string` | 否 | `'图片加载失败'` |
+| height | 设置组件高度。 | `WbbbNumeric` | 否 | `''` |
+| lazyLoad | 是否延迟加载图片资源。 | `boolean` | 否 | `true` |
+| mode | 设置展示方式或图片适配模式。 | `string` | 否 | `'aspectFill'` |
+| radius | 设置组件的圆角半径。 | `WbbbNumeric` | 否 | `0` |
+| showError | 控制是否显示内置错误占位。 | `boolean` | 否 | `true` |
+| showLoading | 控制是否显示内置加载占位。 | `boolean` | 否 | `true` |
+| src | 设置资源的 URL 或本地路径。 | `string` | 否 | `''` |
+| loading | 是否显示加载状态，并在适用时阻止重复交互。 | `boolean` | 否 | `false` |
+| loadingText | 设置加载过程显示的文案。 | `string` | 否 | `'加载中'` |
+| width | 设置组件宽度。 | `WbbbNumeric` | 否 | `'100%'` |
 
-### Events
+### 事件（Events）
 
 - `error`
 - `load`
 
-### Slots
+### 插槽（Slots）
 
 - `error`
 
-## Badge
+## 徽标 Badge
 
 数字角标与状态点
 
-- Category: basic
-- Import: `halo-ui/components/badge`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/badge`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| dot | `boolean` | No | `false` |
-| max | `number` | No | `99` |
-| showZero | `boolean` | No | `false` |
-| type | `HaloType` | No | `'danger'` |
-| value | `number \| string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| dot | 是否将徽标显示为小型状态点。 | `boolean` | 否 | `false` |
+| max | 设置允许的最大数值。 | `number` | 否 | `99` |
+| showZero | 徽标值为零时是否仍然显示。 | `boolean` | 否 | `false` |
+| type | 设置组件的语义类型或样式变体。 | `WbbbType` | 否 | `'danger'` |
+| value | 提供展示值或项目值。 | `number \| string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Tag
+## 标签 Tag
 
 轻量状态标签
 
-- Category: basic
-- Import: `halo-ui/components/tag`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/tag`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| clickable | `boolean` | No | `false` |
-| closable | `boolean` | No | `false` |
-| plain | `boolean` | No | `false` |
-| round | `boolean` | No | `false` |
-| size | `HaloSize` | No | `'medium'` |
-| type | `HaloType` | No | `'default'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| clickable | 是否作为可点击项处理并触发点击事件。 | `boolean` | 否 | `false` |
+| closable | 是否显示关闭控件并允许用户关闭。 | `boolean` | 否 | `false` |
+| plain | 是否使用描边或低强调视觉样式。 | `boolean` | 否 | `false` |
+| round | 是否使用全圆角或胶囊形外观。 | `boolean` | 否 | `false` |
+| size | 设置组件尺寸。 | `WbbbSize` | 否 | `'medium'` |
+| type | 设置组件的语义类型或样式变体。 | `WbbbType` | 否 | `'default'` |
 
-### Events
+### 事件（Events）
 
 - `click`
 - `close`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Avatar
+## 头像 Avatar
 
 头像与默认占位
 
-- Category: basic
-- Import: `halo-ui/components/avatar`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/avatar`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| alt | `string` | No | `''` |
-| round | `boolean` | No | `true` |
-| size | `HaloNumeric` | No | `80` |
-| src | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| alt | 提供图片资源的替代文本。 | `string` | 否 | `''` |
+| round | 是否使用全圆角或胶囊形外观。 | `boolean` | 否 | `true` |
+| size | 设置组件尺寸。 | `WbbbNumeric` | 否 | `80` |
+| src | 设置资源的 URL 或本地路径。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
 - `error`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Divider
+## 分割线 Divider
 
 内容分隔与文字说明
 
-- Category: basic
-- Import: `halo-ui/components/divider`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/divider`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| dashed | `boolean` | No | `false` |
-| direction | `HaloDirection` | No | `'horizontal'` |
-| textPosition | `'left' \| 'center' \| 'right'` | No | `'center'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| dashed | 是否使用虚线分隔线而非实线。 | `boolean` | 否 | `false` |
+| direction | 设置布局或分隔线方向。 | `WbbbDirection` | 否 | `'horizontal'` |
+| textPosition | 设置文字相对分隔线的位置。 | `'left' \| 'center' \| 'right'` | 否 | `'center'` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Loading
+## 加载 Loading
 
 加载中的过程状态
 
-- Category: basic
-- Import: `halo-ui/components/loading`
+- 组件分类: 基础
+- 导入路径: `wbbb-ui/components/loading`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| color | `string` | No | `''` |
-| size | `HaloNumeric` | No | `32` |
-| text | `string` | No | `''` |
-| vertical | `boolean` | No | `false` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| color | 设置主要显示颜色。 | `string` | 否 | `''` |
+| size | 设置组件尺寸。 | `WbbbNumeric` | 否 | `32` |
+| text | 提供主要展示文案。 | `string` | 否 | `''` |
+| vertical | 是否使用纵向布局方向。 | `boolean` | 否 | `false` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Cell
+## 单元格 Cell
 
 信息行与分组容器
 
-- Category: layout
-- Import: `halo-ui/components/cell`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/cell`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| border | `boolean` | No | `true` |
-| clickable | `boolean` | No | `false` |
-| icon | `string` | No | `''` |
-| label | `string` | No | `''` |
-| required | `boolean` | No | `false` |
-| title | `string` | No | `''` |
-| value | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| border | 控制是否显示分隔线或边框。 | `boolean` | 否 | `true` |
+| clickable | 是否作为可点击项处理并触发点击事件。 | `boolean` | 否 | `false` |
+| icon | 设置图标名称或图标内容。 | `string` | 否 | `''` |
+| label | 设置字段或项目的可见标签。 | `string` | 否 | `''` |
+| required | 是否将字段标记为必填以用于校验或展示。 | `boolean` | 否 | `false` |
+| title | 设置组件标题文字。 | `string` | 否 | `''` |
+| value | 提供展示值或项目值。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
 - `click`
 
-### Slots
+### 插槽（Slots）
 
 - `title`
 - `default`
 
-## Grid
+## 宫格 Grid
 
 网格布局与子项
 
-- Category: layout
-- Import: `halo-ui/components/grid`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/grid`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| bordered | `boolean` | No | `false` |
-| columns | `number` | No | `4` |
-| gap | `number` | No | `16` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| bordered | 控制容器是否渲染外边框。 | `boolean` | 否 | `false` |
+| columns | 设置网格的列数。 | `number` | 否 | `4` |
+| gap | 设置重复项目之间的间距。 | `number` | 否 | `16` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## List
+## 列表 List
 
 可选择的业务列表
 
-- Category: layout
-- Import: `halo-ui/components/list`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/list`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| border | `boolean` | No | `true` |
-| items | `HaloListItem[]` | No | `() => []` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| border | 控制是否显示分隔线或边框。 | `boolean` | 否 | `true` |
+| items | 提供组件需要渲染的数据项目。 | `WbbbListItem[]` | 否 | `() => []` |
 
-### Events
+### 事件（Events）
 
 - `select`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Card
+## 卡片 Card
 
 内容卡片与层级容器
 
-- Category: layout
-- Import: `halo-ui/components/card`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/card`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| bordered | `boolean` | No | `true` |
-| extra | `string` | No | `''` |
-| shadow | `boolean` | No | `false` |
-| title | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| bordered | 控制容器是否渲染外边框。 | `boolean` | 否 | `true` |
+| extra | 提供组件头部的补充内容。 | `string` | 否 | `''` |
+| shadow | 是否为组件添加层级阴影。 | `boolean` | 否 | `false` |
+| title | 设置组件标题文字。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `header`
 - `default`
 - `footer`
 
-## Sticky
+## 吸顶 Sticky
 
 吸顶内容区
 
-- Category: layout
-- Import: `halo-ui/components/sticky`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/sticky`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| offsetTop | `HaloNumeric` | No | `0` |
-| zIndex | `number` | No | `700` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| offsetTop | 设置触发吸顶前距顶部的偏移量。 | `WbbbNumeric` | 否 | `0` |
+| zIndex | 设置组件的层叠层级。 | `number` | 否 | `700` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## SafeArea
+## 安全区 SafeArea
 
 设备安全区适配
 
-- Category: layout
-- Import: `halo-ui/components/safe-area`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/safe-area`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| bottom | `boolean` | No | `true` |
-| top | `boolean` | No | `false` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| bottom | 是否启用底部安全区留白。 | `boolean` | 否 | `true` |
+| top | 是否启用顶部安全区留白。 | `boolean` | 否 | `false` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Navbar
+## 导航栏 Navbar
 
 页面导航栏
 
-- Category: layout
-- Import: `halo-ui/components/navbar`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/navbar`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| border | `boolean` | No | `true` |
-| fixed | `boolean` | No | `false` |
-| leftArrow | `boolean` | No | `false` |
-| leftText | `string` | No | `''` |
-| placeholder | `boolean` | No | `false` |
-| rightText | `string` | No | `''` |
-| safeAreaTop | `boolean` | No | `true` |
-| title | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| border | 控制是否显示分隔线或边框。 | `boolean` | 否 | `true` |
+| fixed | 是否将组件固定在视口位置。 | `boolean` | 否 | `false` |
+| leftArrow | 是否在左侧显示返回箭头。 | `boolean` | 否 | `false` |
+| leftText | 设置左侧显示的文字。 | `string` | 否 | `''` |
+| placeholder | 设置尚未输入或选择时的占位文案。 | `boolean` | 否 | `false` |
+| rightText | 设置右侧显示的文字。 | `string` | 否 | `''` |
+| safeAreaTop | 是否为设备顶部安全区增加留白。 | `boolean` | 否 | `true` |
+| title | 设置组件标题文字。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
 - `clickLeft`
 - `clickRight`
 
-### Slots
+### 插槽（Slots）
 
 - `left`
 - `title`
 - `right`
 
-## Tabbar
+## 底部导航栏 Tabbar
 
 底部应用导航
 
-- Category: layout
-- Import: `halo-ui/components/tabbar`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/tabbar`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| activeColor | `string` | No | `'var(--halo-color-primary)'` |
-| fixed | `boolean` | No | `true` |
-| inactiveColor | `string` | No | `'var(--halo-color-text-secondary)'` |
-| items | `HaloTabbarItem[]` | No | `() => []` |
-| modelValue | `string \| number` | No | `''` |
-| safeAreaInsetBottom | `boolean` | No | `true` |
-| zIndex | `number` | No | `800` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| activeColor | 设置激活状态使用的颜色。 | `string` | 否 | `'var(--wbbb-color-primary)'` |
+| fixed | 是否将组件固定在视口位置。 | `boolean` | 否 | `true` |
+| inactiveColor | 设置未激活状态使用的颜色。 | `string` | 否 | `'var(--wbbb-color-text-secondary)'` |
+| items | 提供组件需要渲染的数据项目。 | `WbbbTabbarItem[]` | 否 | `() => []` |
+| modelValue | 提供 v-model 使用的当前值。 | `string \| number` | 否 | `''` |
+| safeAreaInsetBottom | 是否为设备底部安全区增加留白。 | `boolean` | 否 | `true` |
+| zIndex | 设置组件的层叠层级。 | `number` | 否 | `800` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Tabs
+## 标签页 Tabs
 
 内容标签切换
 
-- Category: layout
-- Import: `halo-ui/components/tabs`
+- 组件分类: 布局
+- 导入路径: `wbbb-ui/components/tabs`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| activeColor | `string` | No | `''` |
-| items | `HaloTabItem[]` | No | `() => []` |
-| modelValue | `string \| number` | No | `''` |
-| scrollable | `boolean` | No | `false` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| activeColor | 设置激活状态使用的颜色。 | `string` | 否 | `''` |
+| items | 提供组件需要渲染的数据项目。 | `WbbbTabItem[]` | 否 | `() => []` |
+| modelValue | 提供 v-model 使用的当前值。 | `string \| number` | 否 | `''` |
+| scrollable | 标签项超出宽度时是否允许横向滚动。 | `boolean` | 否 | `false` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Input
+## 输入框 Input
 
 单行文本输入
 
-- Category: form
-- Import: `halo-ui/components/input`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/input`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| clearable | `boolean` | No | `false` |
-| disabled | `boolean` | No | `false` |
-| error | `boolean` | No | `false` |
-| maxlength | `number` | No | `140` |
-| modelValue | `string \| number` | No | `''` |
-| placeholder | `string` | No | `''` |
-| readonly | `boolean` | No | `false` |
-| type | `'text' \| 'number' \| 'idcard' \| 'digit' \| 'safe-password' \| 'nickname'` | No | `'text'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| clearable | 是否显示清空当前输入值的控件。 | `boolean` | 否 | `false` |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| error | 是否以错误视觉状态展示组件。 | `boolean` | 否 | `false` |
+| maxlength | 限制允许输入的最大字符数。 | `number` | 否 | `140` |
+| modelValue | 提供 v-model 使用的当前值。 | `string \| number` | 否 | `''` |
+| placeholder | 设置尚未输入或选择时的占位文案。 | `string` | 否 | `''` |
+| readonly | 是否禁止编辑但保留内容可读。 | `boolean` | 否 | `false` |
+| type | 设置组件的语义类型或样式变体。 | `'text' \| 'number' \| 'idcard' \| 'digit' \| 'safe-password' \| 'nickname'` | 否 | `'text'` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `blur`
@@ -497,240 +497,242 @@ All components support `customClass` and `customStyle` through `HaloCommonProps`
 - `confirm`
 - `focus`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Textarea
+## 文本域 Textarea
 
 多行文本与字数控制
 
-- Category: form
-- Import: `halo-ui/components/textarea`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/textarea`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| autoHeight | `boolean` | No | `false` |
-| disabled | `boolean` | No | `false` |
-| error | `boolean` | No | `false` |
-| maxlength | `number` | No | `200` |
-| modelValue | `string` | No | `''` |
-| placeholder | `string` | No | `''` |
-| readonly | `boolean` | No | `false` |
-| showCount | `boolean` | No | `false` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| autoHeight | 是否让文本域随内容自动增高。 | `boolean` | 否 | `false` |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| error | 是否以错误视觉状态展示组件。 | `boolean` | 否 | `false` |
+| maxlength | 限制允许输入的最大字符数。 | `number` | 否 | `200` |
+| modelValue | 提供 v-model 使用的当前值。 | `string` | 否 | `''` |
+| placeholder | 设置尚未输入或选择时的占位文案。 | `string` | 否 | `''` |
+| readonly | 是否禁止编辑但保留内容可读。 | `boolean` | 否 | `false` |
+| showCount | 是否显示当前输入字数。 | `boolean` | 否 | `false` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `blur`
 - `change`
 - `focus`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Checkbox
+## 复选框 Checkbox
 
 多项复选
 
-- Category: form
-- Import: `halo-ui/components/checkbox`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/checkbox`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| disabled | `boolean` | No | `false` |
-| modelValue | `Array<string \| number>` | No | `() => []` |
-| options | `HaloCheckboxOption[]` | No | `() => []` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| modelValue | 提供 v-model 使用的当前值。 | `Array<string \| number>` | 否 | `() => []` |
+| options | 提供可选择的选项数据。 | `WbbbCheckboxOption[]` | 否 | `() => []` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Radio
+## 单选框 Radio
 
 单项选择
 
-- Category: form
-- Import: `halo-ui/components/radio`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/radio`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| disabled | `boolean` | No | `false` |
-| modelValue | `string \| number` | No | `''` |
-| options | `HaloRadioOption[]` | No | `() => []` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| modelValue | 提供 v-model 使用的当前值。 | `string \| number` | 否 | `''` |
+| options | 提供可选择的选项数据。 | `WbbbRadioOption[]` | 否 | `() => []` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Switch
+## 开关 Switch
 
 布尔开关
 
-- Category: form
-- Import: `halo-ui/components/switch`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/switch`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| activeColor | `string` | No | `''` |
-| disabled | `boolean` | No | `false` |
-| modelValue | `boolean` | No | `false` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| activeColor | 设置激活状态使用的颜色。 | `string` | 否 | `''` |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| modelValue | 提供 v-model 使用的当前值。 | `boolean` | 否 | `false` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Picker
+## 选择器 Picker
 
 基础选项选择器
 
-- Category: form
-- Import: `halo-ui/components/picker`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/picker`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| disabled | `boolean` | No | `false` |
-| modelValue | `string \| number` | No | `''` |
-| options | `HaloPickerOption[]` | No | `() => []` |
-| placeholder | `string` | No | `'Please select'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| locale | 覆盖组件内置文案使用的语言。 | `WbbbLocaleInput` | 否 | `—` |
+| modelValue | 提供 v-model 使用的当前值。 | `string \| number` | 否 | `''` |
+| options | 提供可选择的选项数据。 | `WbbbPickerOption[]` | 否 | `() => []` |
+| placeholder | 设置尚未输入或选择时的占位文案。 | `string` | 否 | `由 locale 决定` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## DatePicker
+## 日期选择器 DatePicker
 
 日期值选择
 
-- Category: form
-- Import: `halo-ui/components/date-picker`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/date-picker`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| disabled | `boolean` | No | `false` |
-| end | `string` | No | `''` |
-| fields | `'day' \| 'month' \| 'year'` | No | `'day'` |
-| locale | `'en' \| 'zh-cn'` | No | `'zh-cn'` |
-| modelValue | `string` | No | `''` |
-| placeholder | `string` | No | `'Select date'` |
-| start | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| end | 设置可选或有效值的结束边界。 | `string` | 否 | `''` |
+| fields | 注册由组件管理的表单字段。 | `'day' \| 'month' \| 'year'` | 否 | `'day'` |
+| locale | 覆盖组件内置文案使用的语言。 | `WbbbLocaleInput` | 否 | `—` |
+| modelValue | 提供 v-model 使用的当前值。 | `string` | 否 | `''` |
+| placeholder | 设置尚未输入或选择时的占位文案。 | `string` | 否 | `由 locale 决定` |
+| start | 设置可选或有效值的起始边界。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Stepper
+## 步进器 Stepper
 
 精确数字步进
 
-- Category: form
-- Import: `halo-ui/components/stepper`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/stepper`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| disabled | `boolean` | No | `false` |
-| max | `number` | No | `Number.MAX_SAFE_INTEGER` |
-| min | `number` | No | `0` |
-| modelValue | `number` | No | `0` |
-| step | `number` | No | `1` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| max | 设置允许的最大数值。 | `number` | 否 | `Number.MAX_SAFE_INTEGER` |
+| min | 设置允许的最小数值。 | `number` | 否 | `0` |
+| modelValue | 提供 v-model 使用的当前值。 | `number` | 否 | `0` |
+| step | 设置数值变化时使用的步长。 | `number` | 否 | `1` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Slider
+## 滑块 Slider
 
 范围值选择
 
-- Category: form
-- Import: `halo-ui/components/slider`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/slider`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| activeColor | `string` | No | `''` |
-| disabled | `boolean` | No | `false` |
-| max | `number` | No | `100` |
-| min | `number` | No | `0` |
-| modelValue | `number` | No | `0` |
-| showValue | `boolean` | No | `false` |
-| step | `number` | No | `1` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| activeColor | 设置激活状态使用的颜色。 | `string` | 否 | `''` |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| max | 设置允许的最大数值。 | `number` | 否 | `100` |
+| min | 设置允许的最小数值。 | `number` | 否 | `0` |
+| modelValue | 提供 v-model 使用的当前值。 | `number` | 否 | `0` |
+| showValue | 控制是否显示当前数值。 | `boolean` | 否 | `false` |
+| step | 设置数值变化时使用的步长。 | `number` | 否 | `1` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 - `changing`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Upload
+## 上传 Upload
 
 本地选择、上传钩子和失败反馈
 
-- Category: form
-- Import: `halo-ui/components/upload`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/upload`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| beforeRead | `(files: HaloUploadFile[]) => boolean \| Promise<boolean>` | No | `—` |
-| count | `number` | No | `9` |
-| disabled | `boolean` | No | `false` |
-| modelValue | `HaloUploadFile[]` | No | `() => []` |
-| text | `string` | No | `'Upload'` |
-| uploader | `(file: HaloUploadFile, options?: { signal?: AbortSignal }) => HaloUploadFile \| Promise<HaloUploadFile>` | No | `—` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| beforeRead | 文件读取前执行，可阻止文件被接收。 | `(files: WbbbUploadFile[]) => boolean \| Promise<boolean>` | 否 | `—` |
+| count | 设置渲染的占位行数或项目数。 | `number` | 否 | `9` |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| locale | 覆盖组件内置文案使用的语言。 | `WbbbLocaleInput` | 否 | `—` |
+| modelValue | 提供 v-model 使用的当前值。 | `WbbbUploadFile[]` | 否 | `() => []` |
+| text | 提供主要展示文案。 | `string` | 否 | `由 locale 决定` |
+| uploader | 提供由业务层注入的上传实现。 | `(file: WbbbUploadFile, options?: { signal?: AbortSignal }) => WbbbUploadFile \| Promise<WbbbUploadFile>` | 否 | `—` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `afterRead`
@@ -738,482 +740,485 @@ All components support `customClass` and `customStyle` through `HaloCommonProps`
 - `error`
 - `remove`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Form
+## 表单 Form
 
 表单规则与校验
 
-- Category: form
-- Import: `halo-ui/components/form`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/form`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| disabled | `boolean` | No | `false` |
-| labelWidth | `HaloNumeric` | No | `160` |
-| model | `Record<string, unknown>` | No | `() => ({})` |
-| rules | `Record<string, HaloFormRule \| HaloFormRule[]>` | No | `() => ({})` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| labelWidth | 设置表单标签预留的宽度。 | `WbbbNumeric` | 否 | `160` |
+| model | 提供组件使用的数据模型。 | `Record<string, unknown>` | 否 | `() => ({})` |
+| rules | 提供表单或字段的校验规则。 | `Record<string, WbbbFormRule \| WbbbFormRule[]>` | 否 | `() => ({})` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Field
+## 表单项 Field
 
 字段标签和错误提示
 
-- Category: form
-- Import: `halo-ui/components/field`
+- 组件分类: 表单
+- 导入路径: `wbbb-ui/components/field`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| label | `string` | No | `''` |
-| labelWidth | `HaloNumeric` | No | `undefined` |
-| prop | `string` | No | `''` |
-| required | `boolean` | No | `false` |
-| rules | `HaloFormRule \| HaloFormRule[]` | No | `undefined` |
-| value | `unknown` | No | `undefined` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| label | 设置字段或项目的可见标签。 | `string` | 否 | `''` |
+| labelWidth | 设置表单标签预留的宽度。 | `WbbbNumeric` | 否 | `undefined` |
+| prop | 将表单项关联到表单模型中的字段键。 | `string` | 否 | `''` |
+| required | 是否将字段标记为必填以用于校验或展示。 | `boolean` | 否 | `false` |
+| rules | 提供表单或字段的校验规则。 | `WbbbFormRule \| WbbbFormRule[]` | 否 | `undefined` |
+| value | 提供展示值或项目值。 | `unknown` | 否 | `undefined` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Toast
+## 轻提示 Toast
 
 轻量短消息
 
-- Category: feedback
-- Import: `halo-ui/components/toast`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/toast`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| duration | `number` | No | `1800` |
-| icon | `'success' \| 'error' \| 'loading' \| 'none'` | No | `'none'` |
-| message | `string` | No | `''` |
-| modelValue | `boolean` | No | `false` |
-| zIndex | `number` | No | `1100` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| duration | 设置展示或动画时长，单位为毫秒。 | `number` | 否 | `1800` |
+| icon | 设置图标名称或图标内容。 | `'success' \| 'error' \| 'loading' \| 'none'` | 否 | `'none'` |
+| message | 提供通知或反馈消息内容。 | `string` | 否 | `''` |
+| modelValue | 提供 v-model 使用的当前值。 | `boolean` | 否 | `false` |
+| zIndex | 设置组件的层叠层级。 | `number` | 否 | `1100` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `close`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Dialog
+## 对话框 Dialog
 
 确认和取消对话框
 
-- Category: feedback
-- Import: `halo-ui/components/dialog`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/dialog`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| cancelText | `string` | No | `'Cancel'` |
-| confirmText | `string` | No | `'OK'` |
-| content | `string` | No | `''` |
-| modelValue | `boolean` | No | `false` |
-| showCancel | `boolean` | No | `true` |
-| title | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| cancelText | 覆盖取消操作的文案。 | `string` | 否 | `由 locale 决定` |
+| confirmText | 覆盖确认操作的文案。 | `string` | 否 | `由 locale 决定` |
+| content | 提供组件的主要文本内容。 | `string` | 否 | `''` |
+| locale | 覆盖组件内置文案使用的语言。 | `WbbbLocaleInput` | 否 | `—` |
+| modelValue | 提供 v-model 使用的当前值。 | `boolean` | 否 | `false` |
+| showCancel | 控制是否显示取消操作。 | `boolean` | 否 | `true` |
+| title | 设置组件标题文字。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `cancel`
 - `close`
 - `confirm`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Popup
+## 弹出层 Popup
 
 位置弹出层
 
-- Category: feedback
-- Import: `halo-ui/components/popup`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/popup`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| closeOnClickOverlay | `boolean` | No | `true` |
-| modelValue | `boolean` | No | `false` |
-| placement | `HaloPlacement` | No | `'center'` |
-| round | `boolean` | No | `false` |
-| zIndex | `number` | No | `900` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| closeOnClickOverlay | 点击遮罩层时是否关闭弹层。 | `boolean` | 否 | `true` |
+| modelValue | 提供 v-model 使用的当前值。 | `boolean` | 否 | `false` |
+| placement | 设置弹层或浮层的展示位置。 | `WbbbPlacement` | 否 | `'center'` |
+| round | 是否使用全圆角或胶囊形外观。 | `boolean` | 否 | `false` |
+| zIndex | 设置组件的层叠层级。 | `number` | 否 | `900` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `close`
 - `open`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## ActionSheet
+## 动作面板 ActionSheet
 
 操作项面板
 
-- Category: feedback
-- Import: `halo-ui/components/action-sheet`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/action-sheet`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| actions | `HaloActionSheetAction[]` | No | `() => []` |
-| cancelText | `string` | No | `'Cancel'` |
-| modelValue | `boolean` | No | `false` |
-| title | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| actions | 定义可供选择的操作项。 | `WbbbActionSheetAction[]` | 否 | `() => []` |
+| cancelText | 覆盖取消操作的文案。 | `string` | 否 | `由 locale 决定` |
+| locale | 覆盖组件内置文案使用的语言。 | `WbbbLocaleInput` | 否 | `—` |
+| modelValue | 提供 v-model 使用的当前值。 | `boolean` | 否 | `false` |
+| title | 设置组件标题文字。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `cancel`
 - `close`
 - `select`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Notify
+## 消息通知 Notify
 
 页面顶部通知
 
-- Category: feedback
-- Import: `halo-ui/components/notify`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/notify`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| duration | `number` | No | `2200` |
-| message | `string` | No | `''` |
-| modelValue | `boolean` | No | `false` |
-| type | `Exclude<HaloType, 'default'>` | No | `'info'` |
-| zIndex | `number` | No | `1000` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| duration | 设置展示或动画时长，单位为毫秒。 | `number` | 否 | `2200` |
+| message | 提供通知或反馈消息内容。 | `string` | 否 | `''` |
+| modelValue | 提供 v-model 使用的当前值。 | `boolean` | 否 | `false` |
+| type | 设置组件的语义类型或样式变体。 | `Exclude<WbbbType, 'default'>` | 否 | `'info'` |
+| zIndex | 设置组件的层叠层级。 | `number` | 否 | `1000` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `close`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## OverlayHost
+## 遮罩宿主 OverlayHost
 
 服务弹层的统一宿主
 
-- Category: feedback
-- Import: `halo-ui/components/overlay-host`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/overlay-host`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| — | — | — | — |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| 无 | 无 | 无 | 无 | 无 |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Skeleton
+## 骨架屏 Skeleton
 
 内容加载骨架
 
-- Category: feedback
-- Import: `halo-ui/components/skeleton`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/skeleton`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| animated | `boolean` | No | `true` |
-| avatar | `boolean` | No | `false` |
-| loading | `boolean` | No | `true` |
-| rows | `number` | No | `3` |
-| title | `boolean` | No | `true` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| animated | 是否启用组件的过渡动画。 | `boolean` | 否 | `true` |
+| avatar | 设置头像图片或头像内容来源。 | `boolean` | 否 | `false` |
+| loading | 是否显示加载状态，并在适用时阻止重复交互。 | `boolean` | 否 | `true` |
+| rows | 设置可见的文本行数。 | `number` | 否 | `3` |
+| title | 设置组件标题文字。 | `boolean` | 否 | `true` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Empty
+## 空状态 Empty
 
 空内容状态
 
-- Category: feedback
-- Import: `halo-ui/components/empty`
+- 组件分类: 反馈
+- 导入路径: `wbbb-ui/components/empty`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| description | `string` | No | `'No data'` |
-| image | `string` | No | `''` |
-| imageSize | `HaloNumeric` | No | `160` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| description | 提供辅助说明文字。 | `string` | 否 | `由 locale 决定` |
+| image | 设置项目使用的图片资源。 | `string` | 否 | `''` |
+| imageSize | 设置图片的渲染尺寸。 | `WbbbNumeric` | 否 | `160` |
+| locale | 覆盖组件内置文案使用的语言。 | `WbbbLocaleInput` | 否 | `—` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## NoticeBar
+## 通知栏 NoticeBar
 
 重要通知横幅
 
-- Category: display
-- Import: `halo-ui/components/notice-bar`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/notice-bar`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| closeable | `boolean` | No | `false` |
-| color | `string` | No | `''` |
-| text | `string` | No | `''` |
-| type | `HaloStatus \| 'primary'` | No | `'warning'` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| closeable | 是否允许用户关闭弹层或通知。 | `boolean` | 否 | `false` |
+| color | 设置主要显示颜色。 | `string` | 否 | `''` |
+| text | 提供主要展示文案。 | `string` | 否 | `''` |
+| type | 设置组件的语义类型或样式变体。 | `WbbbStatus \| 'primary'` | 否 | `'warning'` |
 
-### Events
+### 事件（Events）
 
 - `close`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Collapse
+## 折叠面板 Collapse
 
 可展开的信息块
 
-- Category: display
-- Import: `halo-ui/components/collapse`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/collapse`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| accordion | `boolean` | No | `false` |
-| animated | `boolean` | No | `true` |
-| items | `HaloCollapseItem[]` | No | `() => []` |
-| modelValue | `Array<string \| number> \| string \| number` | No | `() => []` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| accordion | 是否限制同一时间只展开一个折叠项。 | `boolean` | 否 | `false` |
+| animated | 是否启用组件的过渡动画。 | `boolean` | 否 | `true` |
+| items | 提供组件需要渲染的数据项目。 | `WbbbCollapseItem[]` | 否 | `() => []` |
+| modelValue | 提供 v-model 使用的当前值。 | `Array<string \| number> \| string \| number` | 否 | `() => []` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Swiper
+## 轮播 Swiper
 
 轮播内容
 
-- Category: display
-- Import: `halo-ui/components/swiper`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/swiper`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| autoplay | `boolean` | No | `false` |
-| circular | `boolean` | No | `true` |
-| indicatorDots | `boolean` | No | `true` |
-| interval | `number` | No | `3000` |
-| items | `HaloSwiperItem[]` | No | `() => []` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| autoplay | 是否自动切换到下一张轮播项。 | `boolean` | 否 | `false` |
+| circular | 是否允许轮播从最后一项循环到第一项。 | `boolean` | 否 | `true` |
+| indicatorDots | 是否显示轮播项目的分页指示点。 | `boolean` | 否 | `true` |
+| interval | 设置轮播自动切换间隔，单位为毫秒。 | `number` | 否 | `3000` |
+| items | 提供组件需要渲染的数据项目。 | `WbbbSwiperItem[]` | 否 | `() => []` |
 
-### Events
+### 事件（Events）
 
 - `change`
 
-### Slots
+### 插槽（Slots）
 
 - `default`
 
-## Steps
+## 步骤条 Steps
 
 步骤进度
 
-- Category: display
-- Import: `halo-ui/components/steps`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/steps`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| active | `number` | No | `—` |
-| direction | `HaloDirection` | No | `—` |
-| items | `HaloStepItem[]` | No | `—` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| active | 标识当前激活的项目或步骤。 | `number` | 否 | `—` |
+| direction | 设置布局或分隔线方向。 | `WbbbDirection` | 否 | `—` |
+| items | 提供组件需要渲染的数据项目。 | `WbbbStepItem[]` | 否 | `—` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Timeline
+## 时间线 Timeline
 
 时间线事件
 
-- Category: display
-- Import: `halo-ui/components/timeline`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/timeline`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| items | `HaloTimelineItem[]` | No | `() => []` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| items | 提供组件需要渲染的数据项目。 | `WbbbTimelineItem[]` | 否 | `() => []` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## CountDown
+## 倒计时 CountDown
 
 倒计时状态
 
-- Category: display
-- Import: `halo-ui/components/count-down`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/count-down`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| autoStart | `boolean` | No | `true` |
-| format | `string` | No | `'HH:mm:ss'` |
-| time | `number` | No | `0` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| autoStart | 是否在组件挂载后自动开始计时。 | `boolean` | 否 | `true` |
+| format | 设置输出内容的展示格式。 | `string` | 否 | `'HH:mm:ss'` |
+| time | 设置剩余时间或目标时间值。 | `number` | 否 | `0` |
 
-### Events
+### 事件（Events）
 
 - `change`
 - `finish`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Rate
+## 评分 Rate
 
 评分选择
 
-- Category: display
-- Import: `halo-ui/components/rate`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/rate`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| color | `string` | No | `''` |
-| count | `number` | No | `5` |
-| disabled | `boolean` | No | `false` |
-| modelValue | `number` | No | `0` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| color | 设置主要显示颜色。 | `string` | 否 | `''` |
+| count | 设置渲染的占位行数或项目数。 | `number` | 否 | `5` |
+| disabled | 是否禁止用户与组件交互。 | `boolean` | 否 | `false` |
+| modelValue | 提供 v-model 使用的当前值。 | `number` | 否 | `0` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Calendar
+## 日历 Calendar
 
 月历日期选择
 
-- Category: display
-- Import: `halo-ui/components/calendar`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/calendar`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| disabledDates | `string[]` | No | `() => []` |
-| firstDayOfWeek | `0 \| 1` | No | `0` |
-| locale | `'en' \| 'zh-cn'` | No | `'zh-cn'` |
-| maxDate | `string` | No | `''` |
-| minDate | `string` | No | `''` |
-| modelValue | `string` | No | `''` |
-| month | `string` | No | `''` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| disabledDates | 指定不可选择的日期列表。 | `string[]` | 否 | `() => []` |
+| firstDayOfWeek | 设置日历每周的起始星期。 | `0 \| 1` | 否 | `0` |
+| locale | 覆盖组件内置文案使用的语言。 | `WbbbLocaleInput` | 否 | `—` |
+| maxDate | 设置可选择的最晚日期。 | `string` | 否 | `''` |
+| minDate | 设置可选择的最早日期。 | `string` | 否 | `''` |
+| modelValue | 提供 v-model 使用的当前值。 | `string` | 否 | `''` |
+| month | 设置日历当前显示的月份。 | `string` | 否 | `''` |
 
-### Events
+### 事件（Events）
 
 - `update:modelValue`
 - `change`
 - `monthChange`
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 
-## Progress
+## 进度条 Progress
 
 进度反馈
 
-- Category: display
-- Import: `halo-ui/components/progress`
+- 组件分类: 展示
+- 导入路径: `wbbb-ui/components/progress`
 
-### Props
+### 属性（Props）
 
-| Name | Type | Required | Default |
-| --- | --- | --- | --- |
-| color | `string` | No | `''` |
-| percentage | `number` | No | `0` |
-| showText | `boolean` | No | `true` |
-| status | `HaloStatus` | No | `'default'` |
-| strokeWidth | `number` | No | `12` |
+| 属性 | 说明 | 类型 | 必填 | 默认值 |
+| --- | --- | --- | --- | --- |
+| color | 设置主要显示颜色。 | `string` | 否 | `''` |
+| percentage | 设置需要展示的进度百分比。 | `number` | 否 | `0` |
+| showText | 控制是否显示辅助文字。 | `boolean` | 否 | `true` |
+| status | 设置展示使用的语义状态。 | `WbbbStatus` | 否 | `'default'` |
+| strokeWidth | 设置进度条描边的粗细。 | `number` | 否 | `12` |
 
-### Events
+### 事件（Events）
 
-- None
+- 无
 
-### Slots
+### 插槽（Slots）
 
-- None
+- 无
 

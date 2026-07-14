@@ -1,10 +1,10 @@
 ---
-title: Slider
+title: 滑块 Slider
 description: 范围值选择
 outline: [2, 3]
 ---
 
-# Slider
+# 滑块 Slider
 
 <ComponentDoc slug="slider" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="slider" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="slider" section="api" />
 

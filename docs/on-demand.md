@@ -1,25 +1,14 @@
-# On-Demand Imports
+# 按需导入
 
-On-demand import is a v1 requirement.
+按需导入不会自动引入全量组件样式。每个组件都有独立的组件入口和样式入口。
 
-## Rules
+```vue
+<script setup lang="ts">
+import { WbbbInput } from 'wbbb-ui/components/input'
+import 'wbbb-ui/styles/input'
+</script>
 
-- Root package import exports components and services, but does not import `styles/index.scss`.
-- Every component has an independent entry under `halo-ui/components/*`.
-- Every component has an independent style entry under `halo-ui/styles/*`.
-- Service components also expose independent entries, such as `halo-ui/services/toast`.
-
-## Examples
-
-```ts
-import { HaloInput } from 'halo-ui/components/input'
-import 'halo-ui/styles/input'
+<template><WbbbInput placeholder="请输入内容" /></template>
 ```
 
-```ts
-import { showDialog } from 'halo-ui/services/dialog'
-```
-
-The check script verifies each `components/halo-*` folder has `index.ts`, `props.ts`, Vue source, and `style.scss`.
-
-`package.json` contains wildcard exports such as `./components/* -> ./components/halo-*/index.ts`, plus explicit generated paths for tool compatibility.
+服务组件也可独立导入：`wbbb-ui/services/toast`、`wbbb-ui/services/dialog`、`wbbb-ui/services/notify` 与 `wbbb-ui/services/action-sheet`。

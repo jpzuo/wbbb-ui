@@ -1,10 +1,10 @@
 ---
-title: Text
+title: 文本 Text
 description: 语义化文字与省略处理
 outline: [2, 3]
 ---
 
-# Text
+# 文本 Text
 
 <ComponentDoc slug="text" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="text" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="text" section="api" />
 

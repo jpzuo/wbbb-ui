@@ -1,10 +1,10 @@
 ---
-title: Calendar
+title: 日历 Calendar
 description: 月历日期选择
 outline: [2, 3]
 ---
 
-# Calendar
+# 日历 Calendar
 
 <ComponentDoc slug="calendar" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="calendar" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="calendar" section="api" />
 

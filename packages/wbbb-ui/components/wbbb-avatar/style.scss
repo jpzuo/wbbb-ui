@@ -1,0 +1,28 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-avatar {
+  align-items: center;
+  background: var(--wbbb-color-bg);
+  border-radius: var(--wbbb-radius-md);
+  box-sizing: border-box;
+  color: var(--wbbb-color-text-secondary);
+  display: inline-flex;
+  font-size: var(--wbbb-font-size-lg);
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wbbb-avatar--round {
+  border-radius: 999rpx;
+}
+
+.wbbb-avatar__image {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.wbbb-avatar__text {
+  line-height: 1;
+}
+

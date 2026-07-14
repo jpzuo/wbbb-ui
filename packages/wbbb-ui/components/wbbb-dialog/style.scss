@@ -1,0 +1,13 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/motion.scss";
+@use "../../src/styles/tokens.scss";
+
+.wbbb-dialog-root { bottom: 0; left: 0; position: fixed; right: 0; top: 0; z-index: var(--wbbb-z-index-dialog); }
+.wbbb-dialog-root__overlay { background: var(--wbbb-color-overlay); bottom: 0; left: 0; position: absolute; right: 0; top: 0; }
+.wbbb-dialog { background: var(--wbbb-color-surface-elevated); border-radius: var(--wbbb-radius-lg); box-shadow: var(--wbbb-shadow-lg); color: var(--wbbb-color-text); left: 50%; max-width: 640rpx; overflow: hidden; position: absolute; text-align: center; top: 50%; transform: translate(-50%, -50%); width: 80%; }
+.wbbb-dialog__title { font-size: var(--wbbb-font-size-lg); font-weight: 600; padding: 36rpx 40rpx 0; }
+.wbbb-dialog__content { color: var(--wbbb-color-text-secondary); font-size: var(--wbbb-font-size-md); line-height: 1.7; padding: 36rpx 40rpx; }
+.wbbb-dialog__actions { @include wbbb-hairline(top); display: flex; }
+.wbbb-dialog__button { background: transparent; border: 0; border-radius: 0; color: var(--wbbb-color-text); flex: 1; font-size: var(--wbbb-font-size-md); height: 92rpx; line-height: 92rpx; margin: 0; padding: 0; &::after { border: 0; } }
+.wbbb-dialog__button--confirm { color: var(--wbbb-color-primary); font-weight: 600; }
+.wbbb-dialog__button + .wbbb-dialog__button { border-left: 1rpx solid var(--wbbb-color-border); }

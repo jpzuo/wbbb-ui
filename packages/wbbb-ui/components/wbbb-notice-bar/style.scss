@@ -1,0 +1,53 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-notice-bar {
+  align-items: center;
+  background: var(--wbbb-color-warning-soft);
+  border-radius: var(--wbbb-radius-md);
+  box-sizing: border-box;
+  color: var(--wbbb-color-warning);
+  display: flex;
+  font-size: var(--wbbb-font-size-sm);
+  gap: var(--wbbb-spacing-sm);
+  min-height: 72rpx;
+  padding: 0 24rpx;
+}
+
+.wbbb-notice-bar--primary {
+  background: var(--wbbb-color-primary-soft);
+  color: var(--wbbb-color-primary);
+}
+
+.wbbb-notice-bar--success {
+  background: var(--wbbb-color-success-soft);
+  color: var(--wbbb-color-success);
+}
+
+.wbbb-notice-bar--warning {
+  background: var(--wbbb-color-warning-soft);
+  color: var(--wbbb-color-warning);
+}
+
+.wbbb-notice-bar--danger {
+  background: var(--wbbb-color-danger-soft);
+  color: var(--wbbb-color-danger);
+}
+
+.wbbb-notice-bar--info {
+  background: var(--wbbb-color-info-soft);
+  color: var(--wbbb-color-info);
+}
+
+.wbbb-notice-bar__text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wbbb-notice-bar__close {
+  @include wbbb-focus-ring;
+  @include wbbb-tap-active;
+  flex: none;
+}

@@ -1,0 +1,53 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-card {
+  background: var(--wbbb-color-surface);
+  border-radius: var(--wbbb-radius-lg);
+  box-sizing: border-box;
+  box-shadow: var(--wbbb-shadow-sm);
+  overflow: hidden;
+}
+
+.wbbb-card--bordered {
+  @include wbbb-hairline(all);
+}
+
+.wbbb-card--shadow {
+  box-shadow: var(--wbbb-shadow-md);
+}
+
+.wbbb-card__header,
+.wbbb-card__footer {
+  align-items: center;
+  display: flex;
+  min-height: 88rpx;
+  padding: 0 28rpx;
+}
+
+.wbbb-card__header {
+  @include wbbb-hairline(bottom);
+}
+
+.wbbb-card__title {
+  color: var(--wbbb-color-text);
+  flex: 1;
+  font-size: var(--wbbb-font-size-lg);
+  font-weight: 600;
+  min-width: 0;
+}
+
+.wbbb-card__extra {
+  color: var(--wbbb-color-text-secondary);
+  font-size: var(--wbbb-font-size-sm);
+  margin-left: var(--wbbb-spacing-md);
+}
+
+.wbbb-card__body {
+  padding: 28rpx;
+}
+
+.wbbb-card__footer {
+  @include wbbb-hairline(top);
+  color: var(--wbbb-color-text-secondary);
+}

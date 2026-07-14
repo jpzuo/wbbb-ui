@@ -1,10 +1,10 @@
 ---
-title: DatePicker
+title: 日期选择器 DatePicker
 description: 日期值选择
 outline: [2, 3]
 ---
 
-# DatePicker
+# 日期选择器 DatePicker
 
 <ComponentDoc slug="date-picker" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="date-picker" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="date-picker" section="api" />
 

@@ -1,0 +1,27 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-rate {
+  display: inline-flex;
+  gap: 8rpx;
+}
+
+.wbbb-rate--disabled {
+  @include wbbb-disabled;
+
+  .wbbb-rate__item {
+    pointer-events: none;
+  }
+}
+
+.wbbb-rate__item {
+  @include wbbb-focus-ring;
+  @include wbbb-tap-active;
+  color: var(--wbbb-color-border);
+  font-size: 42rpx;
+  line-height: 1;
+}
+
+.wbbb-rate__item--active {
+  color: var(--wbbb-color-warning);
+}

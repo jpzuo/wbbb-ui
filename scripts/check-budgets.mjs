@@ -36,8 +36,8 @@ function assertBudget(label, paths, limit) {
 
 if (!h5Only) {
   const packageFiles = [
-    ...files(join(root, 'packages', 'halo-ui', 'dist')),
-    ...['README.md', 'CHANGELOG.md', 'LICENSE', 'package.json'].map((file) => join(root, 'packages', 'halo-ui', file)).filter(existsSync)
+    ...files(join(root, 'packages', 'wbbb-ui', 'dist')),
+    ...['README.md', 'CHANGELOG.md', 'LICENSE', 'package.json'].map((file) => join(root, 'packages', 'wbbb-ui', file)).filter(existsSync)
   ]
   assertBudget('npm publish payload', packageFiles, limits.package)
   console.log(`npm publish files: ${packageFiles.length} / ${limits.packageFiles}`)

@@ -1,10 +1,10 @@
 ---
-title: NoticeBar
+title: 通知栏 NoticeBar
 description: 重要通知横幅
 outline: [2, 3]
 ---
 
-# NoticeBar
+# 通知栏 NoticeBar
 
 <ComponentDoc slug="notice-bar" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="notice-bar" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="notice-bar" section="api" />
 

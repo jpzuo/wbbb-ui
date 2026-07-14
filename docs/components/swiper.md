@@ -1,10 +1,10 @@
 ---
-title: Swiper
+title: 轮播 Swiper
 description: 轮播内容
 outline: [2, 3]
 ---
 
-# Swiper
+# 轮播 Swiper
 
 <ComponentDoc slug="swiper" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="swiper" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="swiper" section="api" />
 

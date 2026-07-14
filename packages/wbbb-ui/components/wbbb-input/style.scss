@@ -1,0 +1,50 @@
+@use "../../src/styles/mixins.scss" as *;
+@use "../../src/styles/tokens.scss";
+
+.wbbb-input {
+  align-items: center;
+  background: var(--wbbb-color-surface);
+  border: 1rpx solid var(--wbbb-color-border);
+  border-radius: var(--wbbb-radius-md);
+  box-sizing: border-box;
+  display: flex;
+  min-height: 76rpx;
+  padding: 0 22rpx;
+  transition: border-color var(--wbbb-duration-fast), box-shadow var(--wbbb-duration-fast);
+}
+
+.wbbb-input--focus {
+  border-color: var(--wbbb-color-primary);
+  box-shadow: 0 0 0 6rpx var(--wbbb-color-primary-light);
+}
+
+.wbbb-input--error {
+  border-color: var(--wbbb-color-danger);
+
+  &.wbbb-input--focus {
+    box-shadow: 0 0 0 6rpx var(--wbbb-color-danger-soft);
+  }
+}
+
+.wbbb-input--disabled {
+  @include wbbb-disabled;
+  background: var(--wbbb-color-disabled);
+}
+
+.wbbb-input--readonly {
+  background: var(--wbbb-color-surface-subtle);
+}
+
+.wbbb-input__control {
+  color: var(--wbbb-color-text);
+  flex: 1;
+  font-size: var(--wbbb-font-size-md);
+  min-width: 0;
+}
+
+.wbbb-input__clear {
+  color: var(--wbbb-color-text-secondary);
+  flex: none;
+  font-size: var(--wbbb-font-size-md);
+  padding-left: var(--wbbb-spacing-sm);
+}

@@ -3,8 +3,8 @@ import { join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(fileURLToPath(new URL('..', import.meta.url)))
-const targets = [join(root, 'packages', 'halo-ui', 'components'), join(root, 'packages', 'halo-ui', 'src', 'styles'), join(root, 'examples', 'playground', 'src')]
-const allowed = new Set([join(root, 'packages', 'halo-ui', 'src', 'styles', 'tokens.scss')])
+const targets = [join(root, 'packages', 'wbbb-ui', 'components'), join(root, 'packages', 'wbbb-ui', 'src', 'styles'), join(root, 'examples', 'playground', 'src')]
+const allowed = new Set([join(root, 'packages', 'wbbb-ui', 'src', 'styles', 'tokens.scss')])
 const rawColor = /#[0-9a-f]{3,8}\b|rgba?\(/i
 const errors = []
 
@@ -25,7 +25,7 @@ function visit(directory) {
 
     readFileSync(path, 'utf8').split(/\r?\n/).forEach((line, index) => {
       if (rawColor.test(line)) {
-        errors.push(`${relative(root, path)}:${index + 1} contains a raw color; use a --halo-* token instead`)
+        errors.push(`${relative(root, path)}:${index + 1} contains a raw color; use a --wbbb-* token instead`)
       }
     })
   }

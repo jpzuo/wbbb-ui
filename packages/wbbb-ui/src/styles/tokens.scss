@@ -1,0 +1,223 @@
+$wbbb-font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "PingFang SC", "Microsoft YaHei", sans-serif !default;
+$wbbb-radius-sm: 8rpx !default;
+$wbbb-radius-md: 14rpx !default;
+$wbbb-radius-lg: 20rpx !default;
+$wbbb-radius-full: 9999rpx !default;
+$wbbb-spacing-xs: 8rpx !default;
+$wbbb-spacing-sm: 12rpx !default;
+$wbbb-spacing-md: 20rpx !default;
+$wbbb-spacing-lg: 28rpx !default;
+$wbbb-spacing-xl: 40rpx !default;
+$wbbb-font-size-xs: 22rpx !default;
+$wbbb-font-size-sm: 24rpx !default;
+$wbbb-font-size-md: 28rpx !default;
+$wbbb-font-size-lg: 32rpx !default;
+$wbbb-font-size-xl: 40rpx !default;
+
+page,
+:root {
+  --wbbb-font-family: #{$wbbb-font-family};
+
+  // Semantic palette. Existing --wbbb-color-{type} names stay as aliases below.
+  --wbbb-color-neutral-solid: #64748b;
+  --wbbb-color-neutral-foreground: #fff;
+  --wbbb-color-neutral-soft: #eef2f7;
+  --wbbb-color-neutral-soft-hover: #e2e8f0;
+  --wbbb-color-neutral-border: #cbd5e1;
+  --wbbb-color-neutral-hover: #475569;
+  --wbbb-color-neutral-pressed: #334155;
+  --wbbb-color-primary-solid: #2563eb;
+  --wbbb-color-primary-foreground: #fff;
+  --wbbb-color-primary-soft: #e8efff;
+  --wbbb-color-primary-soft-hover: #dce8ff;
+  --wbbb-color-primary-border: #a9c5ff;
+  --wbbb-color-primary-hover: #1d4ed8;
+  --wbbb-color-primary-pressed: #1e40af;
+  --wbbb-color-success-solid: #16875b;
+  --wbbb-color-success-foreground: #fff;
+  --wbbb-color-success-soft: #e7f7ef;
+  --wbbb-color-success-soft-hover: #d2f0e1;
+  --wbbb-color-success-border: #9bd9b7;
+  --wbbb-color-success-hover: #0f714b;
+  --wbbb-color-success-pressed: #0b593a;
+  --wbbb-color-warning-solid: #b86a00;
+  --wbbb-color-warning-foreground: #fff;
+  --wbbb-color-warning-soft: #fff4df;
+  --wbbb-color-warning-soft-hover: #fee9bd;
+  --wbbb-color-warning-border: #f1c46e;
+  --wbbb-color-warning-hover: #965600;
+  --wbbb-color-warning-pressed: #754200;
+  --wbbb-color-danger-solid: #c93642;
+  --wbbb-color-danger-foreground: #fff;
+  --wbbb-color-danger-soft: #fff0f1;
+  --wbbb-color-danger-soft-hover: #ffdde0;
+  --wbbb-color-danger-border: #f2a9b0;
+  --wbbb-color-danger-hover: #aa2631;
+  --wbbb-color-danger-pressed: #861e27;
+  --wbbb-color-info-solid: #526276;
+  --wbbb-color-info-foreground: #fff;
+  --wbbb-color-info-soft: #eff3f8;
+  --wbbb-color-info-soft-hover: #e2e8f0;
+  --wbbb-color-info-border: #bac5d2;
+  --wbbb-color-info-hover: #3d4a5b;
+  --wbbb-color-info-pressed: #2c3746;
+  --wbbb-color-text: #172033;
+  --wbbb-color-text-secondary: #526276;
+  --wbbb-color-text-disabled: #7c899b;
+  --wbbb-color-border: #d7e0eb;
+  --wbbb-color-separator: #e7edf5;
+  --wbbb-color-bg: #f5f7fb;
+  --wbbb-color-surface: #fff;
+  --wbbb-color-surface-elevated: #fff;
+  --wbbb-color-surface-subtle: #f8fafc;
+  --wbbb-color-fill: #eef2f7;
+  --wbbb-color-disabled: #e8edf4;
+  --wbbb-color-disabled-foreground: #94a1b2;
+  --wbbb-color-focus-ring: rgba(37, 99, 235, 0.24);
+  --wbbb-color-mask: rgba(15, 23, 42, 0.52);
+  --wbbb-color-overlay: var(--wbbb-color-mask);
+  --wbbb-color-code-surface: #102a43;
+  --wbbb-color-code-text: #d9e8ff;
+  --wbbb-color-inverse-surface: #172033;
+  --wbbb-color-inverse-foreground: #fff;
+  --wbbb-color-brand-surface: #173b66;
+  --wbbb-color-brand-subtle: #29578a;
+  --wbbb-color-brand-border: #5e8fc0;
+  --wbbb-color-brand-separator: #527aa1;
+  --wbbb-shadow-primary: 0 8rpx 18rpx rgba(37, 99, 235, 0.22);
+  --wbbb-color-link: var(--wbbb-color-primary-solid);
+  --wbbb-color-link-hover: var(--wbbb-color-primary-hover);
+  --wbbb-color-skeleton-shine: rgba(255, 255, 255, 0.56);
+
+  // Compatibility aliases.
+  --wbbb-color-primary: var(--wbbb-color-primary-solid);
+  --wbbb-color-success: var(--wbbb-color-success-solid);
+  --wbbb-color-warning: var(--wbbb-color-warning-solid);
+  --wbbb-color-danger: var(--wbbb-color-danger-solid);
+  --wbbb-color-info: var(--wbbb-color-info-solid);
+  --wbbb-color-primary-light: var(--wbbb-color-primary-soft);
+  --wbbb-radius-sm: #{$wbbb-radius-sm};
+  --wbbb-radius-md: #{$wbbb-radius-md};
+  --wbbb-radius-lg: #{$wbbb-radius-lg};
+  --wbbb-radius-full: #{$wbbb-radius-full};
+  --wbbb-spacing-xs: #{$wbbb-spacing-xs};
+  --wbbb-spacing-sm: #{$wbbb-spacing-sm};
+  --wbbb-spacing-md: #{$wbbb-spacing-md};
+  --wbbb-spacing-lg: #{$wbbb-spacing-lg};
+  --wbbb-spacing-xl: #{$wbbb-spacing-xl};
+  --wbbb-font-size-xs: #{$wbbb-font-size-xs};
+  --wbbb-font-size-sm: #{$wbbb-font-size-sm};
+  --wbbb-font-size-md: #{$wbbb-font-size-md};
+  --wbbb-font-size-lg: #{$wbbb-font-size-lg};
+  --wbbb-font-size-xl: #{$wbbb-font-size-xl};
+  --wbbb-line-height: 1.5;
+  --wbbb-shadow-sm: 0 4rpx 16rpx rgba(15, 23, 42, 0.05);
+  --wbbb-shadow-md: 0 12rpx 32rpx rgba(15, 23, 42, 0.08);
+  --wbbb-shadow-lg: 0 24rpx 64rpx rgba(15, 23, 42, 0.14);
+  --wbbb-duration-fast: 160ms;
+  --wbbb-duration-base: 220ms;
+  --wbbb-duration-slow: 320ms;
+  --wbbb-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --wbbb-easing-enter: cubic-bezier(0, 0, 0.2, 1);
+  --wbbb-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --wbbb-motion-press-scale: 0.985;
+  --wbbb-motion-overlay-distance: 24rpx;
+  --wbbb-z-index-overlay: 800;
+  --wbbb-z-index-popup: 900;
+  --wbbb-z-index-dialog: 1000;
+  --wbbb-z-index-toast: 1100;
+  --wbbb-height-sm: 60rpx;
+  --wbbb-height-md: 76rpx;
+  --wbbb-height-lg: 88rpx;
+}
+
+[data-theme="dark"],
+page[data-theme="dark"],
+:root[data-theme="dark"] {
+  --wbbb-color-neutral-solid: #9aa7b8;
+  --wbbb-color-neutral-foreground: #101827;
+  --wbbb-color-neutral-soft: #283444;
+  --wbbb-color-neutral-soft-hover: #344255;
+  --wbbb-color-neutral-border: #526276;
+  --wbbb-color-neutral-hover: #c7d1df;
+  --wbbb-color-neutral-pressed: #e2e8f0;
+  --wbbb-color-primary-solid: #5aa2ff;
+  --wbbb-color-primary-foreground: #071a33;
+  --wbbb-color-primary-soft: #12335f;
+  --wbbb-color-primary-soft-hover: #17477f;
+  --wbbb-color-primary-border: #3478c9;
+  --wbbb-color-primary-hover: #83baff;
+  --wbbb-color-primary-pressed: #3e86e8;
+  --wbbb-color-success-solid: #42c783;
+  --wbbb-color-success-foreground: #062816;
+  --wbbb-color-success-soft: #123d2a;
+  --wbbb-color-success-soft-hover: #185337;
+  --wbbb-color-success-border: #2b8b5a;
+  --wbbb-color-success-hover: #68d99c;
+  --wbbb-color-success-pressed: #2fa96b;
+  --wbbb-color-warning-solid: #f6b84b;
+  --wbbb-color-warning-foreground: #322003;
+  --wbbb-color-warning-soft: #4b3511;
+  --wbbb-color-warning-soft-hover: #624718;
+  --wbbb-color-warning-border: #a87827;
+  --wbbb-color-warning-hover: #facb77;
+  --wbbb-color-warning-pressed: #d99b2f;
+  --wbbb-color-danger-solid: #ff7773;
+  --wbbb-color-danger-foreground: #3b0d12;
+  --wbbb-color-danger-soft: #4b2027;
+  --wbbb-color-danger-soft-hover: #652b34;
+  --wbbb-color-danger-border: #aa5059;
+  --wbbb-color-danger-hover: #ff9a96;
+  --wbbb-color-danger-pressed: #d55;
+  --wbbb-color-info-solid: #aeb9c8;
+  --wbbb-color-info-foreground: #172033;
+  --wbbb-color-info-soft: #293444;
+  --wbbb-color-info-soft-hover: #344154;
+  --wbbb-color-info-border: #64748b;
+  --wbbb-color-info-hover: #c9d3df;
+  --wbbb-color-info-pressed: #8998aa;
+  --wbbb-color-text: #e8edf5;
+  --wbbb-color-text-secondary: #aeb9c8;
+  --wbbb-color-text-disabled: #78879a;
+  --wbbb-color-border: #3b495e;
+  --wbbb-color-separator: #303c4f;
+  --wbbb-color-bg: #131a26;
+  --wbbb-color-surface: #1d2736;
+  --wbbb-color-surface-elevated: #263246;
+  --wbbb-color-surface-subtle: #182130;
+  --wbbb-color-fill: #2a3648;
+  --wbbb-color-disabled: #293547;
+  --wbbb-color-disabled-foreground: #738196;
+  --wbbb-color-focus-ring: rgba(90, 162, 255, 0.34);
+  --wbbb-color-mask: rgba(2, 6, 23, 0.68);
+  --wbbb-color-code-surface: #0d2035;
+  --wbbb-color-code-text: #c9e2ff;
+  --wbbb-color-inverse-surface: #e8edf5;
+  --wbbb-color-inverse-foreground: #172033;
+  --wbbb-color-brand-surface: #0d3158;
+  --wbbb-color-brand-subtle: #16456f;
+  --wbbb-color-brand-border: #4f89bd;
+  --wbbb-color-brand-separator: #4d7197;
+  --wbbb-shadow-primary: 0 8rpx 18rpx rgba(0, 0, 0, 0.24);
+  --wbbb-color-skeleton-shine: rgba(255, 255, 255, 0.12);
+  --wbbb-shadow-sm: 0 4rpx 16rpx rgba(0, 0, 0, 0.2);
+  --wbbb-shadow-md: 0 12rpx 32rpx rgba(0, 0, 0, 0.28);
+  --wbbb-shadow-lg: 0 24rpx 64rpx rgba(0, 0, 0, 0.38);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  page,
+  :root {
+    --wbbb-duration-fast: 1ms;
+    --wbbb-duration-base: 1ms;
+    --wbbb-duration-slow: 1ms;
+    --wbbb-motion-overlay-distance: 0rpx;
+  }
+
+  [class*="wbbb-"] {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}

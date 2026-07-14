@@ -1,10 +1,10 @@
 ---
-title: Loading
+title: 加载 Loading
 description: 加载中的过程状态
 outline: [2, 3]
 ---
 
-# Loading
+# 加载 Loading
 
 <ComponentDoc slug="loading" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="loading" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="loading" section="api" />
 

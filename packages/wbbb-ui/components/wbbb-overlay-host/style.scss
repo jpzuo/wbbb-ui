@@ -1,0 +1,14 @@
+.wbbb-overlay-host {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  z-index: var(--wbbb-z-index-toast);
+}
+
+.wbbb-overlay-host .wbbb-toast,
+.wbbb-overlay-host .wbbb-notify,
+.wbbb-overlay-host .wbbb-dialog-root,
+.wbbb-overlay-host .wbbb-action-sheet-root {
+  pointer-events: auto;
+}

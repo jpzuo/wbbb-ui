@@ -1,10 +1,10 @@
 ---
-title: SafeArea
+title: 安全区 SafeArea
 description: 设备安全区适配
 outline: [2, 3]
 ---
 
-# SafeArea
+# 安全区 SafeArea
 
 <ComponentDoc slug="safe-area" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="safe-area" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="safe-area" section="api" />
 

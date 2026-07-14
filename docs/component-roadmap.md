@@ -1,14 +1,14 @@
-# Component Roadmap
+# 组件路线图
 
-## Implemented In 0.1.0
+## 0.1.0 已实现
 
-- Basic: Button, Icon, Text, Image, Badge, Tag, Avatar, Divider, Loading.
-- Layout: Cell, Grid, List, Card, Sticky, SafeArea, Navbar, Tabbar, Tabs.
-- Form: Input, Textarea, Checkbox, Radio, Switch, Picker, DatePicker, Slider, Stepper, Upload, Form, Field.
-- Feedback: Toast, Dialog, Popup, ActionSheet, Notify, Skeleton, Empty, Progress.
-- Display: NoticeBar, Collapse, Swiper, Steps, Timeline, CountDown, Rate, Calendar.
+- 基础：Button、Icon、Text、Image、Badge、Tag、Avatar、Divider、Loading。
+- 布局：Cell、Grid、List、Card、Sticky、SafeArea、Navbar、Tabbar、Tabs。
+- 表单：Input、Textarea、Checkbox、Radio、Switch、Picker、DatePicker、Slider、Stepper、Upload、Form、Field。
+- 反馈：Toast、Dialog、Popup、ActionSheet、Notify、Skeleton、Empty、Progress。
+- 展示：NoticeBar、Collapse、Swiper、Steps、Timeline、CountDown、Rate、Calendar。
 
-## Next Phase
+## 下一阶段
 
 - Search
 - DropdownMenu

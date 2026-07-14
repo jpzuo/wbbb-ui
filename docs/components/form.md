@@ -1,10 +1,10 @@
 ---
-title: Form
+title: 表单 Form
 description: 表单规则与校验
 outline: [2, 3]
 ---
 
-# Form
+# 表单 Form
 
 <ComponentDoc slug="form" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="form" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="form" section="api" />
 

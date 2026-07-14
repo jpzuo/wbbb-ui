@@ -1,10 +1,10 @@
 ---
-title: Steps
+title: 步骤条 Steps
 description: 步骤进度
 outline: [2, 3]
 ---
 
-# Steps
+# 步骤条 Steps
 
 <ComponentDoc slug="steps" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="steps" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="steps" section="api" />
 

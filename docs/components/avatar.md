@@ -1,10 +1,10 @@
 ---
-title: Avatar
+title: 头像 Avatar
 description: 头像与默认占位
 outline: [2, 3]
 ---
 
-# Avatar
+# 头像 Avatar
 
 <ComponentDoc slug="avatar" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="avatar" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="avatar" section="api" />
 

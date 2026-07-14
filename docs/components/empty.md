@@ -1,10 +1,10 @@
 ---
-title: Empty
+title: 空状态 Empty
 description: 空内容状态
 outline: [2, 3]
 ---
 
-# Empty
+# 空状态 Empty
 
 <ComponentDoc slug="empty" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="empty" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="empty" section="api" />
 

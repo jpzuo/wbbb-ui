@@ -1,10 +1,10 @@
 ---
-title: Navbar
+title: 导航栏 Navbar
 description: 页面导航栏
 outline: [2, 3]
 ---
 
-# Navbar
+# 导航栏 Navbar
 
 <ComponentDoc slug="navbar" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="navbar" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="navbar" section="api" />
 

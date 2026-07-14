@@ -1,10 +1,10 @@
 ---
-title: Image
+title: 图片 Image
 description: 图片加载与失败占位
 outline: [2, 3]
 ---
 
-# Image
+# 图片 Image
 
 <ComponentDoc slug="image" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="image" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="image" section="api" />
 

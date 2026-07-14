@@ -1,47 +1,18 @@
-# uni_modules Publishing
+# uni_modules 使用与发布
 
-`packages/halo-ui` is the package that should be published to npm and copied to `uni_modules/halo-ui`.
-
-It is intentionally a uni-app source package. npm consumers must use it from a uni-app/Vite compilation pipeline; Node.js does not execute its TypeScript and Vue entry files directly.
-
-Required shape:
+`packages/wbbb-ui` 可发布到 npm，也可复制到 `uni_modules/wbbb-ui`。它是 uni-app 源码包，必须由 uni-app/Vite 编译链处理。
 
 ```text
-uni_modules/halo-ui/
-  package.json
+uni_modules/wbbb-ui/
   components/
-    halo-button/
-      halo-button.vue
-      index.ts
-      props.ts
-      style.scss
   src/
-    styles/
-    services/
+  package.json
 ```
 
-## easycom
-
-Component directories use the `halo-*` prefix so projects can use tags like:
+组件目录使用 `wbbb-*` 前缀，可配合 easycom 使用：
 
 ```vue
-<halo-button type="primary">Submit</halo-button>
+<wbbb-button type="primary">提交</wbbb-button>
 ```
 
-CLI projects can use PascalCase imports:
-
-```ts
-import { HaloButton } from 'halo-ui/components/button'
-```
-
-The playground syncs the local package into `examples/playground/uni_modules/halo-ui` before each build. This keeps mini-program builds away from npm `file:` symlink paths and matches how DCloud projects commonly consume component libraries.
-
-For mini-program builds, the sync script also refreshes `examples/playground/src/uni_modules/halo-ui` because uni-app easycom scans that location in addition to the project root.
-
-## Release Checklist
-
-- Run `npm run check:exports`.
-- Run `npm run typecheck`, `npm run test`, and `npm run build`.
-- Run `npm run prepare:uni-modules` to create `dist/uni_modules/halo-ui`.
-- Run playground builds for H5, App Vue, WeChat mini-program, Alipay mini-program, and Douyin mini-program.
-- Update `CHANGELOG.md`, `docs/platforms.md`, and component docs when behavior changes.
+发布前执行 `npm run release:dry`、类型检查、导出检查与跨端构建。

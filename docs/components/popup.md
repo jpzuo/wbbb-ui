@@ -1,10 +1,10 @@
 ---
-title: Popup
+title: 弹出层 Popup
 description: 位置弹出层
 outline: [2, 3]
 ---
 
-# Popup
+# 弹出层 Popup
 
 <ComponentDoc slug="popup" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="popup" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="popup" section="api" />
 

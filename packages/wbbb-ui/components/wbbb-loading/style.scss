@@ -1,0 +1,33 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-loading {
+  align-items: center;
+  color: var(--wbbb-color-text-secondary);
+  display: inline-flex;
+  gap: var(--wbbb-spacing-xs);
+  justify-content: center;
+}
+
+.wbbb-loading--vertical {
+  flex-direction: column;
+}
+
+.wbbb-loading__spinner {
+  animation: wbbb-loading-rotate 0.75s linear infinite;
+  border: 3rpx solid currentcolor;
+  border-radius: 999rpx;
+  border-right-color: transparent;
+  box-sizing: border-box;
+}
+
+.wbbb-loading__text {
+  color: currentcolor;
+  font-size: var(--wbbb-font-size-sm);
+}
+
+@keyframes wbbb-loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

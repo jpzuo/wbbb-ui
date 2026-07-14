@@ -1,10 +1,10 @@
 ---
-title: Stepper
+title: 步进器 Stepper
 description: 精确数字步进
 outline: [2, 3]
 ---
 
-# Stepper
+# 步进器 Stepper
 
 <ComponentDoc slug="stepper" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="stepper" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="stepper" section="api" />
 

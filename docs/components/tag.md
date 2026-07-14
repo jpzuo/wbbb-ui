@@ -1,10 +1,10 @@
 ---
-title: Tag
+title: 标签 Tag
 description: 轻量状态标签
 outline: [2, 3]
 ---
 
-# Tag
+# 标签 Tag
 
 <ComponentDoc slug="tag" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="tag" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="tag" section="api" />
 

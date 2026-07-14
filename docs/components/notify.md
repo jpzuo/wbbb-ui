@@ -1,10 +1,10 @@
 ---
-title: Notify
+title: 消息通知 Notify
 description: 页面顶部通知
 outline: [2, 3]
 ---
 
-# Notify
+# 消息通知 Notify
 
 <ComponentDoc slug="notify" section="overview" />
 
@@ -16,7 +16,7 @@ outline: [2, 3]
 
 <ComponentDoc slug="notify" section="states" />
 
-## API
+## API 参考
 
 <ComponentDoc slug="notify" section="api" />
 

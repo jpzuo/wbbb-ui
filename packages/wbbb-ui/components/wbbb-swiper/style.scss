@@ -1,0 +1,24 @@
+@use "../../src/styles/tokens.scss";
+
+.wbbb-swiper {
+  border-radius: var(--wbbb-radius-lg);
+  height: 320rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.wbbb-swiper__item,
+.wbbb-swiper__image,
+.wbbb-swiper__fallback {
+  height: 100%;
+  width: 100%;
+}
+
+.wbbb-swiper__fallback {
+  align-items: center;
+  background: var(--wbbb-color-bg);
+  color: var(--wbbb-color-text-secondary);
+  display: flex;
+  justify-content: center;
+}
+
