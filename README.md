@@ -8,6 +8,18 @@ Halo UI is a Vue 3 + TypeScript component library for uni-app. It is designed fo
 - `examples/playground`: uni-app playground for manual cross-platform verification.
 - `docs`: project documentation, usage rules, compatibility matrix, and component roadmap.
 
+## Documentation
+
+The formal developer documentation is built with VitePress, while the uni-app Playground remains the mobile interaction and cross-platform verification surface.
+
+```bash
+npm run docs:api
+npm run docs:dev
+npm run docs:build
+```
+
+For Cloudflare Pages, build the documentation with `npm run docs:api && npm run docs:build` and publish `docs/.vitepress/dist`. Build the Playground separately with `npm run build -w halo-ui && npm run build:h5 -w @halo-ui/playground`.
+
 ## Usage
 
 Full import:
@@ -42,4 +54,3 @@ npm run check:exports
 npm run typecheck
 npm run build
 ```
-

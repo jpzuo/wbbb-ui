@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -6,6 +6,7 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const catalogPath = join(root, 'examples', 'playground', 'src', 'shared', 'component-catalog.ts')
 const outputPath = join(root, 'docs', 'api.md')
 const metadataPath = join(root, 'examples', 'playground', 'src', 'shared', 'api-metadata.ts')
+const componentDocsDirectory = join(root, 'docs', 'components')
 const check = process.argv.includes('--check')
 const catalog = readFileSync(catalogPath, 'utf8')
 const definitions = [...catalog.matchAll(/\{ category: '([^']+)', description: '([^']*)', name: '([^']+)', slug: '([^']+)' \}/g)]
@@ -92,13 +93,24 @@ for (const component of definitions) {
 
 const output = `${lines.join('\n')}\n`
 const metadataOutput = `export interface HaloApiProp {\n  defaultValue: string\n  name: string\n  required: boolean\n  type: string\n}\n\nexport interface HaloComponentApi {\n  events: readonly string[]\n  modelValue: boolean\n  props: readonly HaloApiProp[]\n  slots: readonly string[]\n}\n\nexport const componentApiMetadata = ${JSON.stringify(metadata, null, 2)} as const satisfies Record<string, HaloComponentApi>\n`
+const componentPages = new Map(definitions.map((component) => [
+  join(componentDocsDirectory, `${component.slug}.md`),
+  `---\ntitle: ${component.name}\ndescription: ${component.description}\noutline: [2, 3]\n---\n\n# ${component.name}\n\n<ComponentDoc slug="${component.slug}" section="overview" />\n\n## 基础用法\n\n<ComponentDoc slug="${component.slug}" section="usage" />\n\n## 状态与交互\n\n<ComponentDoc slug="${component.slug}" section="states" />\n\n## API\n\n<ComponentDoc slug="${component.slug}" section="api" />\n\n## 平台说明\n\n<ComponentDoc slug="${component.slug}" section="platform" />\n`
+]))
+
+function isCurrent(path, content) {
+  return existsSync(path) && readFileSync(path, 'utf8') === content
+}
+
 if (check) {
-  if (!existsSync(outputPath) || readFileSync(outputPath, 'utf8') !== output || !existsSync(metadataPath) || readFileSync(metadataPath, 'utf8') !== metadataOutput) {
+  if (!isCurrent(outputPath, output) || !isCurrent(metadataPath, metadataOutput) || [...componentPages].some(([path, content]) => !isCurrent(path, content))) {
     console.error('Generated API documentation is out of date. Run npm run docs:api.')
     process.exit(1)
   }
 } else {
+  mkdirSync(componentDocsDirectory, { recursive: true })
   writeFileSync(outputPath, output)
   writeFileSync(metadataPath, metadataOutput)
-  console.log(`Generated API docs for ${definitions.length} components.`)
+  componentPages.forEach((content, path) => writeFileSync(path, content))
+  console.log(`Generated API docs and ${componentPages.size} component pages.`)
 }

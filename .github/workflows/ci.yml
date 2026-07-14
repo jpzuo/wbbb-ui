@@ -20,12 +20,14 @@ jobs:
       - run: npm run check:tokens
       - run: npm run check:icons
       - run: npm run check:api-docs
+      - run: npm run check:docs
       - run: npm run check:accessibility
       - run: npm run audit:production
       - run: npm run audit:development
       - run: npm run lint
       - run: npm run lint:styles
       - run: npm run typecheck
+      - run: npm run docs:build
       - run: npm run test
       - run: npm run build
       - run: npm run check:budgets
@@ -62,3 +64,4 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run test:visual
+      - run: npm run test:docs

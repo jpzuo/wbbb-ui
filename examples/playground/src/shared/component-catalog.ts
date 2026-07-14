@@ -3,10 +3,12 @@ export type ComponentCategory = 'basic' | 'layout' | 'form' | 'feedback' | 'disp
 export interface PlaygroundComponent {
   category: ComponentCategory
   description: string
+  docSlug: string
   interactive: boolean
   name: string
   requiredStates: string[]
   semantic: boolean
+  service: boolean
   slug: string
   states: string[]
 }
@@ -73,6 +75,7 @@ const semanticComponents = new Set(['badge', 'button', 'notice-bar', 'notify', '
 const interactiveComponents = new Set(['action-sheet', 'button', 'calendar', 'cell', 'checkbox', 'collapse', 'date-picker', 'dialog', 'grid', 'input', 'list', 'picker', 'popup', 'radio', 'rate', 'slider', 'stepper', 'switch', 'tabbar', 'tabs', 'textarea', 'upload'])
 const formComponents = new Set(['checkbox', 'date-picker', 'field', 'form', 'input', 'picker', 'radio', 'rate', 'slider', 'stepper', 'switch', 'textarea', 'upload'])
 const feedbackComponents = new Set(['empty', 'image', 'loading', 'progress', 'skeleton', 'upload'])
+const serviceComponents = new Set(['action-sheet', 'dialog', 'notify', 'overlay-host', 'toast'])
 const explicitStates: Record<string, string[]> = {
   avatar: ['图片', '加载失败回退', '首字母', '默认图标'],
   calendar: ['默认', '今天', '选中', '禁用日期'],
@@ -84,7 +87,7 @@ const explicitStates: Record<string, string[]> = {
   timeline: ['默认', '成功', '信息', '末项无连线']
 }
 
-function stateContract(slug: string): Pick<PlaygroundComponent, 'interactive' | 'requiredStates' | 'semantic' | 'states'> {
+function stateContract(slug: string): Pick<PlaygroundComponent, 'interactive' | 'requiredStates' | 'semantic' | 'service' | 'states'> {
   const semantic = semanticComponents.has(slug)
   const form = formComponents.has(slug)
   const feedback = feedbackComponents.has(slug)
@@ -99,10 +102,10 @@ function stateContract(slug: string): Pick<PlaygroundComponent, 'interactive' | 
           ? ['默认', '按压', '选中', '禁用']
           : ['默认', '内容态'])
 
-  return { interactive, requiredStates: states, semantic, states }
+  return { interactive, requiredStates: states, semantic, service: serviceComponents.has(slug), states }
 }
 
-export const playgroundComponents = componentDefinitions.map((component) => ({ ...component, ...stateContract(component.slug) })) satisfies readonly PlaygroundComponent[]
+export const playgroundComponents = componentDefinitions.map((component) => ({ ...component, docSlug: component.slug, ...stateContract(component.slug) })) satisfies readonly PlaygroundComponent[]
 
 export const componentBySlug = Object.fromEntries(playgroundComponents.map((component) => [component.slug, component])) as Record<string, PlaygroundComponent>
 
