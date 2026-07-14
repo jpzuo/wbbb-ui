@@ -18,12 +18,25 @@ test('catalog routes to a reusable component detail page', async ({ page }) => {
   await expect(page.locator('.state-matrix__item')).toHaveCount(6)
 })
 
+test('component detail applies a valid route theme and keeps it during API navigation', async ({ page }) => {
+  await page.goto('/#/pages/component/detail?name=button&theme=dark')
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
+  await expect(page.locator('.detail')).toHaveCSS('background-color', 'rgb(19, 26, 38)')
+  await page.getByText('查看 API', { exact: true }).click({ force: true })
+  await expect(page).toHaveURL(/theme=dark/)
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
+
+  await page.goto('/#/pages/component/detail?name=button&theme=unsupported')
+  await page.reload()
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light')
+})
+
 test('design token page switches its full semantic palette', async ({ page }) => {
   await page.goto('/#/pages/tokens/index')
   await expect(page.locator('.color-card')).toHaveCount(5)
   await expect(page.locator('.tokens-page__buttons .wbbb-button')).toHaveCount(8)
   await page.getByText('切换深色', { exact: true }).click({ force: true })
-  await expect(page.locator('.tokens-page')).toHaveAttribute('data-theme', 'dark')
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark')
 })
 
 test('icon detail renders the core set and all three icon sources', async ({ page }) => {

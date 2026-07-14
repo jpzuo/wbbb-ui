@@ -15,14 +15,18 @@ import { computed, ref } from 'vue'
 import { onLoad } from '@dcloudio/uni-app'
 import ComponentDemo from '../../components/component-demo.vue'
 import { categoryMeta, componentBySlug, importPath, playgroundComponents } from '../../shared/component-catalog'
+import { applyThemeFromRoute, playgroundTheme } from '../../shared/playground-theme'
 
 const slug = ref('button')
 const component = computed(() => componentBySlug[slug.value] ?? playgroundComponents[0])
 
-onLoad((query) => { if (typeof query.name === 'string' && componentBySlug[query.name]) slug.value = query.name })
+onLoad((query) => {
+  applyThemeFromRoute(query.theme)
+  if (typeof query.name === 'string' && componentBySlug[query.name]) slug.value = query.name
+})
 function goBack() { uni.navigateBack() }
 function openDocs() {
-  uni.navigateTo({ url: `/pages/component/api?name=${component.value.slug}` })
+  uni.navigateTo({ url: `/pages/component/api?name=${component.value.slug}&theme=${playgroundTheme.value}` })
 }
 </script>
 

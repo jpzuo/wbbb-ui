@@ -8,6 +8,7 @@ export function setTheme(theme: WbbbTheme) {
   if (typeof document !== 'undefined') {
     document.documentElement.setAttribute('data-theme', theme)
     document.body?.setAttribute('data-theme', theme)
+    document.querySelectorAll('uni-page-body').forEach((element) => element.setAttribute('data-theme', theme))
   }
 }
 

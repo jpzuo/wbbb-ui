@@ -1,5 +1,5 @@
 <template>
-  <view class="home" :data-theme="theme">
+  <view class="home">
     <wbbb-overlay-host />
     <view class="hero">
       <view class="hero__nav">
@@ -48,8 +48,8 @@ import { computed, ref } from 'vue'
 import { showNotify, showToast } from '../../uni_modules/wbbb-ui/src/services'
 import { WbbbTabPanel } from '../../uni_modules/wbbb-ui/components/wbbb-tabs'
 import { categoryMeta, componentsByCategory } from '../../shared/component-catalog'
+import { playgroundTheme as theme, togglePlaygroundTheme } from '../../shared/playground-theme'
 
-const theme = ref<'light' | 'dark'>('light')
 const estimate = ref(2.5)
 const activeTab = ref('overview')
 const metrics = [{ label: '可用组件', value: '47' }, { label: '支持终端', value: '4+' }, { label: '设计主题', value: '02' }]
@@ -58,7 +58,7 @@ const tasks = [{ label: '今日 · 10:30', title: '设计系统评审', value: '
 const timelineItems = [{ content: '完整组件目录已建立', time: '刚刚', title: '验收基线更新' }, { content: 'H5 与小程序构建完成', time: '今天', title: '跨端能力升级' }]
 const categories = computed(() => (Object.keys(categoryMeta) as Array<keyof typeof categoryMeta>).map((key) => ({ count: componentsByCategory(key).length, description: categoryMeta[key].description, key, name: categoryMeta[key].name })))
 
-function toggleTheme() { theme.value = theme.value === 'light' ? 'dark' : 'light' }
+function toggleTheme() { togglePlaygroundTheme() }
 function openCatalog(category?: string) { uni.navigateTo({ url: `/pages/catalog/index${category ? `?category=${category}` : ''}` }) }
 function openTokens() { uni.navigateTo({ url: '/pages/tokens/index' }) }
 </script>

@@ -15,13 +15,17 @@ import { onLoad } from '@dcloudio/uni-app'
 import ApiContract from '../../components/api-contract.vue'
 import { componentApiMetadata } from '../../shared/api-metadata'
 import { categoryMeta, componentBySlug, importPath, playgroundComponents } from '../../shared/component-catalog'
+import { applyThemeFromRoute } from '../../shared/playground-theme'
 import { showToast } from '../../uni_modules/wbbb-ui/src/services'
 
 const slug = ref('button')
 const component = computed(() => componentBySlug[slug.value] ?? playgroundComponents[0])
 const api = computed(() => componentApiMetadata[component.value.slug])
 
-onLoad((query) => { if (typeof query.name === 'string' && componentBySlug[query.name]) slug.value = query.name })
+onLoad((query) => {
+  applyThemeFromRoute(query.theme)
+  if (typeof query.name === 'string' && componentBySlug[query.name]) slug.value = query.name
+})
 function goBack() { uni.navigateBack() }
 function copyImport() {
   uni.setClipboardData({ data: importPath(component.value) })

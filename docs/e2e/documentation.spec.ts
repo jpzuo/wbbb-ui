@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 
 const playgroundRoot = 'https://wbbb-ui.pages.dev'
 const playgroundHome = `${playgroundRoot}/#/`
-const previewUrl = (slug: string) => `${playgroundRoot}/#/pages/component/detail?name=${slug}`
+const previewUrl = (slug: string, theme: 'dark' | 'light' = 'light') => `${playgroundRoot}/#/pages/component/detail?name=${slug}&theme=${theme}`
 
 test('home provides developer navigation and local search', async ({ page }) => {
   await page.goto('/')
@@ -27,6 +27,18 @@ test('component page exposes code, real preview, states and API', async ({ page 
   await expect(page.getByTestId('mobile-preview-frame')).toBeVisible()
   await expect(page.getByRole('heading', { name: 'API 参考' })).toBeVisible()
   await expect(page.locator('.wbbb-component-api tbody tr')).not.toHaveCount(0)
+})
+
+test('component preview follows the documentation appearance', async ({ page }) => {
+  await page.goto('/components/button')
+  const preview = page.locator('.wbbb-example__preview iframe')
+  const openPreview = page.locator('.wbbb-example__preview-bar a')
+  await expect(preview).toHaveAttribute('src', previewUrl('button', 'light'))
+
+  await page.locator('.VPNavBar button.VPSwitchAppearance:visible').click()
+  await expect(page.locator('html.dark')).toHaveCount(1)
+  await expect(preview).toHaveAttribute('src', previewUrl('button', 'dark'))
+  await expect(openPreview).toHaveAttribute('href', previewUrl('button', 'dark'))
 })
 
 test('English documentation renders the mirrored component page', async ({ page }) => {

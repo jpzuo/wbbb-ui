@@ -56,7 +56,7 @@ import { componentApiMetadata } from '../../../../examples/playground/src/shared
 import { categoryMeta, componentBySlug } from '../../../../examples/playground/src/shared/component-catalog'
 
 const props = withDefaults(defineProps<{ slug: string; section?: 'api' | 'overview' | 'platform' | 'states' | 'usage' }>(), { section: 'overview' })
-const { lang } = useData()
+const { isDark, lang } = useData()
 const copied = ref(false)
 const component = computed(() => componentBySlug[props.slug] ?? componentBySlug.button)
 const api = computed(() => componentApiMetadata[component.value.slug] ?? { events: [], modelValue: false, props: [], slots: [] })
@@ -74,7 +74,8 @@ const componentTitle = computed(() => isEnglish.value ? `${component.value.name}
 const categoryName = computed(() => isEnglish.value ? categoryMeta[component.value.category].enName : categoryMeta[component.value.category].name)
 const description = computed(() => isEnglish.value ? component.value.enDescription : component.value.description)
 const playgroundRoot = __WBBB_PLAYGROUND_URL__.replace(/\/?#\/?$/, '').replace(/\/+$/, '')
-const previewUrl = computed(() => `${playgroundRoot}/#/pages/component/detail?name=${component.value.slug}`)
+const previewTheme = computed(() => isDark.value ? 'dark' : 'light')
+const previewUrl = computed(() => `${playgroundRoot}/#/pages/component/detail?name=${component.value.slug}&theme=${previewTheme.value}`)
 
 const stateTranslations: Record<string, string> = {
   '上传中': 'Uploading', '今天': 'Today', '信息': 'Info', '内容态': 'Content', '关闭': 'Closed', '加载中': 'Loading', '加载失败': 'Load failed', '加载失败回退': 'Load-failure fallback', '加载失败/空资源': 'Error / empty resource', '危险': 'Danger', '可选': 'Selectable', '可操作': 'Interactive', '成功': 'Success', '已填写': 'Filled', '展开动画': 'Expand animation', '已选中': 'Selected', '按压': 'Pressed', '文字卡片': 'Text card', '等待': 'Waiting', '空内容': 'Empty', '空资源': 'Empty source', '禁用': 'Disabled', '默认': 'Default', '错误': 'Error', '图片内容': 'Image content', '失败': 'Failed', '首字母': 'Initials', '默认图标': 'Default icon', '主色': 'Primary', '完成': 'Finished', '警告': 'Warning', '进行中': 'In progress', '末项无连线': 'No trailing connector', '焦点': 'Focus'

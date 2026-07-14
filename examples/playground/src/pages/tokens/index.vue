@@ -1,18 +1,18 @@
 <template>
-  <view class="tokens-page" :data-theme="theme">
+  <view class="tokens-page">
     <wbbb-navbar title="状态规范" left-arrow left-text="首页" @click-left="goBack" />
-    <view class="tokens-page__hero"><text>设计色板</text><text>亮色、深色与交互状态均来自同一组 Wbbb token。</text><wbbb-button size="small" plain type="primary" @click="theme = theme === 'light' ? 'dark' : 'light'">切换{{ theme === 'light' ? '深色' : '浅色' }}</wbbb-button></view>
+    <view class="tokens-page__hero"><text>设计色板</text><text>亮色、深色与交互状态均来自同一组 Wbbb token。</text><wbbb-button size="small" plain type="primary" @click="toggleTheme">切换{{ theme === 'light' ? '深色' : '浅色' }}</wbbb-button></view>
     <view class="tokens-page__section"><text>语义色</text><view class="tokens-page__grid"><view v-for="item in semanticColors" :key="item.type" class="color-card"><view class="color-card__solid" :class="`color-card__solid--${item.type}`"><text>{{ item.name }}</text></view><view class="color-card__soft" :class="`color-card__soft--${item.type}`">浅色容器 / 边界 / 错误提示</view></view></view></view>
     <view class="tokens-page__section"><text>控件状态</text><wbbb-card><view class="tokens-page__buttons"><wbbb-button>默认</wbbb-button><wbbb-button type="primary">按压反馈</wbbb-button><wbbb-button type="success">成功</wbbb-button><wbbb-button type="warning">警告</wbbb-button><wbbb-button type="danger">危险</wbbb-button><wbbb-button type="info">信息</wbbb-button><wbbb-button disabled>禁用</wbbb-button><wbbb-button loading type="primary">加载</wbbb-button></view></wbbb-card></view>
   </view>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { playgroundTheme as theme, togglePlaygroundTheme } from '../../shared/playground-theme'
 
-const theme = ref<'light' | 'dark'>('light')
 const semanticColors = [{ name: '主色', type: 'primary' }, { name: '成功', type: 'success' }, { name: '警告', type: 'warning' }, { name: '危险', type: 'danger' }, { name: '信息', type: 'info' }]
 function goBack() { uni.navigateBack() }
+function toggleTheme() { togglePlaygroundTheme() }
 </script>
 
 <style lang="scss">
