@@ -31,7 +31,8 @@
 <script setup lang="ts">
 import { provide } from 'vue'
 import { isKeyboardActivation, preventKeyboardDefault } from '../../src/shared/keyboard'
-import { wbbbTabsKey, type WbbbTabItem, type WbbbTabsProps } from './props'
+import { wbbbTabsKey } from './context'
+import type { WbbbTabItem, WbbbTabsProps } from './props'
 
 const props = withDefaults(defineProps<WbbbTabsProps>(), {
   activeColor: '',

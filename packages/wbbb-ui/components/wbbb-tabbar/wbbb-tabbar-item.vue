@@ -24,7 +24,8 @@ import { computed, inject } from 'vue'
 import WbbbIcon from '../wbbb-icon'
 import { isKeyboardActivation, preventKeyboardDefault } from '../../src/shared/keyboard'
 import { toStyleText } from '../../src/shared/utils'
-import { wbbbTabbarKey, type WbbbTabbarItemProps } from './props'
+import { wbbbTabbarKey } from './context'
+import type { WbbbTabbarItemProps } from './props'
 
 const props = withDefaults(defineProps<WbbbTabbarItemProps>(), {
   badge: '',

@@ -1,6 +1,6 @@
 {
   "name": "wbbb-ui",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "A uni-app Vue 3 UI library with full and on-demand imports.",
   "type": "module",
   "keywords": [

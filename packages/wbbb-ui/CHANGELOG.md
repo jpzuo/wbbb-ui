@@ -10,6 +10,7 @@
 - 新增亮暗主题 Token、产品化组件样式与 H5 视觉回归基线。
 - 新增 Day.js 日期工具、async-validator 表单规则、精确小数步进与可选 WbbbOverlayHost 服务层。
 - 新增 locale 核心：默认中文，支持 `zh-CN`、`en-US`、`zh-cn` 与 `en`，并通过 `wbbb-ui/locale` 导出 `setLocale()`。
+- 修复 npm 安装的运行时依赖校验，并将依赖打入 uni_modules 分发包，发布为 `0.1.0-alpha.1`。
 
 ### English
 
@@ -19,6 +20,7 @@
 - Added light and dark design tokens, product-oriented component styling, and an H5 visual regression baseline.
 - Added dayjs date utilities, async-validator form rules, decimal-safe step controls, and the optional WbbbOverlayHost service layer.
 - Added locale core support: default Simplified Chinese, `zh-CN`, `en-US`, `zh-cn`, and `en`, with `setLocale()` exported from `wbbb-ui/locale`.
+- Added runtime dependency installation coverage and bundled runtime dependencies in the uni_modules distribution for the `0.1.0-alpha.1` release.
 
 ## 0.1.0-alpha.0
 

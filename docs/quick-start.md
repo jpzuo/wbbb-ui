@@ -8,7 +8,9 @@ Wbbb UI 面向 uni-app Vue 3 与 TypeScript 项目。npm 包发布的是可由 u
 npm install wbbb-ui
 ```
 
-使用 HBuilderX 或 DCloud 插件市场时，将包放到 `uni_modules/wbbb-ui`。
+通过 npm 安装时，`async-validator`、`dayjs`、`decimal.js-light` 与 `mitt` 会作为传递依赖自动安装。
+
+使用 HBuilderX 或 DCloud 插件市场时，将包放到 `uni_modules/wbbb-ui`。通过 `npm run prepare:uni-modules` 生成的分发包会内置这些运行时依赖，无需在宿主项目重复安装。
 
 ## 全量导入
 

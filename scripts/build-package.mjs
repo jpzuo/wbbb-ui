@@ -48,7 +48,9 @@ function visit(directory) {
       continue
     }
 
-    if (entry.name === 'props.js' || entry.name.endsWith('.vue.d.ts')) {
+    const isTypeOnlyPropsModule = entry.name === 'props.js' && readFileSync(path, 'utf8').trim() === 'export {};'
+
+    if (isTypeOnlyPropsModule || entry.name.endsWith('.vue.d.ts')) {
       unlinkSync(path)
     }
   }

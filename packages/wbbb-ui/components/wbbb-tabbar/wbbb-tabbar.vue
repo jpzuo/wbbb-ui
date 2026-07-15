@@ -29,7 +29,8 @@
 import { computed, provide } from 'vue'
 import { isKeyboardActivation, preventKeyboardDefault } from '../../src/shared/keyboard'
 import { toStyleText } from '../../src/shared/utils'
-import { wbbbTabbarKey, type WbbbTabbarItem, type WbbbTabbarProps } from './props'
+import { wbbbTabbarKey } from './context'
+import type { WbbbTabbarItem, WbbbTabbarProps } from './props'
 
 const props = withDefaults(defineProps<WbbbTabbarProps>(), {
   activeColor: 'var(--wbbb-color-primary)',

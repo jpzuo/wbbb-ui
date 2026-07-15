@@ -6,7 +6,8 @@
 
 <script setup lang="ts">
 import { computed, inject } from 'vue'
-import { wbbbTabsKey, type WbbbTabPanelProps } from './props'
+import { wbbbTabsKey } from './context'
+import type { WbbbTabPanelProps } from './props'
 
 const props = withDefaults(defineProps<WbbbTabPanelProps>(), {
   customClass: '',

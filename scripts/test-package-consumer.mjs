@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process'
-import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -54,6 +54,19 @@ try {
   writeFileSync(join(sandbox, 'src', 'pages', 'index', 'index.vue'), '<template><view><wbbb-button type="primary" @click="clicked = true">Consumer {{ clicked ? "ready" : "smoke" }}</wbbb-button></view></template>\n<script setup lang="ts">\nimport { ref } from "vue"\nimport { WbbbButton } from "wbbb-ui/components/button"\nimport { showToast } from "wbbb-ui/services/toast"\nconst clicked = ref(false)\nvoid WbbbButton\nvoid showToast\n</script>\n')
 
   runNpm(['install', '--ignore-scripts', '--legacy-peer-deps', '--no-package-lock'], sandbox)
+  const runtimeDependencies = Object.keys(JSON.parse(readFileSync(join(packageRoot, 'package.json'), 'utf8')).dependencies ?? {})
+
+  for (const dependency of runtimeDependencies) {
+    const installed = [
+      join(sandbox, 'node_modules', dependency, 'package.json'),
+      join(sandbox, 'node_modules', 'wbbb-ui', 'node_modules', dependency, 'package.json')
+    ].some(existsSync)
+
+    if (!installed) {
+      throw new Error(`Packaged consumer did not install runtime dependency: ${dependency}`)
+    }
+  }
+
   const uniCli = join(root, 'node_modules', '@dcloudio', 'vite-plugin-uni', 'bin', 'uni.js')
   for (const target of ['h5', 'app', 'mp-weixin', 'mp-alipay', 'mp-toutiao']) {
     execFileSync(process.execPath, [uniCli, 'build', '-p', target], {

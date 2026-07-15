@@ -1,5 +1,4 @@
 import type { WbbbCommonProps } from '../../src/shared/types'
-import type { InjectionKey } from 'vue'
 
 export interface WbbbTabbarItem {
   badge?: number | string
@@ -27,5 +26,3 @@ export interface WbbbTabbarContext {
   modelValue?: string | number
   select: (item: WbbbTabbarItem) => void
 }
-
-export const wbbbTabbarKey: InjectionKey<WbbbTabbarContext> = Symbol('wbbb-tabbar')

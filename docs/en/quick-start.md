@@ -8,7 +8,9 @@ Wbbb UI targets uni-app Vue 3 and TypeScript projects. The npm package ships uni
 npm install wbbb-ui
 ```
 
-For HBuilderX or DCloud plugin usage, place the package in `uni_modules/wbbb-ui`.
+When installed through npm, `async-validator`, `dayjs`, `decimal.js-light`, and `mitt` are installed automatically as transitive dependencies.
+
+For HBuilderX or DCloud plugin usage, place the package in `uni_modules/wbbb-ui`. Packages produced with `npm run prepare:uni-modules` bundle these runtime dependencies, so the host project does not need to install them again.
 
 ## Full Import
 
